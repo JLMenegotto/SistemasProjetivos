@@ -1,0 +1,203 @@
+{
+  "Uuid": "6ce05f3b-9b7e-4783-a8fe-c6f227ce8f73",
+  "IsCustomNode": true,
+  "Category": "Sistemas_Projetivos",
+  "Description": "Cria os planos de projeção",
+  "Name": "SP_Sistema_Diedrico",
+  "ElementResolver": {
+    "ResolutionMap": {
+      "Point": {
+        "Key": "Autodesk.DesignScript.Geometry.Point",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Surface": {
+        "Key": "Autodesk.DesignScript.Geometry.Surface",
+        "Value": "ProtoGeometry.dll"
+      }
+    }
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "d=100;\nx      = [ [0,d,d,0], [0, 0,-d,-d], [0, 0,-d,-d], [0,d, d, 0]];\ny      = [ [0,0,d,d], [0, d, d, 0], [0, -d,-d,0], [0,0,-d,-d]];\nz      = [ [0,0,0,0], [0, 0, 0, 0], [0,  0, 0,0], [0,0, 0, 0]];\nPHp    = Point.ByCoordinates( x , y , z );\nPVp    = Point.ByCoordinates( x , z , y );\nPLp    = Point.ByCoordinates( z , x , y );\nPlanH  = Surface.ByPerimeterPoints( PHp );\nPlanV  = Surface.ByPerimeterPoints( PVp );\nDiedro = [PlanH[0], PlanH[3], PlanV[0], PlanV[3]];",
+      "Id": "07c83ad07316432bbea4c30ba620cc24",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "a3cd8cc1e7de42f19d8db216d4a03d75",
+          "Name": "",
+          "Description": "d",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "463a9b479c0c4b51af8bea93abce27b4",
+          "Name": "",
+          "Description": "x",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "fd505be545cd4284b947f3b822b6e12b",
+          "Name": "",
+          "Description": "y",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "8300746577f243a78647543deb02aebf",
+          "Name": "",
+          "Description": "z",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "06659bdde9f74715950129e11e6714f1",
+          "Name": "",
+          "Description": "PHp",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "6a5f7e967bfa4b438639fd87cd6da7af",
+          "Name": "",
+          "Description": "PVp",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "7d7702c7b4264fbaabcee73ef95c828c",
+          "Name": "",
+          "Description": "PLp",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "c83327103c9a4589a8647c671d93a9bc",
+          "Name": "",
+          "Description": "PlanH",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "2fed71750aab4841b59620892cbb938d",
+          "Name": "",
+          "Description": "PlanV",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "90cae45d311b4693972ea43e677fe13c",
+          "Name": "",
+          "Description": "Diedro",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Output, DynamoCore",
+      "NodeType": "OutputNode",
+      "ElementResolver": null,
+      "Symbol": "Planos_de_Projeção",
+      "Id": "8298bdcaa8284ff4afb592f574f313c3",
+      "Inputs": [
+        {
+          "Id": "7f16ca71c9f047318133802e9636fe1c",
+          "Name": "",
+          "Description": "",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "A function output, use with custom nodes"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "90cae45d311b4693972ea43e677fe13c",
+      "End": "7f16ca71c9f047318133802e9636fe1c",
+      "Id": "b1c4bae81df6468d916954c3da203b3a"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": false,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.3.0.5885",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": 221.19753784844841,
+      "EyeY": 231.02137474487745,
+      "EyeZ": 267.98576211705119,
+      "LookX": -279.97170664555637,
+      "LookY": -247.88978913693444,
+      "LookZ": -186.64287539085561,
+      "UpX": -0.33842809349927683,
+      "UpY": 0.91354545764261252,
+      "UpZ": -0.2256127708065756
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "Cria sistema de Planos",
+        "Id": "07c83ad07316432bbea4c30ba620cc24",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 370.0,
+        "Y": 167.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Output",
+        "Id": "8298bdcaa8284ff4afb592f574f313c3",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 961.29397881431169,
+        "Y": 321.2349470357791
+      }
+    ],
+    "Annotations": [],
+    "X": -1107.1953204314832,
+    "Y": -123.49667637539557,
+    "Zoom": 1.2270473614083379
+  }
+}

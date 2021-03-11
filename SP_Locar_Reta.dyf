@@ -1,0 +1,384 @@
+{
+  "Uuid": "0fc93616-9b72-416b-b7d5-2f3610958f2b",
+  "IsCustomNode": true,
+  "Category": "Sistemas_Projetivos",
+  "Description": "Projeta reta",
+  "Name": "SP_Locar_Reta",
+  "ElementResolver": {
+    "ResolutionMap": {
+      "Line": {
+        "Key": "Autodesk.DesignScript.Geometry.Line",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Sphere": {
+        "Key": "Autodesk.DesignScript.Geometry.Sphere",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Cylinder": {
+        "Key": "Autodesk.DesignScript.Geometry.Cylinder",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Dictionary": {
+        "Key": "DesignScript.Builtin.Dictionary",
+        "Value": "DesignScriptBuiltin.dll"
+      }
+    }
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "Lterra  = Ponto1[\"LTerra\"    ];\nPlanos  = Ponto1[\"Planos\"    ];\n//---------------------------------------------------------\np1      = Ponto1[\"Ponto\"     ];\nproj1   = Ponto1[\"PontosProj\"];\ncham1   = Ponto1[\"Chamadas\"  ];\nraio1   = Ponto1[\"RaiosProj\" ];\n//---------------------------------------------------------\np2      = Ponto2[\"Ponto\"     ];\nproj2   = Ponto2[\"PontosProj\"];\ncham2   = Ponto2[\"Chamadas\"  ];\nraio2   = Ponto2[\"RaiosProj\" ];\n//---------------------------------------------------------\nR1      = Line.ByStartPointEndPoint  ( p1    , p2         );\nrj1     = Line.ByStartPointEndPoint  ( proj1 , proj2      );\nSolPts  = Sphere.ByCenterPointRadius ( [p1   , p2] , 0.35 );\nSolRet  = Cylinder.ByPointsRadius    (  p1   , p2  , 0.35 );\n//---------------------------------------------------------\nEpura   = [proj1[0], proj2[0], cham1[1], cham2[1], rj1[0]];\n\nKe      = [\"Reta\"  , \"Projeções\", \"Solidos\"     ,\n           \"Epura\" , \"LTerra\"   , \"Pl_Projeção\" ,\n           \"Ponto1\", \"Ponto2\"];\nVa      = [  R1    ,   rj1      , [SolPts, SolRet],\n           Epura   ,  Lterra    ,  Planos         ,\n           Ponto1  ,  Ponto2 ];\n\nTraçado = Dictionary.ByKeysValues(Ke, Va);",
+      "Id": "8b1a631d872944989bb8e65f274e7d2e",
+      "Inputs": [
+        {
+          "Id": "1edc1784102e4431bbc4fa77b14c83b8",
+          "Name": "Ponto1",
+          "Description": "Ponto1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "e4217cfcfcc24a8c9ac8f7c47ab7bbba",
+          "Name": "Ponto2",
+          "Description": "Ponto2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "9b56f07786dc47879eecc72059c52bd1",
+          "Name": "",
+          "Description": "Lterra",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "7a4890484a8d41f1a02b4aebb838fc03",
+          "Name": "",
+          "Description": "Planos",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "1329e35f45e2449cb7fab7e5756dc4cd",
+          "Name": "",
+          "Description": "p1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "7d480a627f18497c9e7b533091302a07",
+          "Name": "",
+          "Description": "proj1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "53a0abfc4a494913a9737c84ef558ff6",
+          "Name": "",
+          "Description": "cham1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "2e54ccc0f55a4afb8444c78bf3f81677",
+          "Name": "",
+          "Description": "raio1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "d5f5814231494b9cb02ca701a65c677b",
+          "Name": "",
+          "Description": "p2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "1d09ce9d0476454d9a201519da86803a",
+          "Name": "",
+          "Description": "proj2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "b58fcfdc7fea46a18c4fb0a1c0e22cf7",
+          "Name": "",
+          "Description": "cham2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "43189d0e277f41ba9af1afb12bf4d880",
+          "Name": "",
+          "Description": "raio2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "9642d1e4ac744ce9b752e91e426c30a5",
+          "Name": "",
+          "Description": "R1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "eb6b66da692f466088107908887eb538",
+          "Name": "",
+          "Description": "rj1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "c9e3d7aa8bd0493ab5f2f920a1373295",
+          "Name": "",
+          "Description": "SolPts",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "a816768d6f5d4b71a9483aa2cbf98b89",
+          "Name": "",
+          "Description": "SolRet",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "614033db20ba40a6b17afa09a354e652",
+          "Name": "",
+          "Description": "Epura",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "f45b0890683e4175a55558dc8a9a2227",
+          "Name": "",
+          "Description": "Ke",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "fb159f6b5bfd4402bdf5e4ae28b4009d",
+          "Name": "",
+          "Description": "Va",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "ceab3db9c9a5404bae02dae533a6e31f",
+          "Name": "",
+          "Description": "Traçado",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "Ponto_1",
+        "TypeName": "var",
+        "TypeRank": -1,
+        "DefaultValue": null,
+        "Description": "Se refere a um ponto criado pela\nfunção SP_Locar_Ponto"
+      },
+      "Id": "f7a60386a73243a8b293b4bbcb60edc9",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "ee3cc3463db04002af38c28c51b473b2",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "Ponto_2",
+        "TypeName": "var",
+        "TypeRank": -1,
+        "DefaultValue": null,
+        "Description": "Se refere a um ponto criado pela\nfunção SP_Locar_Ponto"
+      },
+      "Id": "d7c636ebdaea4b999390052a4264e59d",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "35042ee936e247cdb7408ae7acb6ad56",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Output, DynamoCore",
+      "NodeType": "OutputNode",
+      "ElementResolver": null,
+      "Symbol": "Traçado",
+      "Id": "99231aa71acd416eae044822b79a1bdd",
+      "Inputs": [
+        {
+          "Id": "7cd5328e294e4d2eb541247dd2910bd9",
+          "Name": "",
+          "Description": "",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "A function output, use with custom nodes"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "ceab3db9c9a5404bae02dae533a6e31f",
+      "End": "7cd5328e294e4d2eb541247dd2910bd9",
+      "Id": "3e58c6d44f99482eb96aca7dcef32b7a"
+    },
+    {
+      "Start": "ee3cc3463db04002af38c28c51b473b2",
+      "End": "1edc1784102e4431bbc4fa77b14c83b8",
+      "Id": "fd60f7cdd0054cb893992b0a22380a48"
+    },
+    {
+      "Start": "35042ee936e247cdb7408ae7acb6ad56",
+      "End": "e4217cfcfcc24a8c9ac8f7c47ab7bbba",
+      "Id": "86bd13c4454243a984d413a4172e5a1b"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": false,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.3.0.5885",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": 221.19753784844841,
+      "EyeY": 231.02137474487745,
+      "EyeZ": 267.98576211705119,
+      "LookX": -279.97170664555637,
+      "LookY": -247.88978913693444,
+      "LookZ": -186.64287539085561,
+      "UpX": -0.33842809349927683,
+      "UpY": 0.91354545764261252,
+      "UpZ": -0.2256127708065756
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "8b1a631d872944989bb8e65f274e7d2e",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 260.24086631879868,
+        "Y": 111.40547114590436
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Input",
+        "Id": "f7a60386a73243a8b293b4bbcb60edc9",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -93.190202664287256,
+        "Y": 66.400606889400365
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Input",
+        "Id": "d7c636ebdaea4b999390052a4264e59d",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -93.190202664287369,
+        "Y": 156.6858876826858
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Output",
+        "Id": "99231aa71acd416eae044822b79a1bdd",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 879.27893206386739,
+        "Y": 595.51134183237446
+      }
+    ],
+    "Annotations": [],
+    "X": 126.94598395544412,
+    "Y": 126.25877352313545,
+    "Zoom": 0.88385192930220713
+  }
+}

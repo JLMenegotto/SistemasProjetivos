@@ -1,0 +1,537 @@
+{
+  "Uuid": "22f9ad02-fbd0-4600-a8fc-374dead17853",
+  "IsCustomNode": true,
+  "Category": "Sistemas_Projetivos",
+  "Description": "Localiza um ponto em Sistema Diedrico",
+  "Name": "SP_Locar_Ponto",
+  "ElementResolver": {
+    "ResolutionMap": {
+      "Geometry": {
+        "Key": "Autodesk.DesignScript.Geometry.Geometry",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Vector": {
+        "Key": "Autodesk.DesignScript.Geometry.Vector",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Point": {
+        "Key": "Autodesk.DesignScript.Geometry.Point",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Line": {
+        "Key": "Autodesk.DesignScript.Geometry.Line",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Dictionary": {
+        "Key": "DesignScript.Builtin.Dictionary",
+        "Value": "DesignScriptBuiltin.dll"
+      },
+      "Surface": {
+        "Key": "Autodesk.DesignScript.Geometry.Surface",
+        "Value": "ProtoGeometry.dll"
+      }
+    }
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "d = 20;\nPlanos;\nplH   =  [Planos[0], Planos[1]];\nplV   =  [Planos[2], Planos[3]];\nBis13 =  [\n           Point.ByCoordinates (0   ,  100 ,  100) ,\n           Point.ByCoordinates (100 ,  100 ,  100) ,\n           Point.ByCoordinates (100 , -100 , -100) ,\n           Point.ByCoordinates (0   , -100 , -100)\n         ];\nBis24 =  [\n           Point.ByCoordinates (0   ,  100 , -100) ,\n           Point.ByCoordinates (100 ,  100 , -100) ,\n           Point.ByCoordinates (100 , -100 ,  100) ,\n           Point.ByCoordinates (0   , -100 ,  100)\n         ];\n//---------------------------------------------------\n// Linha de terra\n//---------------------------------------------------\nLterra = Geometry.Intersect ( plH , plV );\nx1     =  i1*d;\ny1     = -j1*d;\nz1     =  k1*d;\n\ndirH   = z1 > 0 ? Vector.ZAxis ().Reverse() : Vector.ZAxis();\ndirV   = y1 > 0 ? Vector.YAxis ().Reverse() : Vector.YAxis();\n\nponto  = Point.ByCoordinates ( x1 , y1  , z1      );\nprojh  = Point.Project       ( ponto<1> , plH , dirH );\nprojv  = Point.Project       ( ponto<1> , plV , dirV );\n\nRproj  = Line.ByStartPointEndPoint( ponto<1>, [projh,projv]);\nCha1   = Geometry.Translate       ( Rproj[1] , dirH ,  z1<0?-z1:z1);\nCha2   = Geometry.Translate       ( Rproj[0] , dirV ,  y1<0?-y1:y1);\n\nBisetor13 = Surface.ByPerimeterPoints ( Bis13 );\nBisetor24 = Surface.ByPerimeterPoints ( Bis24 );\n\nKe    = [ \"Planos\"    , \"Ponto\"      ,\n          \"LTerra\"    , \"PontosProj\" ,\n          \"RaiosProj\" , \"Chamadas\"   ,\n          \"Bisetor13\" , \"Bisetor24\"    ];\n\nVa    = [ [plH, plV]  ,   ponto       ,\n           Lterra     , [projh,projv] ,\n           Rproj      , [Cha1,Cha2]   ,\n           Bisetor13  ,  Bisetor24     ];\nPonto = Dictionary.ByKeysValues(Ke, Va);",
+      "Id": "9f62e9d1b0eb4ee0af5c4428aad61992",
+      "Inputs": [
+        {
+          "Id": "1c8a7ef58c644e09896e5fa8238445c3",
+          "Name": "Planos",
+          "Description": "Planos",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "25a8f763329c42f0b782d3e57f1aa5a1",
+          "Name": "i1",
+          "Description": "i1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "8c4fd6129c0b44bfaff1bc5267ac58b5",
+          "Name": "j1",
+          "Description": "j1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "f338eb8e2d5b404cb2a312053af441cd",
+          "Name": "k1",
+          "Description": "k1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "74e539cfd6e347ed8384cc05176152bc",
+          "Name": "",
+          "Description": "d",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "74d61b90c5634b858c20a621ee6d9b98",
+          "Name": "",
+          "Description": "Value of expression at line 2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "eaf9ebb0637145f3afe7b836e1f94b97",
+          "Name": "",
+          "Description": "plH",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "b143c01a9203474f984f557b7f03a881",
+          "Name": "",
+          "Description": "plV",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "71834adc00c840c69dc0196c4e3559e6",
+          "Name": "",
+          "Description": "Bis13",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "e185ef9468a94d15adcd422a0b513fda",
+          "Name": "",
+          "Description": "Bis24",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "9824d47f125a4543a8d7ae09ac016b23",
+          "Name": "",
+          "Description": "Lterra",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "7715831f33d04bd8b02654db42056b8f",
+          "Name": "",
+          "Description": "x1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "38aa6152025142bf88c2348477518688",
+          "Name": "",
+          "Description": "y1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "766d4cc6f005434cbeb07a194a6b707f",
+          "Name": "",
+          "Description": "z1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "ea7f77b1d59340008cb6702fa313d992",
+          "Name": "",
+          "Description": "dirH",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "a03c92403c214e599ab6b2c3386b3d06",
+          "Name": "",
+          "Description": "dirV",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "fa051a3e0a0546fbae5c4762780b4e92",
+          "Name": "",
+          "Description": "ponto",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "fc571e1b98bd4afea761ce6ed0dcba86",
+          "Name": "",
+          "Description": "projh",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "a286e4c878104f99958012193a60a8f3",
+          "Name": "",
+          "Description": "projv",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "09805c2799474cc9a82b89413c87ae41",
+          "Name": "",
+          "Description": "Rproj",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "f40f65afc67c4c12887de5bac3926169",
+          "Name": "",
+          "Description": "Cha1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "ac2f4a3bb9274b3ebd3750f59e871c09",
+          "Name": "",
+          "Description": "Cha2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "054079a096a64ffbb73941d35b032ff7",
+          "Name": "",
+          "Description": "Bisetor13",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "61217c9446954752b7508bbd2a4f6ff2",
+          "Name": "",
+          "Description": "Bisetor24",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "181ef71df7744d57bba98ec3c7c5f30c",
+          "Name": "",
+          "Description": "Ke",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "3c324c88077045d48379c23839b14242",
+          "Name": "",
+          "Description": "Va",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "73aacbd4cce14c5dbaa29c746165659c",
+          "Name": "",
+          "Description": "Ponto",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "Planos_de_Projeção",
+        "TypeName": "var",
+        "TypeRank": -1,
+        "DefaultValue": null,
+        "Description": "Lista com os 4 semiplanos de projeção"
+      },
+      "Id": "c3f3f3c69bd948b984fb4c6b7adc483b",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "835647954002497ab3458948cb55c1b2",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "abscissa",
+        "TypeName": "var",
+        "TypeRank": -1,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "6aeed669c4574d449a2e42f4c41addaa",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "f97bac086d15442ca1107ef3d71c2dfd",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "Afastamento",
+        "TypeName": "var",
+        "TypeRank": -1,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "d590279aa0f3415eae92853565aeaacf",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "a8f6b743da4746d48c9d1938e6bb7f66",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "Cota",
+        "TypeName": "var",
+        "TypeRank": -1,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "2fa36de2add9457e969cf8bcd79f9889",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "730d52d30edf4c05a523ef11056f04c9",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Output, DynamoCore",
+      "NodeType": "OutputNode",
+      "ElementResolver": null,
+      "Symbol": "Ponto",
+      "Id": "a89ba252cce1482191cca5fad5848d98",
+      "Inputs": [
+        {
+          "Id": "25c00ab764ce4e20b39fd504a60ec4d2",
+          "Name": "",
+          "Description": "",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "A function output, use with custom nodes"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "73aacbd4cce14c5dbaa29c746165659c",
+      "End": "25c00ab764ce4e20b39fd504a60ec4d2",
+      "Id": "5a23c6d8df75442db1dc19d3126f0f61"
+    },
+    {
+      "Start": "835647954002497ab3458948cb55c1b2",
+      "End": "1c8a7ef58c644e09896e5fa8238445c3",
+      "Id": "b90ed29d077a46eb833fc3ceba32fc33"
+    },
+    {
+      "Start": "f97bac086d15442ca1107ef3d71c2dfd",
+      "End": "25a8f763329c42f0b782d3e57f1aa5a1",
+      "Id": "d2acc0cd06e24f7182036eca94edfa2f"
+    },
+    {
+      "Start": "a8f6b743da4746d48c9d1938e6bb7f66",
+      "End": "8c4fd6129c0b44bfaff1bc5267ac58b5",
+      "Id": "67790299286847bea6f72e95cfa98f32"
+    },
+    {
+      "Start": "730d52d30edf4c05a523ef11056f04c9",
+      "End": "f338eb8e2d5b404cb2a312053af441cd",
+      "Id": "1dda53b11e924d458b8a3e8d5ca0a184"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": false,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.3.0.5885",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": 221.19753784844841,
+      "EyeY": 231.02137474487745,
+      "EyeZ": 267.98576211705119,
+      "LookX": -279.97170664555637,
+      "LookY": -247.88978913693444,
+      "LookZ": -186.64287539085561,
+      "UpX": -0.33842809349927683,
+      "UpY": 0.91354545764261252,
+      "UpZ": -0.2256127708065756
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "9f62e9d1b0eb4ee0af5c4428aad61992",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 268.72447513725149,
+        "Y": 334.93669117579594
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Input",
+        "Id": "c3f3f3c69bd948b984fb4c6b7adc483b",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -184.34745190749749,
+        "Y": 239.98594783134769
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Input",
+        "Id": "6aeed669c4574d449a2e42f4c41addaa",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -21.650843758085387,
+        "Y": 312.64205787263666
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Input",
+        "Id": "d590279aa0f3415eae92853565aeaacf",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -45.650843758085443,
+        "Y": 375.72399406569036
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Input",
+        "Id": "2fa36de2add9457e969cf8bcd79f9889",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 10.665286681326336,
+        "Y": 435.38658245580291
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Output",
+        "Id": "a89ba252cce1482191cca5fad5848d98",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 951.75985802488083,
+        "Y": 1156.7039264909251
+      }
+    ],
+    "Annotations": [],
+    "X": 219.64248334614621,
+    "Y": -264.79521730540182,
+    "Zoom": 1.4622671597487673
+  }
+}
