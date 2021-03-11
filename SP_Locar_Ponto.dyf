@@ -29,6 +29,10 @@
       "Surface": {
         "Key": "Autodesk.DesignScript.Geometry.Surface",
         "Value": "ProtoGeometry.dll"
+      },
+      "Sphere": {
+        "Key": "Autodesk.DesignScript.Geometry.Sphere",
+        "Value": "ProtoGeometry.dll"
       }
     }
   },
@@ -38,20 +42,20 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
       "NodeType": "CodeBlockNode",
-      "Code": "d = 20;\nPlanos;\nplH   =  [Planos[0], Planos[1]];\nplV   =  [Planos[2], Planos[3]];\nBis13 =  [\n           Point.ByCoordinates (0   ,  100 ,  100) ,\n           Point.ByCoordinates (100 ,  100 ,  100) ,\n           Point.ByCoordinates (100 , -100 , -100) ,\n           Point.ByCoordinates (0   , -100 , -100)\n         ];\nBis24 =  [\n           Point.ByCoordinates (0   ,  100 , -100) ,\n           Point.ByCoordinates (100 ,  100 , -100) ,\n           Point.ByCoordinates (100 , -100 ,  100) ,\n           Point.ByCoordinates (0   , -100 ,  100)\n         ];\n//---------------------------------------------------\n// Linha de terra\n//---------------------------------------------------\nLterra = Geometry.Intersect ( plH , plV );\nx1     =  i1*d;\ny1     = -j1*d;\nz1     =  k1*d;\n\ndirH   = z1 > 0 ? Vector.ZAxis ().Reverse() : Vector.ZAxis();\ndirV   = y1 > 0 ? Vector.YAxis ().Reverse() : Vector.YAxis();\n\nponto  = Point.ByCoordinates ( x1 , y1  , z1      );\nprojh  = Point.Project       ( ponto<1> , plH , dirH );\nprojv  = Point.Project       ( ponto<1> , plV , dirV );\n\nRproj  = Line.ByStartPointEndPoint( ponto<1>, [projh,projv]);\nCha1   = Geometry.Translate       ( Rproj[1] , dirH ,  z1<0?-z1:z1);\nCha2   = Geometry.Translate       ( Rproj[0] , dirV ,  y1<0?-y1:y1);\n\nBisetor13 = Surface.ByPerimeterPoints ( Bis13 );\nBisetor24 = Surface.ByPerimeterPoints ( Bis24 );\n\nKe    = [ \"Planos\"    , \"Ponto\"      ,\n          \"LTerra\"    , \"PontosProj\" ,\n          \"RaiosProj\" , \"Chamadas\"   ,\n          \"Bisetor13\" , \"Bisetor24\"    ];\n\nVa    = [ [plH, plV]  ,   ponto       ,\n           Lterra     , [projh,projv] ,\n           Rproj      , [Cha1,Cha2]   ,\n           Bisetor13  ,  Bisetor24     ];\nPonto = Dictionary.ByKeysValues(Ke, Va);",
+      "Code": "d = 20;\nDiedro;\nLTE       = Diedro[\"LTerra\"   ];\nPPR       = Diedro[\"Diedro\"   ];\nCuboides  = Diedro[\"Cuboides\" ];\nBisetores = Diedro[\"Bisetores\"];\n\nplH       =  PPR[0];\nplV       =  PPR[1];\n\nx1        =  i1*d;\ny1        = -j1*d;\nz1        =  k1*d;\n\ndirH      = z1 > 0 ? Vector.ZAxis ().Reverse() : Vector.ZAxis();\ndirV      = y1 > 0 ? Vector.YAxis ().Reverse() : Vector.YAxis();\n\nponto     = Point.ByCoordinates        ( x1 , y1  , z1            );\nponsol    = Sphere.ByCenterPointRadius ( ponto    , 0.45          );\nprojh     = Point.Project              ( ponto<1> , PPR  , dirH );\nprojv     = Point.Project              ( ponto<1> , PPR  , dirV );\nRAI       = Line.ByStartPointEndPoint  ( ponto<1> , [projh ,projv]);\nCHA1      = Geometry.Translate         ( RAI[1]   , dirH ,  z1<0?-z1:z1);\nCHA2      = Geometry.Translate         ( RAI[0]   , dirV ,  y1<0?-y1:y1);\n\nKep    = [ \"Ponto\" , \"Esfera\" , \"PontosProj\"  , \"RaiosProj\" , \"Chamadas\" ];\nVap    = [  ponto  ,  ponsol  , [projh,projv] ,  RAI        , [CHA1,CHA2]];\n\nPonto  = Dictionary.ByKeysValues(Kep, Vap);\nDiedro;\n[LTE, PPR, ponto, ponsol, projh, projv, RAI, CHA1, CHA2];",
       "Id": "9f62e9d1b0eb4ee0af5c4428aad61992",
       "Inputs": [
         {
-          "Id": "1c8a7ef58c644e09896e5fa8238445c3",
-          "Name": "Planos",
-          "Description": "Planos",
+          "Id": "5437709d247d43a899d65cfa7c723025",
+          "Name": "Diedro",
+          "Description": "Diedro",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
           "KeepListStructure": false
         },
         {
-          "Id": "25a8f763329c42f0b782d3e57f1aa5a1",
+          "Id": "9e1860a629e549bbacd7b1cb514a5a07",
           "Name": "i1",
           "Description": "i1",
           "UsingDefaultValue": false,
@@ -60,7 +64,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "8c4fd6129c0b44bfaff1bc5267ac58b5",
+          "Id": "b41254a6c3aa4821bd610a2cf08557e8",
           "Name": "j1",
           "Description": "j1",
           "UsingDefaultValue": false,
@@ -69,7 +73,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "f338eb8e2d5b404cb2a312053af441cd",
+          "Id": "b25743344bed48d588639f53e543a541",
           "Name": "k1",
           "Description": "k1",
           "UsingDefaultValue": false,
@@ -80,7 +84,7 @@
       ],
       "Outputs": [
         {
-          "Id": "74e539cfd6e347ed8384cc05176152bc",
+          "Id": "0a3afe8bf2284f66bdafc09dae8b3f6a",
           "Name": "",
           "Description": "d",
           "UsingDefaultValue": false,
@@ -89,7 +93,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "74d61b90c5634b858c20a621ee6d9b98",
+          "Id": "204cbc3bda8248ce93b4f5a44509e641",
           "Name": "",
           "Description": "Value of expression at line 2",
           "UsingDefaultValue": false,
@@ -98,7 +102,43 @@
           "KeepListStructure": false
         },
         {
-          "Id": "eaf9ebb0637145f3afe7b836e1f94b97",
+          "Id": "14b5ea673b33444285aaa283d1521d68",
+          "Name": "",
+          "Description": "LTE",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "bb33ab64edc24192bc32b4712b01bb59",
+          "Name": "",
+          "Description": "PPR",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "f681ebcd4c5e44af96425e554a0b11f5",
+          "Name": "",
+          "Description": "Cuboides",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "6ae40044acee4f15b9b9f9e82c05dd42",
+          "Name": "",
+          "Description": "Bisetores",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "73afc720ad484a1799465ba4b23fd547",
           "Name": "",
           "Description": "plH",
           "UsingDefaultValue": false,
@@ -107,7 +147,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "b143c01a9203474f984f557b7f03a881",
+          "Id": "5bdbe1d45d2b40e3933f376b2cabe368",
           "Name": "",
           "Description": "plV",
           "UsingDefaultValue": false,
@@ -116,34 +156,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "71834adc00c840c69dc0196c4e3559e6",
-          "Name": "",
-          "Description": "Bis13",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "e185ef9468a94d15adcd422a0b513fda",
-          "Name": "",
-          "Description": "Bis24",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "9824d47f125a4543a8d7ae09ac016b23",
-          "Name": "",
-          "Description": "Lterra",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "7715831f33d04bd8b02654db42056b8f",
+          "Id": "4c74f889b3ee45f08810ee2c8c9653cc",
           "Name": "",
           "Description": "x1",
           "UsingDefaultValue": false,
@@ -152,7 +165,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "38aa6152025142bf88c2348477518688",
+          "Id": "3b4913a069714551aa6c5a55a7c07fb6",
           "Name": "",
           "Description": "y1",
           "UsingDefaultValue": false,
@@ -161,7 +174,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "766d4cc6f005434cbeb07a194a6b707f",
+          "Id": "131622d0ab8c4acda91059d7b2454611",
           "Name": "",
           "Description": "z1",
           "UsingDefaultValue": false,
@@ -170,7 +183,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "ea7f77b1d59340008cb6702fa313d992",
+          "Id": "ad99daf7077a46adb3d0a9808528489f",
           "Name": "",
           "Description": "dirH",
           "UsingDefaultValue": false,
@@ -179,7 +192,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "a03c92403c214e599ab6b2c3386b3d06",
+          "Id": "10cf1ed993ab45ebb41a515f7ac934d8",
           "Name": "",
           "Description": "dirV",
           "UsingDefaultValue": false,
@@ -188,7 +201,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "fa051a3e0a0546fbae5c4762780b4e92",
+          "Id": "75b1c186a2184fbbabbb4ac27c013b49",
           "Name": "",
           "Description": "ponto",
           "UsingDefaultValue": false,
@@ -197,7 +210,16 @@
           "KeepListStructure": false
         },
         {
-          "Id": "fc571e1b98bd4afea761ce6ed0dcba86",
+          "Id": "f96bd193cffa4d9c84a1539d606d172c",
+          "Name": "",
+          "Description": "ponsol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "01d02118df094c48aba2aff2ff7e13b2",
           "Name": "",
           "Description": "projh",
           "UsingDefaultValue": false,
@@ -206,7 +228,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "a286e4c878104f99958012193a60a8f3",
+          "Id": "6a71bfd3493f476eb3150d11b59bd520",
           "Name": "",
           "Description": "projv",
           "UsingDefaultValue": false,
@@ -215,72 +237,72 @@
           "KeepListStructure": false
         },
         {
-          "Id": "09805c2799474cc9a82b89413c87ae41",
+          "Id": "fd4f4423f89c4fe097afa65d39a44cbd",
           "Name": "",
-          "Description": "Rproj",
+          "Description": "RAI",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
           "KeepListStructure": false
         },
         {
-          "Id": "f40f65afc67c4c12887de5bac3926169",
+          "Id": "22ca14a8992b485bb19101ca0851307f",
           "Name": "",
-          "Description": "Cha1",
+          "Description": "CHA1",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
           "KeepListStructure": false
         },
         {
-          "Id": "ac2f4a3bb9274b3ebd3750f59e871c09",
+          "Id": "2e79dbbb15b04b3bb8179e3c87ab1ae9",
           "Name": "",
-          "Description": "Cha2",
+          "Description": "CHA2",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
           "KeepListStructure": false
         },
         {
-          "Id": "054079a096a64ffbb73941d35b032ff7",
+          "Id": "3878beaf2ccf4e3ba09e8a20c5f80ed0",
           "Name": "",
-          "Description": "Bisetor13",
+          "Description": "Kep",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
           "KeepListStructure": false
         },
         {
-          "Id": "61217c9446954752b7508bbd2a4f6ff2",
+          "Id": "dc0cb67b20f64b97bfae066f01154361",
           "Name": "",
-          "Description": "Bisetor24",
+          "Description": "Vap",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
           "KeepListStructure": false
         },
         {
-          "Id": "181ef71df7744d57bba98ec3c7c5f30c",
-          "Name": "",
-          "Description": "Ke",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "3c324c88077045d48379c23839b14242",
-          "Name": "",
-          "Description": "Va",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "73aacbd4cce14c5dbaa29c746165659c",
+          "Id": "7041d80bdb2c4f67bdffeb386ab54a21",
           "Name": "",
           "Description": "Ponto",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "291354158a564b36afe9c9d9b3fb7c0d",
+          "Name": "",
+          "Description": "Value of expression at line 30",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "2745dcd91de645c3a7f2daeb13c3d09c",
+          "Name": "",
+          "Description": "Value of expression at line 31",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -294,7 +316,7 @@
       "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
       "NodeType": "InputNode",
       "Parameter": {
-        "Name": "Planos_de_Projeção",
+        "Name": "Diedro",
         "TypeName": "var",
         "TypeRank": -1,
         "DefaultValue": null,
@@ -414,33 +436,85 @@
       "Outputs": [],
       "Replication": "Disabled",
       "Description": "A function output, use with custom nodes"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Output, DynamoCore",
+      "NodeType": "OutputNode",
+      "ElementResolver": null,
+      "Symbol": "Diedro",
+      "Id": "c0fbfa8f089a4e9498284c5eca454d8c",
+      "Inputs": [
+        {
+          "Id": "560ae761f02a48888c42245ea400f46d",
+          "Name": "",
+          "Description": "",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "A function output, use with custom nodes"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Output, DynamoCore",
+      "NodeType": "OutputNode",
+      "ElementResolver": null,
+      "Symbol": "Elementos Geométricos",
+      "Id": "5621057321cc4293aebf743c9775224a",
+      "Inputs": [
+        {
+          "Id": "34adf1ada68a4540bc26ae4ef8ae9eeb",
+          "Name": "",
+          "Description": "",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "A function output, use with custom nodes"
     }
   ],
   "Connectors": [
     {
-      "Start": "73aacbd4cce14c5dbaa29c746165659c",
+      "Start": "7041d80bdb2c4f67bdffeb386ab54a21",
       "End": "25c00ab764ce4e20b39fd504a60ec4d2",
-      "Id": "5a23c6d8df75442db1dc19d3126f0f61"
+      "Id": "818131a73ac446e28668814b280063ac"
+    },
+    {
+      "Start": "291354158a564b36afe9c9d9b3fb7c0d",
+      "End": "560ae761f02a48888c42245ea400f46d",
+      "Id": "a1640ad5ad9844e18913bbcd4e4e3cb8"
+    },
+    {
+      "Start": "2745dcd91de645c3a7f2daeb13c3d09c",
+      "End": "34adf1ada68a4540bc26ae4ef8ae9eeb",
+      "Id": "84cd7d6d88b7464e993ededc48ebfa31"
     },
     {
       "Start": "835647954002497ab3458948cb55c1b2",
-      "End": "1c8a7ef58c644e09896e5fa8238445c3",
-      "Id": "b90ed29d077a46eb833fc3ceba32fc33"
+      "End": "5437709d247d43a899d65cfa7c723025",
+      "Id": "3d94f0760196447ca1a0387dc2cb1a66"
     },
     {
       "Start": "f97bac086d15442ca1107ef3d71c2dfd",
-      "End": "25a8f763329c42f0b782d3e57f1aa5a1",
-      "Id": "d2acc0cd06e24f7182036eca94edfa2f"
+      "End": "9e1860a629e549bbacd7b1cb514a5a07",
+      "Id": "2e984cef05ba48d6a43e33d5155f226a"
     },
     {
       "Start": "a8f6b743da4746d48c9d1938e6bb7f66",
-      "End": "8c4fd6129c0b44bfaff1bc5267ac58b5",
-      "Id": "67790299286847bea6f72e95cfa98f32"
+      "End": "b41254a6c3aa4821bd610a2cf08557e8",
+      "Id": "cb7f876f55724c5796010efccdfdada1"
     },
     {
       "Start": "730d52d30edf4c05a523ef11056f04c9",
-      "End": "f338eb8e2d5b404cb2a312053af441cd",
-      "Id": "1dda53b11e924d458b8a3e8d5ca0a184"
+      "End": "b25743344bed48d588639f53e543a541",
+      "Id": "4d2fd7ce783e4c0ab7fcd32d3676c8f7"
     }
   ],
   "Dependencies": [],
@@ -457,15 +531,15 @@
     },
     "Camera": {
       "Name": "Background Preview",
-      "EyeX": 221.19753784844841,
-      "EyeY": 231.02137474487745,
-      "EyeZ": 267.98576211705119,
-      "LookX": -279.97170664555637,
-      "LookY": -247.88978913693444,
-      "LookZ": -186.64287539085561,
-      "UpX": -0.33842809349927683,
-      "UpY": 0.91354545764261252,
-      "UpZ": -0.2256127708065756
+      "EyeX": -83.272644825361056,
+      "EyeY": 69.427355936427517,
+      "EyeZ": 147.33198360757802,
+      "LookX": 167.91628698354984,
+      "LookY": -20.348174130129479,
+      "LookZ": -104.15564681757168,
+      "UpX": -0.096199514341275563,
+      "UpY": 0.99357185567659878,
+      "UpZ": 0.059670939726848761
     },
     "NodeViews": [
       {
@@ -475,8 +549,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 268.72447513725149,
-        "Y": 334.93669117579594
+        "X": 255.67656267431141,
+        "Y": 313.8592941202773
       },
       {
         "ShowGeometry": true,
@@ -485,8 +559,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": -184.34745190749749,
-        "Y": 239.98594783134769
+        "X": -202.65084375808539,
+        "Y": 259.78432621995324
       },
       {
         "ShowGeometry": true,
@@ -496,7 +570,7 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "X": -21.650843758085387,
-        "Y": 312.64205787263666
+        "Y": 328.66666620422637
       },
       {
         "ShowGeometry": true,
@@ -505,8 +579,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": -45.650843758085443,
-        "Y": 375.72399406569036
+        "X": -45.650843758085387,
+        "Y": 388.5490061884995
       },
       {
         "ShowGeometry": true,
@@ -515,8 +589,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 10.665286681326336,
-        "Y": 435.38658245580291
+        "X": 11.349156241914613,
+        "Y": 448.43134617277263
       },
       {
         "ShowGeometry": true,
@@ -525,13 +599,33 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 951.75985802488083,
-        "Y": 1156.7039264909251
+        "X": 1037.4974413105951,
+        "Y": 756.12189333010838
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Output",
+        "Id": "c0fbfa8f089a4e9498284c5eca454d8c",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1038.8734463699111,
+        "Y": 815.31460770623232
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Output",
+        "Id": "5621057321cc4293aebf743c9775224a",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1039.5691806242842,
+        "Y": 873.58743430421021
       }
     ],
     "Annotations": [],
-    "X": 219.64248334614621,
-    "Y": -264.79521730540182,
-    "Zoom": 1.4622671597487673
+    "X": -43.363259037670218,
+    "Y": -129.70329864257994,
+    "Zoom": 0.72499405887104518
   }
 }

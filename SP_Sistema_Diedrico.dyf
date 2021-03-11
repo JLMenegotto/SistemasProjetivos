@@ -13,6 +13,18 @@
       "Surface": {
         "Key": "Autodesk.DesignScript.Geometry.Surface",
         "Value": "ProtoGeometry.dll"
+      },
+      "Cuboid": {
+        "Key": "Autodesk.DesignScript.Geometry.Cuboid",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Dictionary": {
+        "Key": "DesignScript.Builtin.Dictionary",
+        "Value": "DesignScriptBuiltin.dll"
+      },
+      "Line": {
+        "Key": "Autodesk.DesignScript.Geometry.Line",
+        "Value": "ProtoGeometry.dll"
       }
     }
   },
@@ -22,12 +34,12 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
       "NodeType": "CodeBlockNode",
-      "Code": "d=100;\nx      = [ [0,d,d,0], [0, 0,-d,-d], [0, 0,-d,-d], [0,d, d, 0]];\ny      = [ [0,0,d,d], [0, d, d, 0], [0, -d,-d,0], [0,0,-d,-d]];\nz      = [ [0,0,0,0], [0, 0, 0, 0], [0,  0, 0,0], [0,0, 0, 0]];\nPHp    = Point.ByCoordinates( x , y , z );\nPVp    = Point.ByCoordinates( x , z , y );\nPLp    = Point.ByCoordinates( z , x , y );\nPlanH  = Surface.ByPerimeterPoints( PHp );\nPlanV  = Surface.ByPerimeterPoints( PVp );\nDiedro = [PlanH[0], PlanH[3], PlanV[0], PlanV[3]];",
+      "Code": "d=100;\n\nx      = [ [0,d,d,0] , [0, 0,-d,-d] , [0, 0,-d,-d] , [0,d, d, 0]];\ny      = [ [0,0,d,d] , [0, d, d, 0] , [0, -d,-d,0] , [0,0,-d,-d]];\nz      = [ [0,0,0,0] , [0, 0, 0, 0] , [0,  0, 0,0] , [0,0, 0, 0]];\n\nPHp    = Point.ByCoordinates       ( x , y , z );\nPVp    = Point.ByCoordinates       ( x , z , y );\nPLp    = Point.ByCoordinates       ( z , x , y );\nPlanH  = Surface.ByPerimeterPoints ( PHp       );\nPlanV  = Surface.ByPerimeterPoints ( PVp       );\n\nLterra = Line.Intersect(PlanH, PlanV);\n\nCub1   = Cuboid.ByCorners(Point.ByCoordinates( 0 ,  0  ,  0 ),\n                          Point.ByCoordinates( d , -d  ,  d ));\nCub3   = Cuboid.ByCorners(Point.ByCoordinates( 0 ,  0  ,  0 ),\n                          Point.ByCoordinates( d ,  d  , -d ));\nBis13  = [ Point.ByCoordinates (0 ,  d ,  d) ,\n           Point.ByCoordinates (d ,  d ,  d) ,\n           Point.ByCoordinates (d , -d , -d) ,\n           Point.ByCoordinates (0 , -d , -d) ];\nBis24  = [ Point.ByCoordinates (0 ,  d , -d) ,\n           Point.ByCoordinates (d ,  d , -d) ,\n           Point.ByCoordinates (d , -d ,  d) ,\n           Point.ByCoordinates (0 , -d ,  d)   ];\nBi13   = Surface.ByPerimeterPoints  ( Bis13 );\nBi24   = Surface.ByPerimeterPoints  ( Bis24 );\n\nKe     = [ \"Diedro\"                                 , \"LTerra\"   , \"Bisetores\" , \"Cuboides\"];\nVa     = [ [PlanH[0], PlanH[3], PlanV[0], PlanV[3]] ,  Lterra[0] , [Bi13, Bi24], [Cub1, Cub3]];\nDiedro = Dictionary.ByKeysValues(Ke, Va);",
       "Id": "07c83ad07316432bbea4c30ba620cc24",
       "Inputs": [],
       "Outputs": [
         {
-          "Id": "a3cd8cc1e7de42f19d8db216d4a03d75",
+          "Id": "d3051dfd493c4cdd8ed8666f7f0fe464",
           "Name": "",
           "Description": "d",
           "UsingDefaultValue": false,
@@ -36,7 +48,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "463a9b479c0c4b51af8bea93abce27b4",
+          "Id": "6a4be95fa1054700a61d59fe43f348d1",
           "Name": "",
           "Description": "x",
           "UsingDefaultValue": false,
@@ -45,7 +57,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "fd505be545cd4284b947f3b822b6e12b",
+          "Id": "6f4ba381e1244d51afb6e811f1b75ae1",
           "Name": "",
           "Description": "y",
           "UsingDefaultValue": false,
@@ -54,7 +66,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "8300746577f243a78647543deb02aebf",
+          "Id": "f5e8c0f6c53b42408e9d7aee802f340e",
           "Name": "",
           "Description": "z",
           "UsingDefaultValue": false,
@@ -63,7 +75,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "06659bdde9f74715950129e11e6714f1",
+          "Id": "287d8774a20d4c6fa186ba17a6b58171",
           "Name": "",
           "Description": "PHp",
           "UsingDefaultValue": false,
@@ -72,7 +84,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "6a5f7e967bfa4b438639fd87cd6da7af",
+          "Id": "c53ce872edb44b4bb1a715f140a3c86b",
           "Name": "",
           "Description": "PVp",
           "UsingDefaultValue": false,
@@ -81,7 +93,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "7d7702c7b4264fbaabcee73ef95c828c",
+          "Id": "a4dcb34ebfab485fb132855e57e84cba",
           "Name": "",
           "Description": "PLp",
           "UsingDefaultValue": false,
@@ -90,7 +102,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "c83327103c9a4589a8647c671d93a9bc",
+          "Id": "7a57acbbb4cb4d16942ebdfe047d31a1",
           "Name": "",
           "Description": "PlanH",
           "UsingDefaultValue": false,
@@ -99,7 +111,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "2fed71750aab4841b59620892cbb938d",
+          "Id": "681bedcdb09b4795b6ca5d98bfaa4494",
           "Name": "",
           "Description": "PlanV",
           "UsingDefaultValue": false,
@@ -108,7 +120,88 @@
           "KeepListStructure": false
         },
         {
-          "Id": "90cae45d311b4693972ea43e677fe13c",
+          "Id": "6ac886c7bd04490bbe7d022033cbe3ca",
+          "Name": "",
+          "Description": "Lterra",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "e9144e109a1f41779f2e82a73360de05",
+          "Name": "",
+          "Description": "Cub1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "9cc7df8e51e04d0e935ab77a63bbd85f",
+          "Name": "",
+          "Description": "Cub3",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "12954f9013b447729813a62c5660b34e",
+          "Name": "",
+          "Description": "Bis13",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "2185b8ffe069488e8a2abf2224b6dba9",
+          "Name": "",
+          "Description": "Bis24",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "861d98d049824a158ed096cfeb59406a",
+          "Name": "",
+          "Description": "Bi13",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "163f9f415f434440bd86c11e93c9d082",
+          "Name": "",
+          "Description": "Bi24",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "7cce957b63b74fee98e191ba6c0b93d6",
+          "Name": "",
+          "Description": "Ke",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "c393352fc1e247fcb1ea587a3fae05f9",
+          "Name": "",
+          "Description": "Va",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "2dd4123bd43747098f98a7cf1e35c848",
           "Name": "",
           "Description": "Diedro",
           "UsingDefaultValue": false,
@@ -124,7 +217,7 @@
       "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Output, DynamoCore",
       "NodeType": "OutputNode",
       "ElementResolver": null,
-      "Symbol": "Planos_de_Projeção",
+      "Symbol": "Diedro",
       "Id": "8298bdcaa8284ff4afb592f574f313c3",
       "Inputs": [
         {
@@ -144,9 +237,9 @@
   ],
   "Connectors": [
     {
-      "Start": "90cae45d311b4693972ea43e677fe13c",
+      "Start": "2dd4123bd43747098f98a7cf1e35c848",
       "End": "7f16ca71c9f047318133802e9636fe1c",
-      "Id": "b1c4bae81df6468d916954c3da203b3a"
+      "Id": "a4d9e909b793489baa768e197aec4eff"
     }
   ],
   "Dependencies": [],
@@ -163,41 +256,41 @@
     },
     "Camera": {
       "Name": "Background Preview",
-      "EyeX": 221.19753784844841,
-      "EyeY": 231.02137474487745,
-      "EyeZ": 267.98576211705119,
-      "LookX": -279.97170664555637,
-      "LookY": -247.88978913693444,
-      "LookZ": -186.64287539085561,
-      "UpX": -0.33842809349927683,
-      "UpY": 0.91354545764261252,
-      "UpZ": -0.2256127708065756
+      "EyeX": -83.272644825361056,
+      "EyeY": 69.427355936427517,
+      "EyeZ": 147.33198360757802,
+      "LookX": 167.91628698354984,
+      "LookY": -20.348174130129479,
+      "LookZ": -104.15564681757168,
+      "UpX": -0.096199514341275563,
+      "UpY": 0.99357185567659878,
+      "UpZ": 0.059670939726848761
     },
     "NodeViews": [
       {
-        "ShowGeometry": true,
-        "Name": "Cria sistema de Planos",
         "Id": "07c83ad07316432bbea4c30ba620cc24",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
+        "Name": "Cria sistema de Planos",
+        "ShowGeometry": true,
         "Excluded": false,
-        "X": 370.0,
-        "Y": 167.0
+        "X": 232.13186644210919,
+        "Y": 86.427714154479418
       },
       {
-        "ShowGeometry": true,
-        "Name": "Output",
         "Id": "8298bdcaa8284ff4afb592f574f313c3",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
+        "Name": "Output",
+        "ShowGeometry": true,
         "Excluded": false,
-        "X": 961.29397881431169,
-        "Y": 321.2349470357791
+        "X": 981.2088165334975,
+        "Y": 627.31062758607072
       }
     ],
     "Annotations": [],
-    "X": -1107.1953204314832,
-    "Y": -123.49667637539557,
-    "Zoom": 1.2270473614083379
+    "X": -68.926901450203218,
+    "Y": -117.0621054464267,
+    "Zoom": 0.977220601341528
   }
 }

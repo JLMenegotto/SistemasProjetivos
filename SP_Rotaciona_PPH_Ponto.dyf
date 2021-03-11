@@ -1,9 +1,9 @@
 {
-  "Uuid": "194543bf-9fca-4af0-8ce8-9b55cf9bd6a2",
+  "Uuid": "fa45f9da-0072-4479-9f06-113c1cb5db4c",
   "IsCustomNode": true,
   "Category": "Sistemas_Projetivos",
   "Description": "Rotaciona o PPH do traçado",
-  "Name": "SP_Rotaciona_PPH_Plano",
+  "Name": "SP_Rotaciona_PPH_Ponto",
   "ElementResolver": {
     "ResolutionMap": {
       "Point": {
@@ -26,20 +26,20 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
       "NodeType": "CodeBlockNode",
-      "Code": "angulo;\nDiedro;\nLTE = Diedro[\"LTerra\"];\nPPR = Diedro[\"Diedro\"];\nPTS = Plano[\"Pontos\"];\nESF = Plano[\"Esferas\"];\nTRA = Plano[\"Traços\"];\nFIG = Plano[\"Figura\"];\nSUP = Plano[\"Superficie\"];\nRAI = Plano[\"Raios\"];\nCON = Plano[\"Contorno\"];\nINF = Plano[\"PlanoInfinito\"];\n\nPTR = List.Flatten(Plano[\"PtProjetado\"], 3);\nPRO = List.Flatten(Plano[\"Projeções\"]  , 3);\nCHA = List.Flatten(Plano[\"Chamadas\"]   , 3);\n//--------------------------------------------\n//Constantes----------------------------------\n//--------------------------------------------\norig   = Point.ByCoordinates ( 0 , 0 , 0 );\neixo   = Vector.XAxis();\n//--------------------------------------------\nEpura3D = [  PPR[0], PPR[1] , PTR[0], PTR[2], PTR[4],\n                              CHA[0], CHA[2], CHA[4],\n                              PRO[0], PRO[1], PRO[2],\n                              TRA[0]\n          ];\nEpura2D   = Epura3D!=null?Geometry.Rotate( Epura3D , orig, eixo, angulo):null;\n[PPR, LTE, PTS, ESF, TRA, FIG, SUP, RAI, CON, INF , PTR, PRO, CHA, Epura3D, Epura2D];",
-      "Id": "eb892373b4e54b5eb0947a1c50de77d2",
+      "Code": "Ponto;\nDiedro;\nangulo;\n//------------------------------------------\n//Constantes--------------------------------\norig = Point.ByCoordinates ( 0 , 0 , 0);\neixo = Vector.XAxis();\n//------------------------------------------\nLTE  = Diedro[\"LTerra\"    ];\nPPH  = Diedro[\"Diedro\"    ];\nPTO  = Ponto [\"Ponto\"     ];\nPRO  = Ponto [\"PontosProj\"];\nRAI  = Ponto [\"RaiosProj\" ];\nCHA  = Ponto [\"Chamadas\"  ];\n//Rotaciona PPH-----------------------------\n\nEpura3D = [ PRO[0] , CHA[0] , PPH[0],  PPH[1]];\nEpura2D = Epura3D!=null?Geometry.Rotate( Epura3D , orig, eixo, angulo):null;\nDiedro;\n[LTE, PPH, PTO, PRO, RAI, CHA];",
+      "Id": "c056d54b8cd54842a328a3e49806baf0",
       "Inputs": [
         {
-          "Id": "ce6ad4717dc14bd088626e01ed5b2a46",
-          "Name": "angulo",
-          "Description": "angulo",
+          "Id": "0b1530323ba248f49d3b654c1b706fe0",
+          "Name": "Ponto",
+          "Description": "Ponto",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
           "KeepListStructure": false
         },
         {
-          "Id": "b75bfc670ddc454b82a811b7ff22d04f",
+          "Id": "018e5af0afe04e36ac30dda433196453",
           "Name": "Diedro",
           "Description": "Diedro",
           "UsingDefaultValue": false,
@@ -48,9 +48,9 @@
           "KeepListStructure": false
         },
         {
-          "Id": "ef34305d7a3d40eeb091c3de1195e6c6",
-          "Name": "Plano",
-          "Description": "Plano",
+          "Id": "fc192970ee9540f598b6007d65421d63",
+          "Name": "angulo",
+          "Description": "angulo",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -59,7 +59,7 @@
       ],
       "Outputs": [
         {
-          "Id": "ecf43e820d0a413ea91f9cfce4b73c28",
+          "Id": "9b85070b087f4b8ba304caaaafbabfc1",
           "Name": "",
           "Description": "Value of expression at line 1",
           "UsingDefaultValue": false,
@@ -68,7 +68,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "78d3460360864390ba2b434691c89186",
+          "Id": "a2af5fc97cb648969bff16ff77ab1ae7",
           "Name": "",
           "Description": "Value of expression at line 2",
           "UsingDefaultValue": false,
@@ -77,124 +77,16 @@
           "KeepListStructure": false
         },
         {
-          "Id": "6f70c4a6e70040318f297d92f0df3343",
+          "Id": "e27e4648b9be4df9a5dbac696dbc5f90",
           "Name": "",
-          "Description": "LTE",
+          "Description": "Value of expression at line 3",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
           "KeepListStructure": false
         },
         {
-          "Id": "a8fe8ed54ef04aaf877732be05bd7a7a",
-          "Name": "",
-          "Description": "PPR",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "6e99624c6e744a2086029209b9392352",
-          "Name": "",
-          "Description": "PTS",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "b4f1eeb7f2dd42779216991ebeca3122",
-          "Name": "",
-          "Description": "ESF",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "8e3cc75f66a64614b00e2fabfd34dbe6",
-          "Name": "",
-          "Description": "TRA",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "6f9862e002c749d6a2cdf41e3fed12ed",
-          "Name": "",
-          "Description": "FIG",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "1e2e0decacfc404f8629dc05a43dccb4",
-          "Name": "",
-          "Description": "SUP",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "5233a3870f374d929001d0eaaff88cf5",
-          "Name": "",
-          "Description": "RAI",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "4d1845bf09c343b9b01f5248641da9d7",
-          "Name": "",
-          "Description": "CON",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "67cb175df77544e0aef06b1894c582ab",
-          "Name": "",
-          "Description": "INF",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "f8cf50434dcd4a8195f208380da5f6cd",
-          "Name": "",
-          "Description": "PTR",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "ba4789e60b2c41baacaeef8c0df541d7",
-          "Name": "",
-          "Description": "PRO",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "84dd9bdf953541919205c874039ed555",
-          "Name": "",
-          "Description": "CHA",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "35a2a7706acd44aa82dff62140e5c1d4",
+          "Id": "4eb1632538d94718b565a2633438a3c9",
           "Name": "",
           "Description": "orig",
           "UsingDefaultValue": false,
@@ -203,7 +95,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "9328c7f038b74338b0d3ddf02b9e1ea7",
+          "Id": "c90f88993b1649ecbe675f84feed2b20",
           "Name": "",
           "Description": "eixo",
           "UsingDefaultValue": false,
@@ -212,7 +104,61 @@
           "KeepListStructure": false
         },
         {
-          "Id": "db4f8df0a54341f2a71121924223726f",
+          "Id": "3de4ef228aad47ac810c37ac19382210",
+          "Name": "",
+          "Description": "LTE",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "08300735665b4de48224f066e26fc1a6",
+          "Name": "",
+          "Description": "PPH",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "dc6a978a2c1b4601965950b461cc5f82",
+          "Name": "",
+          "Description": "PTO",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "0be3b31c07a44000945538e7cf88e64a",
+          "Name": "",
+          "Description": "PRO",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "cb10f2946e3e4b1ebe2ecf02323b3d80",
+          "Name": "",
+          "Description": "RAI",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "3e30f4decb4347ccb6cd4bd65bb43c01",
+          "Name": "",
+          "Description": "CHA",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "ac0bcd1db7f44c8ca0bc83de51bb052c",
           "Name": "",
           "Description": "Epura3D",
           "UsingDefaultValue": false,
@@ -221,7 +167,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "76695ceab93b4be3b967de869a76550b",
+          "Id": "a00257b0b3794ef987c9dc83eda2550d",
           "Name": "",
           "Description": "Epura2D",
           "UsingDefaultValue": false,
@@ -230,9 +176,18 @@
           "KeepListStructure": false
         },
         {
-          "Id": "9908c70e91974e6ebc7b26e28d15fe01",
+          "Id": "53f0470b855841dfb277ec1a1e58adbe",
           "Name": "",
-          "Description": "Value of expression at line 29",
+          "Description": "Value of expression at line 19",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "04312c245aef4f32af5c87711a29a204",
+          "Name": "",
+          "Description": "Value of expression at line 20",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -246,11 +201,53 @@
       "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Output, DynamoCore",
       "NodeType": "OutputNode",
       "ElementResolver": null,
-      "Symbol": "Resultado",
-      "Id": "cfdd1ff0b05d4265bb7205931d5e755a",
+      "Symbol": "Diedro",
+      "Id": "09bfb0a212d9470b9ac6ea5be6beeec0",
       "Inputs": [
         {
-          "Id": "585e5e86c58b4062848366cad2e08ffb",
+          "Id": "12330250cd474d3e985644fdaecab996",
+          "Name": "",
+          "Description": "",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "A function output, use with custom nodes"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Output, DynamoCore",
+      "NodeType": "OutputNode",
+      "ElementResolver": null,
+      "Symbol": "Traçado",
+      "Id": "9c8944554c4b410b948c06486b57f2f3",
+      "Inputs": [
+        {
+          "Id": "df7f213aac4649e98275898eebf35b76",
+          "Name": "",
+          "Description": "",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "A function output, use with custom nodes"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Output, DynamoCore",
+      "NodeType": "OutputNode",
+      "ElementResolver": null,
+      "Symbol": "Resultado",
+      "Id": "9120e53a6eaf417298259685b5814e27",
+      "Inputs": [
+        {
+          "Id": "9f02af547ea74402b1b01ab8c37118f2",
           "Name": "",
           "Description": "",
           "UsingDefaultValue": false,
@@ -267,69 +264,69 @@
       "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
       "NodeType": "InputNode",
       "Parameter": {
-        "Name": "Angulo",
-        "TypeName": "var",
-        "TypeRank": -1,
-        "DefaultValue": null,
-        "Description": ""
-      },
-      "Id": "ea90772c65f24bfab2b3b11693d22895",
-      "Inputs": [],
-      "Outputs": [
-        {
-          "Id": "33cf6d921c1b41bfa9a2e8217e9e9017",
-          "Name": "",
-          "Description": "Symbol",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Replication": "Disabled",
-      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
-    },
-    {
-      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
-      "NodeType": "InputNode",
-      "Parameter": {
-        "Name": "Plano",
-        "TypeName": "var",
-        "TypeRank": -1,
-        "DefaultValue": null,
-        "Description": "Se refere ao plano criado com\na função SP_Locar_Plano"
-      },
-      "Id": "ee4d7dd961f545fba4632bf8f2ff53af",
-      "Inputs": [],
-      "Outputs": [
-        {
-          "Id": "7adff58d0a514d649c07b0beb409770e",
-          "Name": "",
-          "Description": "Symbol",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Replication": "Disabled",
-      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
-    },
-    {
-      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
-      "NodeType": "InputNode",
-      "Parameter": {
         "Name": "Diedro",
         "TypeName": "var",
         "TypeRank": -1,
         "DefaultValue": null,
         "Description": ""
       },
-      "Id": "257c8f4cacba42eabe6457bba6122a57",
+      "Id": "27861c17b1764e3798ead8272299f2da",
       "Inputs": [],
       "Outputs": [
         {
-          "Id": "633be15c7c3b49a5b1556ec2d0c7ef0c",
+          "Id": "14d3812cb47642eab852236cf581b032",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "Ponto",
+        "TypeName": "var",
+        "TypeRank": -1,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "51f52ef154c348768ca1b33fbf60b8a8",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "b83be76dfd3f41a9a95a7ea72f7a2b38",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "Angulo",
+        "TypeName": "var",
+        "TypeRank": -1,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "ea1fa2947cee40bd843d03fe02c74138",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "7b86ac2391b2492ba8c87f100afa9fe8",
           "Name": "",
           "Description": "Symbol",
           "UsingDefaultValue": false,
@@ -344,24 +341,34 @@
   ],
   "Connectors": [
     {
-      "Start": "9908c70e91974e6ebc7b26e28d15fe01",
-      "End": "585e5e86c58b4062848366cad2e08ffb",
-      "Id": "4c36c72b3b1a43e19bad851fb7a5a362"
+      "Start": "a00257b0b3794ef987c9dc83eda2550d",
+      "End": "9f02af547ea74402b1b01ab8c37118f2",
+      "Id": "0c4e9dafb742434a9607bd453f4d075b"
     },
     {
-      "Start": "33cf6d921c1b41bfa9a2e8217e9e9017",
-      "End": "ce6ad4717dc14bd088626e01ed5b2a46",
-      "Id": "4d4b0da4c5054500be19101f317581be"
+      "Start": "53f0470b855841dfb277ec1a1e58adbe",
+      "End": "12330250cd474d3e985644fdaecab996",
+      "Id": "8fe63cab2ab6421c944751d08f7e4d40"
     },
     {
-      "Start": "7adff58d0a514d649c07b0beb409770e",
-      "End": "ef34305d7a3d40eeb091c3de1195e6c6",
-      "Id": "41d13d498a7c4d169bd96bc8c094367b"
+      "Start": "04312c245aef4f32af5c87711a29a204",
+      "End": "df7f213aac4649e98275898eebf35b76",
+      "Id": "d8940d63bcfc4bf2a92a17df485fc22f"
     },
     {
-      "Start": "633be15c7c3b49a5b1556ec2d0c7ef0c",
-      "End": "b75bfc670ddc454b82a811b7ff22d04f",
-      "Id": "99c9a6406259468c8248567a2b3e2956"
+      "Start": "14d3812cb47642eab852236cf581b032",
+      "End": "018e5af0afe04e36ac30dda433196453",
+      "Id": "d6ea0a51a9e14c8c8c4e934c3b241c94"
+    },
+    {
+      "Start": "b83be76dfd3f41a9a95a7ea72f7a2b38",
+      "End": "0b1530323ba248f49d3b654c1b706fe0",
+      "Id": "4aebfb96b719467eb79a8c97148debc5"
+    },
+    {
+      "Start": "7b86ac2391b2492ba8c87f100afa9fe8",
+      "End": "fc192970ee9540f598b6007d65421d63",
+      "Id": "a56ab85e3d0f4d559a12eb217846c419"
     }
   ],
   "Dependencies": [],
@@ -378,71 +385,91 @@
     },
     "Camera": {
       "Name": "Background Preview",
-      "EyeX": 221.19753784844841,
-      "EyeY": 231.02137474487745,
-      "EyeZ": 267.98576211705119,
-      "LookX": -279.97170664555637,
-      "LookY": -247.88978913693444,
-      "LookZ": -186.64287539085561,
-      "UpX": -0.33842809349927683,
-      "UpY": 0.91354545764261252,
-      "UpZ": -0.2256127708065756
+      "EyeX": -83.272644825361056,
+      "EyeY": 69.427355936427517,
+      "EyeZ": 147.33198360757802,
+      "LookX": 167.91628698354984,
+      "LookY": -20.348174130129479,
+      "LookZ": -104.15564681757168,
+      "UpX": -0.096199514341275563,
+      "UpY": 0.99357185567659878,
+      "UpZ": 0.059670939726848761
     },
     "NodeViews": [
       {
         "ShowGeometry": true,
         "Name": "Code Block",
-        "Id": "eb892373b4e54b5eb0947a1c50de77d2",
+        "Id": "c056d54b8cd54842a328a3e49806baf0",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 667.741781395028,
-        "Y": 440.58850853643696
+        "X": 505.4440815038688,
+        "Y": 312.93531918556994
       },
       {
         "ShowGeometry": true,
         "Name": "Output",
-        "Id": "cfdd1ff0b05d4265bb7205931d5e755a",
+        "Id": "09bfb0a212d9470b9ac6ea5be6beeec0",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1460.1967309448989,
-        "Y": 923.025281544697
+        "X": 1270.9410385173228,
+        "Y": 625.62568053802931
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Output",
+        "Id": "9c8944554c4b410b948c06486b57f2f3",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1270.6342366046358,
+        "Y": 683.22770922833274
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Output",
+        "Id": "9120e53a6eaf417298259685b5814e27",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1270.5546423426963,
+        "Y": 569.47806714922115
       },
       {
         "ShowGeometry": true,
         "Name": "Input",
-        "Id": "ea90772c65f24bfab2b3b11693d22895",
+        "Id": "27861c17b1764e3798ead8272299f2da",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 446.24855742732194,
-        "Y": 396.0
+        "X": 369.53193824865929,
+        "Y": 318.87700720671552
       },
       {
         "ShowGeometry": true,
         "Name": "Input",
-        "Id": "ee4d7dd961f545fba4632bf8f2ff53af",
+        "Id": "51f52ef154c348768ca1b33fbf60b8a8",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 328.0,
-        "Y": 511.17413878034597
+        "X": 375.6452149582172,
+        "Y": 256.273108770963
       },
       {
         "ShowGeometry": true,
         "Name": "Input",
-        "Id": "257c8f4cacba42eabe6457bba6122a57",
+        "Id": "ea1fa2947cee40bd843d03fe02c74138",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 442.19376861857637,
-        "Y": 454.426119957077
+        "X": 371.12198385355072,
+        "Y": 386.32997078167239
       }
     ],
     "Annotations": [],
-    "X": -316.29078125000012,
-    "Y": -46.934581250000065,
-    "Zoom": 0.70823125000000009
+    "X": -342.60855908024394,
+    "Y": -306.39111476330163,
+    "Zoom": 1.7637449060649024
   }
 }

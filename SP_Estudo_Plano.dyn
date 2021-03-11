@@ -68,6 +68,14 @@
       "Dictionary": {
         "Key": "DesignScript.Builtin.Dictionary",
         "Value": "DesignScriptBuiltin.dll"
+      },
+      "Plane.Origin": {
+        "Key": "Autodesk.DesignScript.Geometry.Plane",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Cuboid": {
+        "Key": "Autodesk.DesignScript.Geometry.Cuboid",
+        "Value": "ProtoGeometry.dll"
       }
     }
   },
@@ -81,7 +89,7 @@
       "MaximumValue": 5.0,
       "MinimumValue": 0.0,
       "StepValue": 0.1,
-      "InputValue": 3.5,
+      "InputValue": 3.3000000000000003,
       "Id": "eb3570a00ba4456fab8eac90801b0a6f",
       "Inputs": [],
       "Outputs": [
@@ -105,7 +113,7 @@
       "MaximumValue": 5.0,
       "MinimumValue": 0.0,
       "StepValue": 0.1,
-      "InputValue": 2.8000000000000003,
+      "InputValue": 1.1,
       "Id": "47b7d58b678047ea99264a7c0348cc9a",
       "Inputs": [],
       "Outputs": [
@@ -129,7 +137,7 @@
       "MaximumValue": 5.0,
       "MinimumValue": 0.0,
       "StepValue": 0.1,
-      "InputValue": 1.0,
+      "InputValue": 2.2,
       "Id": "4f81ef2624f2478fa36061e074ed315e",
       "Inputs": [],
       "Outputs": [
@@ -155,7 +163,7 @@
       "Inputs": [
         {
           "Id": "51a9d2cda4c4415d96604672f42f4ebc",
-          "Name": "Planos_de_Projeção",
+          "Name": "Diedro",
           "Description": "Lista com os 4 semiplanos de projeção\n\nvar[]..[]",
           "UsingDefaultValue": false,
           "Level": 2,
@@ -199,6 +207,24 @@
           "Level": 2,
           "UseLevels": false,
           "KeepListStructure": false
+        },
+        {
+          "Id": "0ad980f419ba4894b7306e772117ac38",
+          "Name": "Diedro",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "eb4ea79df457418989769b2091daff08",
+          "Name": "Elementos Geométricos",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
         }
       ],
       "Replication": "Auto",
@@ -211,7 +237,7 @@
       "MaximumValue": 90.0,
       "MinimumValue": 0.0,
       "StepValue": 10.0,
-      "InputValue": 0.0,
+      "InputValue": 90.0,
       "Id": "d22d3767cc384cbcb1e50a82e262579a",
       "Inputs": [],
       "Outputs": [
@@ -238,7 +264,7 @@
       "Outputs": [
         {
           "Id": "debc6fc666944fc38ea49d91a06ccb4e",
-          "Name": "Planos_de_Projeção",
+          "Name": "Diedro",
           "Description": "return value",
           "UsingDefaultValue": false,
           "Level": 2,
@@ -280,7 +306,7 @@
       "MaximumValue": 5.0,
       "MinimumValue": 0.0,
       "StepValue": 0.1,
-      "InputValue": 2.4000000000000004,
+      "InputValue": 1.8,
       "Id": "97bb6acb9c3943f5a4c0c495be54fcd6",
       "Inputs": [],
       "Outputs": [
@@ -304,7 +330,7 @@
       "MaximumValue": 5.0,
       "MinimumValue": 0.0,
       "StepValue": 0.1,
-      "InputValue": 1.0,
+      "InputValue": 0.30000000000000004,
       "Id": "00eed9897bb347ff853aecf2d09aec8a",
       "Inputs": [],
       "Outputs": [
@@ -330,7 +356,7 @@
       "Inputs": [
         {
           "Id": "80ecfa267cf647ca865f0b4b57eabb08",
-          "Name": "Planos_de_Projeção",
+          "Name": "Diedro",
           "Description": "Lista com os 4 semiplanos de projeção\n\nvar[]..[]",
           "UsingDefaultValue": false,
           "Level": 2,
@@ -374,6 +400,24 @@
           "Level": 2,
           "UseLevels": false,
           "KeepListStructure": false
+        },
+        {
+          "Id": "39d5191c11504687a41dfa328844c101",
+          "Name": "Diedro",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "15df46e9252b499c8f62a8253221d6bf",
+          "Name": "Elementos Geométricos",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
         }
       ],
       "Replication": "Auto",
@@ -388,7 +432,7 @@
       "Inputs": [
         {
           "Id": "7dc74cc3c30c419c8c646baaf671466c",
-          "Name": "Planos_de_Projeção",
+          "Name": "Diedro",
           "Description": "Lista com os 4 semiplanos de projeção\n\nvar[]..[]",
           "UsingDefaultValue": false,
           "Level": 2,
@@ -432,6 +476,24 @@
           "Level": 2,
           "UseLevels": false,
           "KeepListStructure": false
+        },
+        {
+          "Id": "592ceba8b24247b7a6ec0cc2a9096e28",
+          "Name": "Diedro",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "685abdad446b441eb2c0b188d4eacf85",
+          "Name": "Elementos Geométricos",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
         }
       ],
       "Replication": "Auto",
@@ -444,7 +506,7 @@
       "MaximumValue": 5.0,
       "MinimumValue": 0.0,
       "StepValue": 0.1,
-      "InputValue": 2.3000000000000003,
+      "InputValue": 2.4000000000000004,
       "Id": "3e822829394249d49fb569cb55eb9c86",
       "Inputs": [],
       "Outputs": [
@@ -468,7 +530,7 @@
       "MaximumValue": 5.0,
       "MinimumValue": 0.0,
       "StepValue": 0.1,
-      "InputValue": 3.5,
+      "InputValue": 1.8,
       "Id": "156b084111d2454e92aead9e3783f97a",
       "Inputs": [],
       "Outputs": [
@@ -492,7 +554,7 @@
       "MaximumValue": 5.0,
       "MinimumValue": 0.0,
       "StepValue": 0.1,
-      "InputValue": 1.0,
+      "InputValue": 1.1,
       "Id": "310fe06d4fc64dd1b4c120f4e88a76bc",
       "Inputs": [],
       "Outputs": [
@@ -514,10 +576,10 @@
       "FunctionSignature": "70cc6a68-e4b5-4ece-9cfb-88ddb14b6664",
       "FunctionType": "Graph",
       "NodeType": "FunctionNode",
-      "Id": "4ef4bb98357a42a9b090f487aa0194d2",
+      "Id": "b24f6260c8e140d7b8d7d43be8cc344b",
       "Inputs": [
         {
-          "Id": "bbd12f9c225c490f84697a514ff73085",
+          "Id": "4e872f1f6f0949b5b34c60aa542ab479",
           "Name": "P1",
           "Description": "Se refere a um ponto utilizando\nas função SP_Locar_Ponto\n\nvar[]..[]",
           "UsingDefaultValue": false,
@@ -526,7 +588,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "32d3dd31faa3478ab06b4e8633484e04",
+          "Id": "b3fc1f2816404b94bf2933d64d663026",
           "Name": "P2",
           "Description": "Se refere a um ponto utilizando\nas função SP_Locar_Ponto\n\nvar[]..[]",
           "UsingDefaultValue": false,
@@ -535,9 +597,18 @@
           "KeepListStructure": false
         },
         {
-          "Id": "6c3d2588e3e74efbb64d92e65f667eda",
+          "Id": "c203462ffd7a4a6397172f1b13eb52b4",
           "Name": "P3",
           "Description": "Se refere a um ponto utilizando\nas função SP_Locar_Ponto\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "69fdc47af9c8423cbe9c2e6d045ab1ee",
+          "Name": "Diedro",
+          "Description": "Lista com os 4 semiplanos de projeção\n\nvar[]..[]",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -546,8 +617,26 @@
       ],
       "Outputs": [
         {
-          "Id": "c99714fb7e4f421397ab8a8d53d2fc38",
-          "Name": "Resultado",
+          "Id": "d0ae2c3cd6a44630ae212230ed97e14f",
+          "Name": "Plano",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "93e817fd8389432585af2abbc1d51455",
+          "Name": "Diedro",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "713c2ab22d9c4d8ebd524fa059a68205",
+          "Name": "ElementosGeometricos",
           "Description": "return value",
           "UsingDefaultValue": false,
           "Level": 2,
@@ -560,13 +649,13 @@
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function, DynamoCore",
-      "FunctionSignature": "003ff663-0265-4427-a450-3397c30f6532",
+      "FunctionSignature": "194543bf-9fca-4af0-8ce8-9b55cf9bd6a2",
       "FunctionType": "Graph",
       "NodeType": "FunctionNode",
-      "Id": "1e05aac8026a4c05bedda3f6f9621e31",
+      "Id": "a778f102056a4ad18c8eecf6db40b2fb",
       "Inputs": [
         {
-          "Id": "907e635bd4d44dc797bac533bf1b3a39",
+          "Id": "024e1945b4cc41de9ad203b105a33938",
           "Name": "Angulo",
           "Description": "var[]..[]",
           "UsingDefaultValue": false,
@@ -575,9 +664,18 @@
           "KeepListStructure": false
         },
         {
-          "Id": "83ca70c8612f486d9692010238b889f5",
+          "Id": "ae74c4f1577f4f8f8db5f3d2e1bdb92a",
           "Name": "Plano",
           "Description": "Se refere ao plano criado com\na função SP_Locar_Plano\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "a958a2b38c2d47a4b3a70ad2c1747ef4",
+          "Name": "Diedro",
+          "Description": "var[]..[]",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -586,7 +684,7 @@
       ],
       "Outputs": [
         {
-          "Id": "677c9f6eaebc4b549fd80f30b650ed90",
+          "Id": "0b61fa369e684812b8f7e49590d4628e",
           "Name": "Resultado",
           "Description": "return value",
           "UsingDefaultValue": false,
@@ -596,7 +694,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Rotaciona o plano de projeção horizontal para formar a Epura 2D"
+      "Description": "Rotaciona o PPH do traçado"
     }
   ],
   "Connectors": [
@@ -617,13 +715,13 @@
     },
     {
       "Start": "b4cf58a44300428080739ef9cc679ba8",
-      "End": "bbd12f9c225c490f84697a514ff73085",
-      "Id": "9f313a6709ce4ef688d1f37ecab89e80"
+      "End": "4e872f1f6f0949b5b34c60aa542ab479",
+      "Id": "709bce5b0791481da8bff7e23aa6c6c0"
     },
     {
       "Start": "af6a5759b9484bf6bb67bf707eb8b280",
-      "End": "907e635bd4d44dc797bac533bf1b3a39",
-      "Id": "9036ca7ac1b540f9bcec7966eb4862d6"
+      "End": "024e1945b4cc41de9ad203b105a33938",
+      "Id": "dce6993539114aa3bce727b1eb52b0d2"
     },
     {
       "Start": "debc6fc666944fc38ea49d91a06ccb4e",
@@ -638,61 +736,84 @@
     {
       "Start": "debc6fc666944fc38ea49d91a06ccb4e",
       "End": "7dc74cc3c30c419c8c646baaf671466c",
-      "Id": "682a2b808991402d8e9e91e2048728f1"
+      "Id": "a65b806dca5b4db4bcb9b956b261d6e0"
     },
     {
       "Start": "c8d3b581652d43758c5d6cd457d060c4",
       "End": "6ff1d24aac3b4503abc326bc5d679ec7",
-      "Id": "16404a11ebba4feaaf3d41697f2fe683"
+      "Id": "3d1f463e76db444c8c436145b41c21aa"
     },
     {
       "Start": "431abca5a2b44641aedc4bfc35a43623",
       "End": "3b19ddaab277402d9f10407efd659621",
-      "Id": "efaa2273027e4a77b65d5128815e36a9"
+      "Id": "462f15b04b81492ab06e6c7758038c66"
     },
     {
       "Start": "4fae124973a8453c888607ef0833de8f",
       "End": "8864a37c1d0a4e8d820ff9291652964d",
-      "Id": "6644c445d8244bf8b33cbdfcf53b3e22"
+      "Id": "ac0724f1e6d5491ba375c887a2ddc96d"
     },
     {
       "Start": "8a4b69d0cdfd4d6389d5b798688198ea",
-      "End": "32d3dd31faa3478ab06b4e8633484e04",
-      "Id": "7c7b308cfc284ffaa5ac30ea5f9a4c11"
+      "End": "b3fc1f2816404b94bf2933d64d663026",
+      "Id": "b86aa39e70624e249b7e66cacd31d466"
     },
     {
       "Start": "53ac6b450d7f4dc8afcf2bd39d8abb42",
-      "End": "6c3d2588e3e74efbb64d92e65f667eda",
-      "Id": "eaa46c86f03e499780b395c6eae59898"
+      "End": "c203462ffd7a4a6397172f1b13eb52b4",
+      "Id": "b3cc59a33577456ebf84789920ac56fb"
+    },
+    {
+      "Start": "592ceba8b24247b7a6ec0cc2a9096e28",
+      "End": "69fdc47af9c8423cbe9c2e6d045ab1ee",
+      "Id": "c88feb86118942ae8fbdd360c0ba6b4f"
     },
     {
       "Start": "2d311f4a80ff4080ab377661f1257187",
       "End": "52e1081439b54dee8ce1973e8399d2d1",
-      "Id": "f40697c8563a4629b5e36b535a6f9c15"
+      "Id": "5806849d457c44c3a149ae00a46af256"
     },
     {
       "Start": "56e658b30b424367a4a838e2a7e00fac",
       "End": "4e3d14b1df8e48309413bcc1c155fc65",
-      "Id": "bc73f8436340494ebc2802a9037f6710"
+      "Id": "1a14fd9a3ca7408cb8ebe4a39f4c41ea"
     },
     {
       "Start": "8973d5dc09c74852a481c985eb031b8c",
       "End": "d18736a2c9074e8083755ae5b2caa516",
-      "Id": "973aaf36e04c4bc6a7e3e4ac46fed389"
+      "Id": "ca24fecc499f4befa5dda2de29e06624"
     },
     {
-      "Start": "c99714fb7e4f421397ab8a8d53d2fc38",
-      "End": "83ca70c8612f486d9692010238b889f5",
-      "Id": "ed0f0f8f4a5a460f9650673c215e8f13"
+      "Start": "d0ae2c3cd6a44630ae212230ed97e14f",
+      "End": "ae74c4f1577f4f8f8db5f3d2e1bdb92a",
+      "Id": "bc5de486914e4153affb649de50a7d3f"
+    },
+    {
+      "Start": "93e817fd8389432585af2abbc1d51455",
+      "End": "a958a2b38c2d47a4b3a70ad2c1747ef4",
+      "Id": "4f61752aae68437fa1bb4cbef1f2ea0e"
     }
   ],
   "Dependencies": [
     "22f9ad02-fbd0-4600-a8fc-374dead17853",
     "6ce05f3b-9b7e-4783-a8fe-c6f227ce8f73",
     "70cc6a68-e4b5-4ece-9cfb-88ddb14b6664",
-    "003ff663-0265-4427-a450-3397c30f6532"
+    "194543bf-9fca-4af0-8ce8-9b55cf9bd6a2"
   ],
-  "NodeLibraryDependencies": [],
+  "NodeLibraryDependencies": [
+    {
+      "Name": "Sistemas_Projetivos",
+      "Version": "1.0.0",
+      "ReferenceType": "Package",
+      "Nodes": [
+        "59eaef39b5024575bd0b0d27fbe56048",
+        "e1533272aaf34bbeb73ba2604e9fd0c2",
+        "8ada1c3881f84952a5f8b3171a3ca743",
+        "78033573ceec4fde8048fbc8b4b78fff",
+        "b24f6260c8e140d7b8d7d43be8cc344b"
+      ]
+    }
+  ],
   "Bindings": [],
   "View": {
     "Dynamo": {
@@ -723,8 +844,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 574.35396449631241,
-        "Y": 1203.6517695549187
+        "X": 559.40339110430841,
+        "Y": 1197.6034411583139
       },
       {
         "ShowGeometry": true,
@@ -733,8 +854,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 574.35396449631241,
-        "Y": 1263.0011629258602
+        "X": 559.40339110430841,
+        "Y": 1256.0593395390013
       },
       {
         "ShowGeometry": true,
@@ -743,8 +864,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 574.35396449631241,
-        "Y": 1322.3505562968016
+        "X": 559.40339110430841,
+        "Y": 1310.8176110361226
       },
       {
         "ShowGeometry": false,
@@ -753,8 +874,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1052.4581324950382,
-        "Y": 1223.3245547644042
+        "X": 1010.8042246169368,
+        "Y": 1213.2423584496569
       },
       {
         "ShowGeometry": true,
@@ -763,8 +884,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1448.657880875036,
-        "Y": 1346.537278591519
+        "X": 1502.9732979358228,
+        "Y": 1288.0843052392217
       },
       {
         "ShowGeometry": false,
@@ -773,8 +894,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 704.98474598354517,
-        "Y": 1069.77619187097
+        "X": 729.02969359422741,
+        "Y": 1093.4137380553905
       },
       {
         "ShowGeometry": true,
@@ -783,8 +904,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 567.70098289776456,
-        "Y": 1415.7793179547778
+        "X": 560.71340691622936,
+        "Y": 1386.8587164166872
       },
       {
         "ShowGeometry": true,
@@ -793,8 +914,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 567.70098289776456,
-        "Y": 1471.7223643028951
+        "X": 560.71340691622936,
+        "Y": 1440.7837354797889
       },
       {
         "ShowGeometry": true,
@@ -803,8 +924,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 567.70098289776456,
-        "Y": 1527.6654106510125
+        "X": 560.71340691622936,
+        "Y": 1495.2853337671809
       },
       {
         "ShowGeometry": false,
@@ -813,8 +934,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1052.2101047358583,
-        "Y": 1421.6203482551566
+        "X": 1007.7959156404158,
+        "Y": 1390.6817194320504
       },
       {
         "ShowGeometry": false,
@@ -823,8 +944,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1050.0161438345508,
-        "Y": 1613.55528280674
+        "X": 1009.6722517683704,
+        "Y": 1573.1421593779723
       },
       {
         "ShowGeometry": true,
@@ -833,8 +954,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 566.45977423368072,
-        "Y": 1614.9005306638651
+        "X": 560.71340691622936,
+        "Y": 1567.1039741384095
       },
       {
         "ShowGeometry": true,
@@ -843,8 +964,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 566.45977423368072,
-        "Y": 1672.1563732789018
+        "X": 560.71340691622936,
+        "Y": 1622.9636620152123
       },
       {
         "ShowGeometry": true,
@@ -853,61 +974,33 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 566.45977423368072,
-        "Y": 1729.4122158939385
+        "X": 560.71340691622936,
+        "Y": 1678.8233498920154
       },
       {
         "ShowGeometry": true,
         "Name": "SP_Locar_Plano",
-        "Id": "4ef4bb98357a42a9b090f487aa0194d2",
+        "Id": "b24f6260c8e140d7b8d7d43be8cc344b",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1449.0306781998886,
-        "Y": 1411.9190859338944
+        "X": 1501.1943077278679,
+        "Y": 1361.9205556947225
       },
       {
         "ShowGeometry": true,
-        "Name": "SP_Rotacionar_Plano",
-        "Id": "1e05aac8026a4c05bedda3f6f9621e31",
+        "Name": "SP_Rotaciona_PPH_Plano",
+        "Id": "a778f102056a4ad18c8eecf6db40b2fb",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1797.8800956257014,
-        "Y": 1387.2637565179407
+        "X": 1847.1127095302402,
+        "Y": 1315.6907834886633
       }
     ],
-    "Annotations": [
-      {
-        "Id": "5b3b4c3826054ac68f0e35b08204276a",
-        "Title": "Plano 1",
-        "Nodes": [
-          "eb3570a00ba4456fab8eac90801b0a6f",
-          "47b7d58b678047ea99264a7c0348cc9a",
-          "4f81ef2624f2478fa36061e074ed315e",
-          "59eaef39b5024575bd0b0d27fbe56048",
-          "bde8b42c92474de5b109d86178d341c0",
-          "97bb6acb9c3943f5a4c0c495be54fcd6",
-          "00eed9897bb347ff853aecf2d09aec8a",
-          "8ada1c3881f84952a5f8b3171a3ca743",
-          "78033573ceec4fde8048fbc8b4b78fff",
-          "3e822829394249d49fb569cb55eb9c86",
-          "156b084111d2454e92aead9e3783f97a",
-          "310fe06d4fc64dd1b4c120f4e88a76bc"
-        ],
-        "Left": 556.45977423368072,
-        "Top": 1164.6517695549187,
-        "Width": 780.99835826135745,
-        "Height": 632.76044633901984,
-        "FontSize": 24.0,
-        "InitialTop": 1203.6517695549187,
-        "InitialHeight": 811.53141646943209,
-        "TextblockHeight": 29.0,
-        "Background": "#FFFFB8D8"
-      }
-    ],
-    "X": -1384.3360489385104,
-    "Y": -1106.780841538907,
-    "Zoom": 1.0949837343615023
+    "Annotations": [],
+    "X": -112.32663444151035,
+    "Y": 32.340956785869935,
+    "Zoom": 0.36405767025543123
   }
 }

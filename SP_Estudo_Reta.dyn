@@ -71,78 +71,6 @@
   "Outputs": [],
   "Nodes": [
     {
-      "ConcreteType": "CoreNodeModels.Input.DoubleSlider, CoreNodeModels",
-      "NodeType": "NumberInputNode",
-      "NumberType": "Double",
-      "MaximumValue": 5.0,
-      "MinimumValue": 0.0,
-      "StepValue": 0.1,
-      "InputValue": 4.9,
-      "Id": "eb3570a00ba4456fab8eac90801b0a6f",
-      "Inputs": [],
-      "Outputs": [
-        {
-          "Id": "c393671f19764922824c2612a4a2579a",
-          "Name": "",
-          "Description": "Double",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Replication": "Disabled",
-      "Description": "A slider that produces numeric values."
-    },
-    {
-      "ConcreteType": "CoreNodeModels.Input.DoubleSlider, CoreNodeModels",
-      "NodeType": "NumberInputNode",
-      "NumberType": "Double",
-      "MaximumValue": 5.0,
-      "MinimumValue": 0.0,
-      "StepValue": 0.1,
-      "InputValue": 3.4000000000000004,
-      "Id": "47b7d58b678047ea99264a7c0348cc9a",
-      "Inputs": [],
-      "Outputs": [
-        {
-          "Id": "7ff7ade3d266424194f7e640ff4c2df3",
-          "Name": "",
-          "Description": "Double",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Replication": "Disabled",
-      "Description": "A slider that produces numeric values."
-    },
-    {
-      "ConcreteType": "CoreNodeModels.Input.DoubleSlider, CoreNodeModels",
-      "NodeType": "NumberInputNode",
-      "NumberType": "Double",
-      "MaximumValue": 5.0,
-      "MinimumValue": 0.0,
-      "StepValue": 0.1,
-      "InputValue": 1.9000000000000001,
-      "Id": "4f81ef2624f2478fa36061e074ed315e",
-      "Inputs": [],
-      "Outputs": [
-        {
-          "Id": "715be68a15314eabbbe2a55f22227e6b",
-          "Name": "",
-          "Description": "Double",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Replication": "Disabled",
-      "Description": "A slider that produces numeric values."
-    },
-    {
       "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function, DynamoCore",
       "FunctionSignature": "22f9ad02-fbd0-4600-a8fc-374dead17853",
       "FunctionType": "Graph",
@@ -151,7 +79,7 @@
       "Inputs": [
         {
           "Id": "51a9d2cda4c4415d96604672f42f4ebc",
-          "Name": "Planos_de_Projeção",
+          "Name": "Diedro",
           "Description": "Lista com os 4 semiplanos de projeção\n\nvar[]..[]",
           "UsingDefaultValue": false,
           "Level": 2,
@@ -195,6 +123,24 @@
           "Level": 2,
           "UseLevels": false,
           "KeepListStructure": false
+        },
+        {
+          "Id": "7454ba390a0342e1bec35a3e3e146cb3",
+          "Name": "Diedro",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "27dce0b2797e4766b080001575bfc3a5",
+          "Name": "Elementos Geométricos",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
         }
       ],
       "Replication": "Auto",
@@ -209,7 +155,7 @@
       "Inputs": [
         {
           "Id": "9dbd47ec09434757b3b6cf0cc04e6264",
-          "Name": "Planos_de_Projeção",
+          "Name": "Diedro",
           "Description": "Lista com os 4 semiplanos de projeção\n\nvar[]..[]",
           "UsingDefaultValue": false,
           "Level": 2,
@@ -253,6 +199,24 @@
           "Level": 2,
           "UseLevels": false,
           "KeepListStructure": false
+        },
+        {
+          "Id": "d02dd77bbcc44e558af48abb75630f21",
+          "Name": "Diedro",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "5ec58fbd45af41a48bbbe828b5cd42c6",
+          "Name": "Elementos Geométricos",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
         }
       ],
       "Replication": "Auto",
@@ -262,82 +226,10 @@
       "ConcreteType": "CoreNodeModels.Input.DoubleSlider, CoreNodeModels",
       "NodeType": "NumberInputNode",
       "NumberType": "Double",
-      "MaximumValue": 5.0,
-      "MinimumValue": 0.0,
-      "StepValue": 0.1,
-      "InputValue": 0.9,
-      "Id": "7819672775ad459890c9d62f26c490eb",
-      "Inputs": [],
-      "Outputs": [
-        {
-          "Id": "322fed522ec947b79503d4c632e4139d",
-          "Name": "",
-          "Description": "Double",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Replication": "Disabled",
-      "Description": "A slider that produces numeric values."
-    },
-    {
-      "ConcreteType": "CoreNodeModels.Input.DoubleSlider, CoreNodeModels",
-      "NodeType": "NumberInputNode",
-      "NumberType": "Double",
-      "MaximumValue": 5.0,
-      "MinimumValue": 0.0,
-      "StepValue": 0.1,
-      "InputValue": 3.4000000000000004,
-      "Id": "610a49fbc00c4590af13bc1f222815e6",
-      "Inputs": [],
-      "Outputs": [
-        {
-          "Id": "3963aa74fd154040af3753df74bf6282",
-          "Name": "",
-          "Description": "Double",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Replication": "Disabled",
-      "Description": "A slider that produces numeric values."
-    },
-    {
-      "ConcreteType": "CoreNodeModels.Input.DoubleSlider, CoreNodeModels",
-      "NodeType": "NumberInputNode",
-      "NumberType": "Double",
-      "MaximumValue": 5.0,
-      "MinimumValue": 0.0,
-      "StepValue": 0.1,
-      "InputValue": 0.5,
-      "Id": "375b67789bd141d4b73e8cbd6c9dfa7f",
-      "Inputs": [],
-      "Outputs": [
-        {
-          "Id": "1e8217018e724ad8a74384e6a3abbfd5",
-          "Name": "",
-          "Description": "Double",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Replication": "Disabled",
-      "Description": "A slider that produces numeric values."
-    },
-    {
-      "ConcreteType": "CoreNodeModels.Input.DoubleSlider, CoreNodeModels",
-      "NodeType": "NumberInputNode",
-      "NumberType": "Double",
       "MaximumValue": 90.0,
       "MinimumValue": 0.0,
       "StepValue": 10.0,
-      "InputValue": 0.0,
+      "InputValue": 90.0,
       "Id": "d22d3767cc384cbcb1e50a82e262579a",
       "Inputs": [],
       "Outputs": [
@@ -378,12 +270,39 @@
           "Level": 2,
           "UseLevels": false,
           "KeepListStructure": false
+        },
+        {
+          "Id": "cdeab1a70ddc48a0aabbf2f6cd68a157",
+          "Name": "Diedro",
+          "Description": "Se refere ao Sistema Diédrico criado pela\nfunção SP_Sistema_Diedrico\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
         }
       ],
       "Outputs": [
         {
           "Id": "3776c782f49440ceaa1fdde663926553",
-          "Name": "Traçado",
+          "Name": "Reta",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "fc79dd0c4a4a4df48bbb31fa667c3ede",
+          "Name": "Diedro",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "bf74db2fa3b54770b4cb7c2c8489d0e3",
+          "Name": "Elementos Geométricos",
           "Description": "return value",
           "UsingDefaultValue": false,
           "Level": 2,
@@ -404,7 +323,7 @@
       "Outputs": [
         {
           "Id": "debc6fc666944fc38ea49d91a06ccb4e",
-          "Name": "Planos_de_Projeção",
+          "Name": "Diedro",
           "Description": "return value",
           "UsingDefaultValue": false,
           "Level": 2,
@@ -422,12 +341,12 @@
       "MaximumValue": 5.0,
       "MinimumValue": 0.0,
       "StepValue": 0.1,
-      "InputValue": 2.6,
-      "Id": "bde8b42c92474de5b109d86178d341c0",
+      "InputValue": 3.0,
+      "Id": "ec5d326099274fdabf5e7ed68573a378",
       "Inputs": [],
       "Outputs": [
         {
-          "Id": "c8d3b581652d43758c5d6cd457d060c4",
+          "Id": "e28a3a95ad674c4f9fa5dfc041899bb8",
           "Name": "",
           "Description": "Double",
           "UsingDefaultValue": false,
@@ -446,12 +365,12 @@
       "MaximumValue": 5.0,
       "MinimumValue": 0.0,
       "StepValue": 0.1,
-      "InputValue": 3.4000000000000004,
-      "Id": "97bb6acb9c3943f5a4c0c495be54fcd6",
+      "InputValue": 2.5,
+      "Id": "da5e23c5460c4fa099ab305784aa0eba",
       "Inputs": [],
       "Outputs": [
         {
-          "Id": "431abca5a2b44641aedc4bfc35a43623",
+          "Id": "216931302ecc40f0b83c2b8120b39313",
           "Name": "",
           "Description": "Double",
           "UsingDefaultValue": false,
@@ -470,12 +389,84 @@
       "MaximumValue": 5.0,
       "MinimumValue": 0.0,
       "StepValue": 0.1,
-      "InputValue": 2.1,
-      "Id": "00eed9897bb347ff853aecf2d09aec8a",
+      "InputValue": 1.1,
+      "Id": "4f2b10ca1e534acaa49945c44e68bbd6",
       "Inputs": [],
       "Outputs": [
         {
-          "Id": "4fae124973a8453c888607ef0833de8f",
+          "Id": "c6e63121543842009840a7b129889592",
+          "Name": "",
+          "Description": "Double",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A slider that produces numeric values."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.DoubleSlider, CoreNodeModels",
+      "NodeType": "NumberInputNode",
+      "NumberType": "Double",
+      "MaximumValue": 5.0,
+      "MinimumValue": 0.0,
+      "StepValue": 0.1,
+      "InputValue": 1.6,
+      "Id": "0e2ec618a341460ca8b0892a5b5f61b8",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "6ad62476d8744c249241a13dd649f19b",
+          "Name": "",
+          "Description": "Double",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A slider that produces numeric values."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.DoubleSlider, CoreNodeModels",
+      "NodeType": "NumberInputNode",
+      "NumberType": "Double",
+      "MaximumValue": 5.0,
+      "MinimumValue": 0.0,
+      "StepValue": 0.1,
+      "InputValue": 3.1,
+      "Id": "c9c4ef9caca64b35929f2531a50d458f",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "24ec42352cba43229251892ffaecd991",
+          "Name": "",
+          "Description": "Double",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A slider that produces numeric values."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.DoubleSlider, CoreNodeModels",
+      "NodeType": "NumberInputNode",
+      "NumberType": "Double",
+      "MaximumValue": 5.0,
+      "MinimumValue": 0.0,
+      "StepValue": 0.1,
+      "InputValue": 0.5,
+      "Id": "397ddc084296499eae5d1fdecee0f4c8",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "17c40cb935984c9a8c3ef6562d0e22ab",
           "Name": "",
           "Description": "Double",
           "UsingDefaultValue": false,
@@ -489,23 +480,14 @@
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function, DynamoCore",
-      "FunctionSignature": "22f9ad02-fbd0-4600-a8fc-374dead17853",
+      "FunctionSignature": "56d016f9-3829-46e8-8f30-cc9fa5eb5aee",
       "FunctionType": "Graph",
       "NodeType": "FunctionNode",
-      "Id": "8ada1c3881f84952a5f8b3171a3ca743",
+      "Id": "04c0aeb5217d4239a872cc4c334145ff",
       "Inputs": [
         {
-          "Id": "80ecfa267cf647ca865f0b4b57eabb08",
-          "Name": "Planos_de_Projeção",
-          "Description": "Lista com os 4 semiplanos de projeção\n\nvar[]..[]",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "6ff1d24aac3b4503abc326bc5d679ec7",
-          "Name": "abscissa",
+          "Id": "15bc87a54ad64818913983d6455004a5",
+          "Name": "Diedro",
           "Description": "var[]..[]",
           "UsingDefaultValue": false,
           "Level": 2,
@@ -513,217 +495,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "3b19ddaab277402d9f10407efd659621",
-          "Name": "Afastamento",
-          "Description": "var[]..[]",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "8864a37c1d0a4e8d820ff9291652964d",
-          "Name": "Cota",
-          "Description": "var[]..[]",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Outputs": [
-        {
-          "Id": "8a4b69d0cdfd4d6389d5b798688198ea",
-          "Name": "Ponto",
-          "Description": "return value",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Replication": "Auto",
-      "Description": "Localiza um ponto em Sistema Diedrico"
-    },
-    {
-      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function, DynamoCore",
-      "FunctionSignature": "22f9ad02-fbd0-4600-a8fc-374dead17853",
-      "FunctionType": "Graph",
-      "NodeType": "FunctionNode",
-      "Id": "78033573ceec4fde8048fbc8b4b78fff",
-      "Inputs": [
-        {
-          "Id": "7dc74cc3c30c419c8c646baaf671466c",
-          "Name": "Planos_de_Projeção",
-          "Description": "Lista com os 4 semiplanos de projeção\n\nvar[]..[]",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "52e1081439b54dee8ce1973e8399d2d1",
-          "Name": "abscissa",
-          "Description": "var[]..[]",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "4e3d14b1df8e48309413bcc1c155fc65",
-          "Name": "Afastamento",
-          "Description": "var[]..[]",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "d18736a2c9074e8083755ae5b2caa516",
-          "Name": "Cota",
-          "Description": "var[]..[]",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Outputs": [
-        {
-          "Id": "53ac6b450d7f4dc8afcf2bd39d8abb42",
-          "Name": "Ponto",
-          "Description": "return value",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Replication": "Auto",
-      "Description": "Localiza um ponto em Sistema Diedrico"
-    },
-    {
-      "ConcreteType": "CoreNodeModels.Input.DoubleSlider, CoreNodeModels",
-      "NodeType": "NumberInputNode",
-      "NumberType": "Double",
-      "MaximumValue": 5.0,
-      "MinimumValue": 0.0,
-      "StepValue": 0.1,
-      "InputValue": 0.9,
-      "Id": "3e822829394249d49fb569cb55eb9c86",
-      "Inputs": [],
-      "Outputs": [
-        {
-          "Id": "2d311f4a80ff4080ab377661f1257187",
-          "Name": "",
-          "Description": "Double",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Replication": "Disabled",
-      "Description": "A slider that produces numeric values."
-    },
-    {
-      "ConcreteType": "CoreNodeModels.Input.DoubleSlider, CoreNodeModels",
-      "NodeType": "NumberInputNode",
-      "NumberType": "Double",
-      "MaximumValue": 5.0,
-      "MinimumValue": 0.0,
-      "StepValue": 0.1,
-      "InputValue": 0.70000000000000018,
-      "Id": "156b084111d2454e92aead9e3783f97a",
-      "Inputs": [],
-      "Outputs": [
-        {
-          "Id": "56e658b30b424367a4a838e2a7e00fac",
-          "Name": "",
-          "Description": "Double",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Replication": "Disabled",
-      "Description": "A slider that produces numeric values."
-    },
-    {
-      "ConcreteType": "CoreNodeModels.Input.DoubleSlider, CoreNodeModels",
-      "NodeType": "NumberInputNode",
-      "NumberType": "Double",
-      "MaximumValue": 5.0,
-      "MinimumValue": 0.0,
-      "StepValue": 0.1,
-      "InputValue": 1.5,
-      "Id": "310fe06d4fc64dd1b4c120f4e88a76bc",
-      "Inputs": [],
-      "Outputs": [
-        {
-          "Id": "8973d5dc09c74852a481c985eb031b8c",
-          "Name": "",
-          "Description": "Double",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Replication": "Disabled",
-      "Description": "A slider that produces numeric values."
-    },
-    {
-      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function, DynamoCore",
-      "FunctionSignature": "0fc93616-9b72-416b-b7d5-2f3610958f2b",
-      "FunctionType": "Graph",
-      "NodeType": "FunctionNode",
-      "Id": "061a2d2c630d4281942ad0a24f6c1fd7",
-      "Inputs": [
-        {
-          "Id": "90d9e7a2525f4ceab97b3657f6047d74",
-          "Name": "Ponto_1",
-          "Description": "Se refere a um ponto criado pela\nfunção SP_Locar_Ponto\n\nvar[]..[]",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "b0652bb690e84c4e9de911e1cd24e978",
-          "Name": "Ponto_2",
-          "Description": "Se refere a um ponto criado pela\nfunção SP_Locar_Ponto\n\nvar[]..[]",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Outputs": [
-        {
-          "Id": "cdf86db7059b4f289ff9d6e46ce1c30b",
-          "Name": "Traçado",
-          "Description": "return value",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Replication": "Auto",
-      "Description": "Projeta reta"
-    },
-    {
-      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function, DynamoCore",
-      "FunctionSignature": "9d77a482-244f-47a3-87dc-9be37e94e93f",
-      "FunctionType": "Graph",
-      "NodeType": "FunctionNode",
-      "Id": "cedacc8d81e74521ad9a6c1415dd95e4",
-      "Inputs": [
-        {
-          "Id": "d68d310ecd1e4e17ad62cdea484acc6b",
+          "Id": "4cfb4f1d73df4c83abf2fb3dacc5c627",
           "Name": "Reta",
           "Description": "var[]..[]",
           "UsingDefaultValue": false,
@@ -732,7 +504,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "33f5aa9df9c349e8962f18ab7abf7c10",
+          "Id": "0fafe8bb01d14bc4a87b1af1009144de",
           "Name": "Angulo",
           "Description": "var[]..[]",
           "UsingDefaultValue": false,
@@ -743,48 +515,17 @@
       ],
       "Outputs": [
         {
-          "Id": "99a5dcfb66c64753bc7d32322f8c2373",
+          "Id": "7b6fd50a4ae5425399b421a1eb6d62de",
           "Name": "Resultado",
           "Description": "return value",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Replication": "Auto",
-      "Description": "Rotaciona o plano de projeção Horizontal para formar a Epura 2D"
-    },
-    {
-      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function, DynamoCore",
-      "FunctionSignature": "9d77a482-244f-47a3-87dc-9be37e94e93f",
-      "FunctionType": "Graph",
-      "NodeType": "FunctionNode",
-      "Id": "f64c784b2e64424d93fbe3781226958f",
-      "Inputs": [
-        {
-          "Id": "a0cfbf79e2d54f19a04d70053ab973f6",
-          "Name": "Reta",
-          "Description": "var[]..[]",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
           "KeepListStructure": false
         },
         {
-          "Id": "10e2d59c4b614bdeb364285a8bcd3b3e",
-          "Name": "Angulo",
-          "Description": "var[]..[]",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Outputs": [
-        {
-          "Id": "7d19551cdd884b0db0ca7240c1e55b53",
-          "Name": "Resultado",
+          "Id": "7076b899ba9847e9948b3d504d298ca3",
+          "Name": "Diedro",
           "Description": "return value",
           "UsingDefaultValue": false,
           "Level": 2,
@@ -793,25 +534,10 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Rotaciona o plano de projeção Horizontal para formar a Epura 2D"
+      "Description": "Rotaciona o PPH do traçado"
     }
   ],
   "Connectors": [
-    {
-      "Start": "c393671f19764922824c2612a4a2579a",
-      "End": "fc051c5032e74b2fa8c8def7fe004843",
-      "Id": "850ec7b8ac464a4d80d36363d8c591f9"
-    },
-    {
-      "Start": "7ff7ade3d266424194f7e640ff4c2df3",
-      "End": "45de7821b9af4dcfa97681cf6b29fdee",
-      "Id": "be2e92dcb4844426bb2114e872ce7db7"
-    },
-    {
-      "Start": "715be68a15314eabbbe2a55f22227e6b",
-      "End": "2c2a91df1ab241c7ab2cac7659915d42",
-      "Id": "57ac0f25fa044fd7af995c6cf0f47ee1"
-    },
     {
       "Start": "b4cf58a44300428080739ef9cc679ba8",
       "End": "c0d59ab466cc4f91978c112044891ac2",
@@ -823,34 +549,24 @@
       "Id": "abe4b6eba9ca49c89783040dac3adb87"
     },
     {
-      "Start": "322fed522ec947b79503d4c632e4139d",
-      "End": "8cf2b921e44a438a9cb1ebabdc5bdea0",
-      "Id": "0e955a1f0a7b494c920a63e580842a3d"
-    },
-    {
-      "Start": "3963aa74fd154040af3753df74bf6282",
-      "End": "958ca9ec083f4b7b839706a7c1dd362c",
-      "Id": "65e87fab4d3b4d8294dced1a2ed2ee82"
-    },
-    {
-      "Start": "1e8217018e724ad8a74384e6a3abbfd5",
-      "End": "9c0ea95ec0d147e8a66a8792c6573cc7",
-      "Id": "3d32dfc61ca04959a3b586d26de933ed"
+      "Start": "d02dd77bbcc44e558af48abb75630f21",
+      "End": "cdeab1a70ddc48a0aabbf2f6cd68a157",
+      "Id": "5516f3d391644e41a66458d1b5a15ca3"
     },
     {
       "Start": "af6a5759b9484bf6bb67bf707eb8b280",
-      "End": "33f5aa9df9c349e8962f18ab7abf7c10",
-      "Id": "67ce35530c0146debeb43c6ca304c26e"
-    },
-    {
-      "Start": "af6a5759b9484bf6bb67bf707eb8b280",
-      "End": "10e2d59c4b614bdeb364285a8bcd3b3e",
-      "Id": "083428984075404ca4ea127382c34d3d"
+      "End": "0fafe8bb01d14bc4a87b1af1009144de",
+      "Id": "ec46593ca22c44f2b9bfc1a6bd6dc585"
     },
     {
       "Start": "3776c782f49440ceaa1fdde663926553",
-      "End": "d68d310ecd1e4e17ad62cdea484acc6b",
-      "Id": "fa8ebc518b3d4dfb9bb41c5b089fa901"
+      "End": "4cfb4f1d73df4c83abf2fb3dacc5c627",
+      "Id": "ab8b11c1f63b40baae7b106847c5320f"
+    },
+    {
+      "Start": "fc79dd0c4a4a4df48bbb31fa667c3ede",
+      "End": "15bc87a54ad64818913983d6455004a5",
+      "Id": "ef2f7cc1326d4ef6a6517b00148c9799"
     },
     {
       "Start": "debc6fc666944fc38ea49d91a06ccb4e",
@@ -863,68 +579,55 @@
       "Id": "9b0f87dca2cf4a02b5893921473d7c79"
     },
     {
-      "Start": "debc6fc666944fc38ea49d91a06ccb4e",
-      "End": "80ecfa267cf647ca865f0b4b57eabb08",
-      "Id": "c09ac0d87ac04022937033d3227a58e1"
+      "Start": "e28a3a95ad674c4f9fa5dfc041899bb8",
+      "End": "fc051c5032e74b2fa8c8def7fe004843",
+      "Id": "c2b2e8b0aae44f9cae06529095e7b7af"
     },
     {
-      "Start": "debc6fc666944fc38ea49d91a06ccb4e",
-      "End": "7dc74cc3c30c419c8c646baaf671466c",
-      "Id": "682a2b808991402d8e9e91e2048728f1"
+      "Start": "216931302ecc40f0b83c2b8120b39313",
+      "End": "45de7821b9af4dcfa97681cf6b29fdee",
+      "Id": "6ed830bd3181445ea67fe55ecd8f8906"
     },
     {
-      "Start": "c8d3b581652d43758c5d6cd457d060c4",
-      "End": "6ff1d24aac3b4503abc326bc5d679ec7",
-      "Id": "c38467ad796e4d36bc8bc37282bd0032"
+      "Start": "c6e63121543842009840a7b129889592",
+      "End": "2c2a91df1ab241c7ab2cac7659915d42",
+      "Id": "4010ea41010e442c9f47e558bb0b73a1"
     },
     {
-      "Start": "431abca5a2b44641aedc4bfc35a43623",
-      "End": "3b19ddaab277402d9f10407efd659621",
-      "Id": "24cce1d5cec146c3a21a22eafd281d6e"
+      "Start": "6ad62476d8744c249241a13dd649f19b",
+      "End": "8cf2b921e44a438a9cb1ebabdc5bdea0",
+      "Id": "455973d789834dd6b7db0fbc86217220"
     },
     {
-      "Start": "4fae124973a8453c888607ef0833de8f",
-      "End": "8864a37c1d0a4e8d820ff9291652964d",
-      "Id": "e01a38dde834454d948fd9df4333fbc2"
+      "Start": "24ec42352cba43229251892ffaecd991",
+      "End": "958ca9ec083f4b7b839706a7c1dd362c",
+      "Id": "fe9bcad8413f46feaf6a66b99761d2ab"
     },
     {
-      "Start": "8a4b69d0cdfd4d6389d5b798688198ea",
-      "End": "90d9e7a2525f4ceab97b3657f6047d74",
-      "Id": "9f19f6ea69aa48f58c724cc777aace5f"
-    },
-    {
-      "Start": "53ac6b450d7f4dc8afcf2bd39d8abb42",
-      "End": "b0652bb690e84c4e9de911e1cd24e978",
-      "Id": "6bccf08f0ea14c4e9f6bdab11731c155"
-    },
-    {
-      "Start": "2d311f4a80ff4080ab377661f1257187",
-      "End": "52e1081439b54dee8ce1973e8399d2d1",
-      "Id": "f40697c8563a4629b5e36b535a6f9c15"
-    },
-    {
-      "Start": "56e658b30b424367a4a838e2a7e00fac",
-      "End": "4e3d14b1df8e48309413bcc1c155fc65",
-      "Id": "bc73f8436340494ebc2802a9037f6710"
-    },
-    {
-      "Start": "8973d5dc09c74852a481c985eb031b8c",
-      "End": "d18736a2c9074e8083755ae5b2caa516",
-      "Id": "fc630749e0384e3f910f06ac5deddb6d"
-    },
-    {
-      "Start": "cdf86db7059b4f289ff9d6e46ce1c30b",
-      "End": "a0cfbf79e2d54f19a04d70053ab973f6",
-      "Id": "cbe5819cf6e8475c8b5667498c7ec72d"
+      "Start": "17c40cb935984c9a8c3ef6562d0e22ab",
+      "End": "9c0ea95ec0d147e8a66a8792c6573cc7",
+      "Id": "aa0937fa134b447aa88854d24e785c5e"
     }
   ],
   "Dependencies": [
     "22f9ad02-fbd0-4600-a8fc-374dead17853",
     "0fc93616-9b72-416b-b7d5-2f3610958f2b",
     "6ce05f3b-9b7e-4783-a8fe-c6f227ce8f73",
-    "9d77a482-244f-47a3-87dc-9be37e94e93f"
+    "56d016f9-3829-46e8-8f30-cc9fa5eb5aee"
   ],
-  "NodeLibraryDependencies": [],
+  "NodeLibraryDependencies": [
+    {
+      "Name": "Sistemas_Projetivos",
+      "Version": "1.0.0",
+      "ReferenceType": "Package",
+      "Nodes": [
+        "59eaef39b5024575bd0b0d27fbe56048",
+        "f70bc19366204556abf5e1e3b208c292",
+        "d4351bd0345749daa0c33296e2c490b8",
+        "e1533272aaf34bbeb73ba2604e9fd0c2"
+      ]
+    }
+  ],
   "Bindings": [],
   "View": {
     "Dynamo": {
@@ -949,44 +652,14 @@
     },
     "NodeViews": [
       {
-        "ShowGeometry": true,
-        "Name": "abscissa",
-        "Id": "eb3570a00ba4456fab8eac90801b0a6f",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Excluded": false,
-        "X": 582.17084724674032,
-        "Y": 766.887337196292
-      },
-      {
-        "ShowGeometry": true,
-        "Name": "Afastamento",
-        "Id": "47b7d58b678047ea99264a7c0348cc9a",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Excluded": false,
-        "X": 582.17084724674032,
-        "Y": 821.7962294975697
-      },
-      {
-        "ShowGeometry": true,
-        "Name": "cota",
-        "Id": "4f81ef2624f2478fa36061e074ed315e",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Excluded": false,
-        "X": 582.17084724674032,
-        "Y": 878.86597623721059
-      },
-      {
         "ShowGeometry": false,
         "Name": "SP_Locar_Ponto",
         "Id": "59eaef39b5024575bd0b0d27fbe56048",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1079.9376179487624,
-        "Y": 773.75200201144594
+        "X": 1095.4521804272997,
+        "Y": 813.32698899759293
       },
       {
         "ShowGeometry": false,
@@ -995,38 +668,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1078.3502054534956,
-        "Y": 960.32217091020743
-      },
-      {
-        "ShowGeometry": true,
-        "Name": "abscissa",
-        "Id": "7819672775ad459890c9d62f26c490eb",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Excluded": false,
-        "X": 580.58343475147353,
-        "Y": 953.873154601701
-      },
-      {
-        "ShowGeometry": true,
-        "Name": "Afastamento",
-        "Id": "610a49fbc00c4590af13bc1f222815e6",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Excluded": false,
-        "X": 580.58343475147353,
-        "Y": 1010.9429013413421
-      },
-      {
-        "ShowGeometry": true,
-        "Name": "cota",
-        "Id": "375b67789bd141d4b73e8cbd6c9dfa7f",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Excluded": false,
-        "X": 580.58343475147353,
-        "Y": 1068.0126480809829
+        "X": 1096.9213355818827,
+        "Y": 988.4945694278299
       },
       {
         "ShowGeometry": true,
@@ -1035,8 +678,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1347.90556039565,
-        "Y": 1151.7743295640455
+        "X": 1501.7893789069917,
+        "Y": 1099.1356841726288
       },
       {
         "ShowGeometry": true,
@@ -1045,182 +688,93 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1438.0667535185482,
-        "Y": 858.07068356776483
+        "X": 1497.9120288025638,
+        "Y": 962.63712655764232
       },
       {
-        "ShowGeometry": false,
+        "ShowGeometry": true,
         "Name": "SP_Sistema_Diedrico",
         "Id": "e1533272aaf34bbeb73ba2604e9fd0c2",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 389.94375340717772,
-        "Y": 1140.4158601674694
+        "X": 804.50643292246207,
+        "Y": 689.41515734006907
       },
       {
         "ShowGeometry": true,
         "Name": "abscissa",
-        "Id": "bde8b42c92474de5b109d86178d341c0",
+        "Id": "ec5d326099274fdabf5e7ed68573a378",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 578.69792747487008,
-        "Y": 1261.5558103024293
+        "X": 650.33278451969272,
+        "Y": 786.98812025695679
       },
       {
         "ShowGeometry": true,
         "Name": "Afastamento",
-        "Id": "97bb6acb9c3943f5a4c0c495be54fcd6",
+        "Id": "da5e23c5460c4fa099ab305784aa0eba",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 578.69792747487008,
-        "Y": 1316.4647026037073
+        "X": 650.33278451969272,
+        "Y": 841.89701255823479
       },
       {
         "ShowGeometry": true,
         "Name": "cota",
-        "Id": "00eed9897bb347ff853aecf2d09aec8a",
+        "Id": "4f2b10ca1e534acaa49945c44e68bbd6",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 578.69792747487008,
-        "Y": 1373.5344493433483
-      },
-      {
-        "ShowGeometry": false,
-        "Name": "SP_Locar_Ponto",
-        "Id": "8ada1c3881f84952a5f8b3171a3ca743",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Excluded": false,
-        "X": 1076.4646981768972,
-        "Y": 1268.4204751175832
-      },
-      {
-        "ShowGeometry": false,
-        "Name": "SP_Locar_Ponto",
-        "Id": "78033573ceec4fde8048fbc8b4b78fff",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Excluded": false,
-        "X": 1074.8772856816272,
-        "Y": 1451.8206230773123
+        "X": 650.33278451969272,
+        "Y": 898.9667592978758
       },
       {
         "ShowGeometry": true,
         "Name": "abscissa",
-        "Id": "3e822829394249d49fb569cb55eb9c86",
+        "Id": "0e2ec618a341460ca8b0892a5b5f61b8",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 577.11051497960307,
-        "Y": 1448.5416277078382
+        "X": 648.74537202442571,
+        "Y": 973.97393766236587
       },
       {
         "ShowGeometry": true,
         "Name": "Afastamento",
-        "Id": "156b084111d2454e92aead9e3783f97a",
+        "Id": "c9c4ef9caca64b35929f2531a50d458f",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 577.11051497960307,
-        "Y": 1505.6113744474771
+        "X": 648.74537202442571,
+        "Y": 1031.0436844020039
       },
       {
         "ShowGeometry": true,
         "Name": "cota",
-        "Id": "310fe06d4fc64dd1b4c120f4e88a76bc",
+        "Id": "397ddc084296499eae5d1fdecee0f4c8",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 577.11051497960307,
-        "Y": 1562.6811211871172
+        "X": 648.74537202442571,
+        "Y": 1088.1134311416438
       },
       {
         "ShowGeometry": true,
-        "Name": "SP_Locar_Reta",
-        "Id": "061a2d2c630d4281942ad0a24f6c1fd7",
+        "Name": "SP_Rotaciona_PPH_Reta",
+        "Id": "04c0aeb5217d4239a872cc4c334145ff",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1432.9563030785396,
-        "Y": 1356.0142180101886
-      },
-      {
-        "ShowGeometry": true,
-        "Name": "SP_Rotaciona_PPH",
-        "Id": "cedacc8d81e74521ad9a6c1415dd95e4",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Excluded": false,
-        "X": 1748.030202477905,
-        "Y": 857.662049220252
-      },
-      {
-        "ShowGeometry": true,
-        "Name": "SP_Rotaciona_PPH",
-        "Id": "f64c784b2e64424d93fbe3781226958f",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Excluded": false,
-        "X": 1739.5619397462578,
-        "Y": 1360.579257514308
+        "X": 1848.3541984026738,
+        "Y": 965.06714046582658
       }
     ],
-    "Annotations": [
-      {
-        "Id": "fe006497a3aa46c78ce9505ed39f7670",
-        "Title": "Reta a",
-        "Nodes": [
-          "eb3570a00ba4456fab8eac90801b0a6f",
-          "47b7d58b678047ea99264a7c0348cc9a",
-          "4f81ef2624f2478fa36061e074ed315e",
-          "59eaef39b5024575bd0b0d27fbe56048",
-          "f70bc19366204556abf5e1e3b208c292",
-          "7819672775ad459890c9d62f26c490eb",
-          "610a49fbc00c4590af13bc1f222815e6",
-          "375b67789bd141d4b73e8cbd6c9dfa7f",
-          "d4351bd0345749daa0c33296e2c490b8"
-        ],
-        "Left": 570.58343475147353,
-        "Top": 734.887337196292,
-        "Width": 1094.4833187670747,
-        "Height": 401.12531088469086,
-        "FontSize": 18.0,
-        "InitialTop": 766.887337196292,
-        "InitialHeight": 446.12531088469086,
-        "TextblockHeight": 22.0,
-        "Background": "#FFA4E1FF"
-      },
-      {
-        "Id": "92ac66ba6fb54ac191ee4acd02554f56",
-        "Title": "Reta a",
-        "Nodes": [
-          "bde8b42c92474de5b109d86178d341c0",
-          "97bb6acb9c3943f5a4c0c495be54fcd6",
-          "00eed9897bb347ff853aecf2d09aec8a",
-          "8ada1c3881f84952a5f8b3171a3ca743",
-          "78033573ceec4fde8048fbc8b4b78fff",
-          "3e822829394249d49fb569cb55eb9c86",
-          "156b084111d2454e92aead9e3783f97a",
-          "310fe06d4fc64dd1b4c120f4e88a76bc",
-          "061a2d2c630d4281942ad0a24f6c1fd7"
-        ],
-        "Left": 567.11051497960307,
-        "Top": 1229.5558103024293,
-        "Width": 1092.8457880989365,
-        "Height": 401.12531088468791,
-        "FontSize": 18.0,
-        "InitialTop": 1261.5558103024293,
-        "InitialHeight": 446.12531088468791,
-        "TextblockHeight": 22.0,
-        "Background": "#FFA4E1FF"
-      }
-    ],
-    "X": -224.57376477949867,
-    "Y": -217.73910880478414,
-    "Zoom": 0.40754022914209881
+    "Annotations": [],
+    "X": -379.11280715396015,
+    "Y": -418.68692254095834,
+    "Zoom": 0.79084087388643165
   }
 }
