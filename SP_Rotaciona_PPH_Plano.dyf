@@ -17,6 +17,10 @@
       "Geometry": {
         "Key": "Autodesk.DesignScript.Geometry.Geometry",
         "Value": "ProtoGeometry.dll"
+      },
+      "Arc": {
+        "Key": "Autodesk.DesignScript.Geometry.Arc",
+        "Value": "ProtoGeometry.dll"
       }
     }
   },
@@ -26,11 +30,11 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
       "NodeType": "CodeBlockNode",
-      "Code": "angulo;\nDiedro;\nLTE = Diedro[\"LTerra\"];\nPPR = Diedro[\"Diedro\"];\nPTS = Plano[\"Pontos\"];\nESF = Plano[\"Esferas\"];\nTRA = Plano[\"Traços\"];\nFIG = Plano[\"Figura\"];\nSUP = Plano[\"Superficie\"];\nRAI = Plano[\"Raios\"];\nCON = Plano[\"Contorno\"];\nINF = Plano[\"PlanoInfinito\"];\n\nPTR = List.Flatten(Plano[\"PtProjetado\"], 3);\nPRO = List.Flatten(Plano[\"Projeções\"]  , 3);\nCHA = List.Flatten(Plano[\"Chamadas\"]   , 3);\n//--------------------------------------------\n//Constantes----------------------------------\n//--------------------------------------------\norig   = Point.ByCoordinates ( 0 , 0 , 0 );\neixo   = Vector.XAxis();\n//--------------------------------------------\nEpura3D = [  PPR[0], PPR[1] , PTR[0], PTR[2], PTR[4],\n                              CHA[0], CHA[2], CHA[4],\n                              PRO[0], PRO[1], PRO[2],\n                              TRA[0]\n          ];\nEpura2D   = Epura3D!=null?Geometry.Rotate( Epura3D , orig, eixo, angulo):null;\n[PPR, LTE, PTS, ESF, TRA, FIG, SUP, RAI, CON, INF , PTR, PRO, CHA, Epura3D, Epura2D];",
+      "Code": "angulo;\nDiedro;\nLTE = Diedro[\"LTerra\"];\nPPR = Diedro[\"Diedro\"];\nPTS = Plano[\"Pontos\"];\nESF = Plano[\"Esferas\"];\nTRA = Plano[\"Traços\"];\nFIG = Plano[\"Figura\"];\nSUP = Plano[\"Superficie\"];\nRAI = Plano[\"Raios\"];\nCON = Plano[\"Contorno\"];\n\nPTR = List.Flatten(Plano[\"PtProjetado\"], 3);\nPRO = List.Flatten(Plano[\"Projeções\"]  , 3);\nCHA = List.Flatten(Plano[\"Chamadas\"]   , 3);\n//--------------------------------------------\n//Constantes----------------------------------\n//--------------------------------------------\norig   = Point.ByCoordinates ( 0 , 0 , 0 );\neixo   = Vector.XAxis();\n//--------------------------------------------\nEpura3D  = [  PPR[0], PPR[1] , PTR[0], PTR[2], PTR[4],\n                               CHA[0], CHA[2], CHA[4],\n                               PRO[0], PRO[1], PRO[2],\n                               TRA[0][0] ];\nEpura2D = Epura3D!=null?Geometry.Rotate( Epura3D , orig, eixo, angulo):null;\n\ns     = [PTR[0]           , PTR[2]           , PTR[4]          ];\nc     = [CHA[0].EndPoint  , CHA[2].EndPoint  , CHA[4].EndPoint ];\nd     = [CHA[0].Direction , CHA[2].Direction , CHA[4].Direction];\na     = [angulo           , angulo           , angulo          ];\nv     = [Vector.ZAxis()   , Vector.ZAxis()   , Vector.ZAxis()  ];\nArcos = Geometry.Rotate(Arc.ByCenterPointStartPointSweepAngle( c , s , a , v) , c,  d , [90, 90, 90]);\n\n[PPR, LTE, PTS, ESF, TRA, FIG, SUP, RAI, CON, PTR, PRO, CHA, Epura3D, Epura2D, Arcos];",
       "Id": "eb892373b4e54b5eb0947a1c50de77d2",
       "Inputs": [
         {
-          "Id": "ce6ad4717dc14bd088626e01ed5b2a46",
+          "Id": "a1bbbbc95f6142258576dcb5dec41263",
           "Name": "angulo",
           "Description": "angulo",
           "UsingDefaultValue": false,
@@ -39,7 +43,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "b75bfc670ddc454b82a811b7ff22d04f",
+          "Id": "9b32deac440b4f669d2fd106414a7b61",
           "Name": "Diedro",
           "Description": "Diedro",
           "UsingDefaultValue": false,
@@ -48,7 +52,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "ef34305d7a3d40eeb091c3de1195e6c6",
+          "Id": "d0adafcef2254673a2ec1aee0223b35f",
           "Name": "Plano",
           "Description": "Plano",
           "UsingDefaultValue": false,
@@ -59,7 +63,7 @@
       ],
       "Outputs": [
         {
-          "Id": "ecf43e820d0a413ea91f9cfce4b73c28",
+          "Id": "dcf9e30a28334951adc624dd95100364",
           "Name": "",
           "Description": "Value of expression at line 1",
           "UsingDefaultValue": false,
@@ -68,7 +72,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "78d3460360864390ba2b434691c89186",
+          "Id": "5e67f4b60402475293de4fe8b17c0e7b",
           "Name": "",
           "Description": "Value of expression at line 2",
           "UsingDefaultValue": false,
@@ -77,7 +81,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "6f70c4a6e70040318f297d92f0df3343",
+          "Id": "f1cdb5ae8ebb44698c13be975ebe621e",
           "Name": "",
           "Description": "LTE",
           "UsingDefaultValue": false,
@@ -86,7 +90,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "a8fe8ed54ef04aaf877732be05bd7a7a",
+          "Id": "e1cddc2aa1db4c06bae519f9ac7910e0",
           "Name": "",
           "Description": "PPR",
           "UsingDefaultValue": false,
@@ -95,7 +99,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "6e99624c6e744a2086029209b9392352",
+          "Id": "e13c984a2bd643be90daff540dfc4b9a",
           "Name": "",
           "Description": "PTS",
           "UsingDefaultValue": false,
@@ -104,7 +108,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "b4f1eeb7f2dd42779216991ebeca3122",
+          "Id": "2911d77398294d6cb835960cb7db7ce6",
           "Name": "",
           "Description": "ESF",
           "UsingDefaultValue": false,
@@ -113,7 +117,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "8e3cc75f66a64614b00e2fabfd34dbe6",
+          "Id": "a8e9588a0abb4d11913041bb04b09050",
           "Name": "",
           "Description": "TRA",
           "UsingDefaultValue": false,
@@ -122,7 +126,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "6f9862e002c749d6a2cdf41e3fed12ed",
+          "Id": "135d10bcb6034f09b780d08c0a9d90c2",
           "Name": "",
           "Description": "FIG",
           "UsingDefaultValue": false,
@@ -131,7 +135,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "1e2e0decacfc404f8629dc05a43dccb4",
+          "Id": "baaa64599ca4476f80872331b870f9cc",
           "Name": "",
           "Description": "SUP",
           "UsingDefaultValue": false,
@@ -140,7 +144,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "5233a3870f374d929001d0eaaff88cf5",
+          "Id": "cc382923ff664bd582f3c37f1db680d3",
           "Name": "",
           "Description": "RAI",
           "UsingDefaultValue": false,
@@ -149,7 +153,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "4d1845bf09c343b9b01f5248641da9d7",
+          "Id": "c35d657bf0a6455c82f675d9c9a33d93",
           "Name": "",
           "Description": "CON",
           "UsingDefaultValue": false,
@@ -158,16 +162,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "67cb175df77544e0aef06b1894c582ab",
-          "Name": "",
-          "Description": "INF",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "f8cf50434dcd4a8195f208380da5f6cd",
+          "Id": "b608df356dfc468da5579e947120d350",
           "Name": "",
           "Description": "PTR",
           "UsingDefaultValue": false,
@@ -176,7 +171,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "ba4789e60b2c41baacaeef8c0df541d7",
+          "Id": "d227458826aa44a8805057ec49c8be2b",
           "Name": "",
           "Description": "PRO",
           "UsingDefaultValue": false,
@@ -185,7 +180,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "84dd9bdf953541919205c874039ed555",
+          "Id": "8221da328afc41aa852840754b7a6a4a",
           "Name": "",
           "Description": "CHA",
           "UsingDefaultValue": false,
@@ -194,7 +189,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "35a2a7706acd44aa82dff62140e5c1d4",
+          "Id": "232741d67b9d4044a413523d5b4ce84c",
           "Name": "",
           "Description": "orig",
           "UsingDefaultValue": false,
@@ -203,7 +198,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "9328c7f038b74338b0d3ddf02b9e1ea7",
+          "Id": "da30ba5c48454387b326c240571414b7",
           "Name": "",
           "Description": "eixo",
           "UsingDefaultValue": false,
@@ -212,7 +207,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "db4f8df0a54341f2a71121924223726f",
+          "Id": "9ab3666b28e846d9bd8c8cbe09f7a427",
           "Name": "",
           "Description": "Epura3D",
           "UsingDefaultValue": false,
@@ -221,7 +216,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "76695ceab93b4be3b967de869a76550b",
+          "Id": "2af6f82b04784e198586dc5abb61ec63",
           "Name": "",
           "Description": "Epura2D",
           "UsingDefaultValue": false,
@@ -230,9 +225,63 @@
           "KeepListStructure": false
         },
         {
-          "Id": "9908c70e91974e6ebc7b26e28d15fe01",
+          "Id": "8b973d26568f46a2ba315b23d96ca830",
           "Name": "",
-          "Description": "Value of expression at line 29",
+          "Description": "s",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "5b8e221617aa4cde983e0d7e111dc2a4",
+          "Name": "",
+          "Description": "c",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "14d32305a5f34e26be690d7dec7eb6e8",
+          "Name": "",
+          "Description": "d",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "f4fbe8a4b3234e09ac50942f25f998f3",
+          "Name": "",
+          "Description": "a",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "105ba74292e24bd8bdf89845b4f88598",
+          "Name": "",
+          "Description": "v",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "9dec3a4b4def4b8aa51e7aa7087bbfc9",
+          "Name": "",
+          "Description": "Arcos",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "73754dbcfd3e4c93980328c4d042f129",
+          "Name": "",
+          "Description": "Value of expression at line 35",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -344,24 +393,24 @@
   ],
   "Connectors": [
     {
-      "Start": "9908c70e91974e6ebc7b26e28d15fe01",
+      "Start": "73754dbcfd3e4c93980328c4d042f129",
       "End": "585e5e86c58b4062848366cad2e08ffb",
-      "Id": "4c36c72b3b1a43e19bad851fb7a5a362"
+      "Id": "60c9ec2bf9334b4da83bdd996dbb92e9"
     },
     {
       "Start": "33cf6d921c1b41bfa9a2e8217e9e9017",
-      "End": "ce6ad4717dc14bd088626e01ed5b2a46",
-      "Id": "4d4b0da4c5054500be19101f317581be"
+      "End": "a1bbbbc95f6142258576dcb5dec41263",
+      "Id": "6a7713650fd34d6ba3992325f9c60f85"
     },
     {
       "Start": "7adff58d0a514d649c07b0beb409770e",
-      "End": "ef34305d7a3d40eeb091c3de1195e6c6",
-      "Id": "41d13d498a7c4d169bd96bc8c094367b"
+      "End": "d0adafcef2254673a2ec1aee0223b35f",
+      "Id": "3886cd6de2794bcf814e7d60bfa935dd"
     },
     {
       "Start": "633be15c7c3b49a5b1556ec2d0c7ef0c",
-      "End": "b75bfc670ddc454b82a811b7ff22d04f",
-      "Id": "99c9a6406259468c8248567a2b3e2956"
+      "End": "9b32deac440b4f669d2fd106414a7b61",
+      "Id": "f487bf9305d0457aa04cb09f4e7cf24f"
     }
   ],
   "Dependencies": [],
@@ -378,15 +427,15 @@
     },
     "Camera": {
       "Name": "Background Preview",
-      "EyeX": 221.19753784844841,
-      "EyeY": 231.02137474487745,
-      "EyeZ": 267.98576211705119,
-      "LookX": -279.97170664555637,
-      "LookY": -247.88978913693444,
-      "LookZ": -186.64287539085561,
-      "UpX": -0.33842809349927683,
-      "UpY": 0.91354545764261252,
-      "UpZ": -0.2256127708065756
+      "EyeX": -31.97503211411453,
+      "EyeY": 22.652264401997456,
+      "EyeZ": 249.21448992083856,
+      "LookX": 2.8217111675810465,
+      "LookY": -20.02162041701872,
+      "LookZ": -234.51054267378217,
+      "UpX": -0.0015704221724507834,
+      "UpY": 0.99144486137382415,
+      "UpZ": 0.13051674463327104
     },
     "NodeViews": [
       {
@@ -406,8 +455,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1460.1967309448989,
-        "Y": 923.025281544697
+        "X": 1488.4973443615504,
+        "Y": 1010.0234635292186
       },
       {
         "ShowGeometry": true,
@@ -441,8 +490,8 @@
       }
     ],
     "Annotations": [],
-    "X": -316.29078125000012,
-    "Y": -46.934581250000065,
-    "Zoom": 0.70823125000000009
+    "X": -833.25035223227917,
+    "Y": -724.064653893248,
+    "Zoom": 0.95404292488281262
   }
 }

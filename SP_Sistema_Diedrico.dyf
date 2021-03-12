@@ -34,12 +34,49 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
       "NodeType": "CodeBlockNode",
-      "Code": "d=100;\n\nx      = [ [0,d,d,0] , [0, 0,-d,-d] , [0, 0,-d,-d] , [0,d, d, 0]];\ny      = [ [0,0,d,d] , [0, d, d, 0] , [0, -d,-d,0] , [0,0,-d,-d]];\nz      = [ [0,0,0,0] , [0, 0, 0, 0] , [0,  0, 0,0] , [0,0, 0, 0]];\n\nPHp    = Point.ByCoordinates       ( x , y , z );\nPVp    = Point.ByCoordinates       ( x , z , y );\nPLp    = Point.ByCoordinates       ( z , x , y );\nPlanH  = Surface.ByPerimeterPoints ( PHp       );\nPlanV  = Surface.ByPerimeterPoints ( PVp       );\n\nLterra = Line.Intersect(PlanH, PlanV);\n\nCub1   = Cuboid.ByCorners(Point.ByCoordinates( 0 ,  0  ,  0 ),\n                          Point.ByCoordinates( d , -d  ,  d ));\nCub3   = Cuboid.ByCorners(Point.ByCoordinates( 0 ,  0  ,  0 ),\n                          Point.ByCoordinates( d ,  d  , -d ));\nBis13  = [ Point.ByCoordinates (0 ,  d ,  d) ,\n           Point.ByCoordinates (d ,  d ,  d) ,\n           Point.ByCoordinates (d , -d , -d) ,\n           Point.ByCoordinates (0 , -d , -d) ];\nBis24  = [ Point.ByCoordinates (0 ,  d , -d) ,\n           Point.ByCoordinates (d ,  d , -d) ,\n           Point.ByCoordinates (d , -d ,  d) ,\n           Point.ByCoordinates (0 , -d ,  d)   ];\nBi13   = Surface.ByPerimeterPoints  ( Bis13 );\nBi24   = Surface.ByPerimeterPoints  ( Bis24 );\n\nKe     = [ \"Diedro\"                                 , \"LTerra\"   , \"Bisetores\" , \"Cuboides\"];\nVa     = [ [PlanH[0], PlanH[3], PlanV[0], PlanV[3]] ,  Lterra[0] , [Bi13, Bi24], [Cub1, Cub3]];\nDiedro = Dictionary.ByKeysValues(Ke, Va);",
+      "Code": "Escala;\nDeslocar;\nd=200;\n\nx      = [ [0,d,d,0] , [0, 0,-d,-d] , [0, 0,-d,-d] , [0,d, d, 0]];\ny      = [ [0,0,d,d] , [0, d, d, 0] , [0, -d,-d,0] , [0,0,-d,-d]];\nz      = [ [0,0,0,0] , [0, 0, 0, 0] , [0,  0, 0,0] , [0,0, 0, 0]];\n\nPHp    = Point.ByCoordinates       ( x , y , z );\nPVp    = Point.ByCoordinates       ( x , z , y );\nPLp    = Point.ByCoordinates       ( z , x , y );\nPlanH  = Surface.ByPerimeterPoints ( PHp       );\nPlanV  = Surface.ByPerimeterPoints ( PVp       );\n\nLterra = Line.Intersect(PlanH, PlanV);\n\nCub1   = Cuboid.ByCorners(Point.ByCoordinates( 0 ,  0  ,  0 ),\n                          Point.ByCoordinates( d , -d  ,  d ));\nCub3   = Cuboid.ByCorners(Point.ByCoordinates( 0 ,  0  ,  0 ),\n                          Point.ByCoordinates( d ,  d  , -d ));\nBis13  = [ Point.ByCoordinates (0 ,  d ,  d) ,\n           Point.ByCoordinates (d ,  d ,  d) ,\n           Point.ByCoordinates (d , -d , -d) ,\n           Point.ByCoordinates (0 , -d , -d)   ];\nBis24  = [ Point.ByCoordinates (0 ,  d , -d) ,\n           Point.ByCoordinates (d ,  d , -d) ,\n           Point.ByCoordinates (d , -d ,  d) ,\n           Point.ByCoordinates (0 , -d ,  d)   ];\nBi13   = Surface.ByPerimeterPoints  ( Bis13 );\nBi24   = Surface.ByPerimeterPoints  ( Bis24 );\n\nKe     = [ \"Diedro\"                                 ,\"Escala\", \"Deslocar\" , \"LTerra\"   , \"Bisetores\" , \"Cuboides\"  ];\nVa     = [ [PlanH[0], PlanH[3], PlanV[0], PlanV[3]] , Escala ,  Deslocar  ,  Lterra[0] , [Bi13, Bi24], [Cub1, Cub3]];\nDiedro = Dictionary.ByKeysValues(Ke, Va);",
       "Id": "07c83ad07316432bbea4c30ba620cc24",
-      "Inputs": [],
+      "Inputs": [
+        {
+          "Id": "ef8ddfe1ae1a4f1dafb0dd40569cc0b9",
+          "Name": "Escala",
+          "Description": "Escala",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "95ab858119f34e1693ec690ab09448ac",
+          "Name": "Deslocar",
+          "Description": "Deslocar",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
       "Outputs": [
         {
-          "Id": "d3051dfd493c4cdd8ed8666f7f0fe464",
+          "Id": "cffa7907eb9a41cfb2d2796ef889bd3f",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "0286d5602d6847a084f403bf88214b36",
+          "Name": "",
+          "Description": "Value of expression at line 2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "106fbfebdfb945e88468fcaf3cec58b2",
           "Name": "",
           "Description": "d",
           "UsingDefaultValue": false,
@@ -48,7 +85,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "6a4be95fa1054700a61d59fe43f348d1",
+          "Id": "fe38f6934a674e56a8b1d244e25d661d",
           "Name": "",
           "Description": "x",
           "UsingDefaultValue": false,
@@ -57,7 +94,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "6f4ba381e1244d51afb6e811f1b75ae1",
+          "Id": "3d448f856224495ba4051883d84370b2",
           "Name": "",
           "Description": "y",
           "UsingDefaultValue": false,
@@ -66,7 +103,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "f5e8c0f6c53b42408e9d7aee802f340e",
+          "Id": "8c8651bbfd20443e87a69a8b852e6c5b",
           "Name": "",
           "Description": "z",
           "UsingDefaultValue": false,
@@ -75,7 +112,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "287d8774a20d4c6fa186ba17a6b58171",
+          "Id": "98c651b9931c4584bf1eff2ea6fad9e1",
           "Name": "",
           "Description": "PHp",
           "UsingDefaultValue": false,
@@ -84,7 +121,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "c53ce872edb44b4bb1a715f140a3c86b",
+          "Id": "507e0285326e4cd3b0450ec02c8f5ea9",
           "Name": "",
           "Description": "PVp",
           "UsingDefaultValue": false,
@@ -93,7 +130,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "a4dcb34ebfab485fb132855e57e84cba",
+          "Id": "810c1352764f4355983f4c3a202d03bc",
           "Name": "",
           "Description": "PLp",
           "UsingDefaultValue": false,
@@ -102,7 +139,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "7a57acbbb4cb4d16942ebdfe047d31a1",
+          "Id": "df968e3dea624218b659778eebaed30e",
           "Name": "",
           "Description": "PlanH",
           "UsingDefaultValue": false,
@@ -111,7 +148,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "681bedcdb09b4795b6ca5d98bfaa4494",
+          "Id": "b919a7923ca741d781163e5efc63888b",
           "Name": "",
           "Description": "PlanV",
           "UsingDefaultValue": false,
@@ -120,7 +157,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "6ac886c7bd04490bbe7d022033cbe3ca",
+          "Id": "28feb6252a7642cabbe332a100eab1d8",
           "Name": "",
           "Description": "Lterra",
           "UsingDefaultValue": false,
@@ -129,7 +166,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "e9144e109a1f41779f2e82a73360de05",
+          "Id": "2a5e45a9f6c848059d1ebd804660e294",
           "Name": "",
           "Description": "Cub1",
           "UsingDefaultValue": false,
@@ -138,7 +175,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "9cc7df8e51e04d0e935ab77a63bbd85f",
+          "Id": "be6af3b73f82453b8230ab566d1d8f2b",
           "Name": "",
           "Description": "Cub3",
           "UsingDefaultValue": false,
@@ -147,7 +184,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "12954f9013b447729813a62c5660b34e",
+          "Id": "837b7fa1de4041bd93f9aa49e1819a85",
           "Name": "",
           "Description": "Bis13",
           "UsingDefaultValue": false,
@@ -156,7 +193,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "2185b8ffe069488e8a2abf2224b6dba9",
+          "Id": "278581bdb143440ca8ca87f98662d342",
           "Name": "",
           "Description": "Bis24",
           "UsingDefaultValue": false,
@@ -165,7 +202,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "861d98d049824a158ed096cfeb59406a",
+          "Id": "f6bc262155b54a68b32ab30869e09323",
           "Name": "",
           "Description": "Bi13",
           "UsingDefaultValue": false,
@@ -174,7 +211,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "163f9f415f434440bd86c11e93c9d082",
+          "Id": "40783174e42b4449b03fd62d502bb906",
           "Name": "",
           "Description": "Bi24",
           "UsingDefaultValue": false,
@@ -183,7 +220,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "7cce957b63b74fee98e191ba6c0b93d6",
+          "Id": "d471c56ae39d4e30895b2527b1ac4fc0",
           "Name": "",
           "Description": "Ke",
           "UsingDefaultValue": false,
@@ -192,7 +229,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "c393352fc1e247fcb1ea587a3fae05f9",
+          "Id": "fdedae581061428fb382de61ad0b66ad",
           "Name": "",
           "Description": "Va",
           "UsingDefaultValue": false,
@@ -201,7 +238,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "2dd4123bd43747098f98a7cf1e35c848",
+          "Id": "ce04e375c79e40d5a6b18145793e80ae",
           "Name": "",
           "Description": "Diedro",
           "UsingDefaultValue": false,
@@ -233,13 +270,75 @@
       "Outputs": [],
       "Replication": "Disabled",
       "Description": "A function output, use with custom nodes"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "Escala",
+        "TypeName": "var",
+        "TypeRank": -1,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "ab8358a3870845ce946168e5008fe466",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "d716fd294a154a13becfdec6ee6bee8d",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "Deslocar",
+        "TypeName": "var",
+        "TypeRank": -1,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "5b3eaec536274e45a2d49664450c1820",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "947c3188822246339f1d391eac024976",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
     }
   ],
   "Connectors": [
     {
-      "Start": "2dd4123bd43747098f98a7cf1e35c848",
+      "Start": "ce04e375c79e40d5a6b18145793e80ae",
       "End": "7f16ca71c9f047318133802e9636fe1c",
-      "Id": "a4d9e909b793489baa768e197aec4eff"
+      "Id": "351b1a7c59b04262b4ddd5bea935edb9"
+    },
+    {
+      "Start": "d716fd294a154a13becfdec6ee6bee8d",
+      "End": "ef8ddfe1ae1a4f1dafb0dd40569cc0b9",
+      "Id": "108192df647446c795cba29eba1ff095"
+    },
+    {
+      "Start": "947c3188822246339f1d391eac024976",
+      "End": "95ab858119f34e1693ec690ab09448ac",
+      "Id": "b412932469a44d2c9750da4c1449a688"
     }
   ],
   "Dependencies": [],
@@ -256,41 +355,61 @@
     },
     "Camera": {
       "Name": "Background Preview",
-      "EyeX": -83.272644825361056,
-      "EyeY": 69.427355936427517,
-      "EyeZ": 147.33198360757802,
-      "LookX": 167.91628698354984,
-      "LookY": -20.348174130129479,
-      "LookZ": -104.15564681757168,
-      "UpX": -0.096199514341275563,
-      "UpY": 0.99357185567659878,
-      "UpZ": 0.059670939726848761
+      "EyeX": 165.90320629980351,
+      "EyeY": 108.86719547408015,
+      "EyeZ": 177.01127645085589,
+      "LookX": -209.19084848619886,
+      "LookY": -93.355475546088485,
+      "LookZ": -114.47820142538976,
+      "UpX": -0.13722982715184429,
+      "UpY": 0.98768834059515154,
+      "UpZ": -0.07509804519625686
     },
     "NodeViews": [
       {
+        "ShowGeometry": true,
+        "Name": "Cria sistema de Planos",
         "Id": "07c83ad07316432bbea4c30ba620cc24",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "Cria sistema de Planos",
-        "ShowGeometry": true,
         "Excluded": false,
-        "X": 232.13186644210919,
-        "Y": 86.427714154479418
+        "X": 226.2997718324724,
+        "Y": 92.843018225079874
       },
       {
+        "ShowGeometry": true,
+        "Name": "Output",
         "Id": "8298bdcaa8284ff4afb592f574f313c3",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "Output",
-        "ShowGeometry": true,
         "Excluded": false,
-        "X": 981.2088165334975,
-        "Y": 627.31062758607072
+        "X": 1032.3816506823891,
+        "Y": 668.88692471727745
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Input",
+        "Id": "ab8358a3870845ce946168e5008fe466",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 17.454626017684575,
+        "Y": 69.24213688897305
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Input",
+        "Id": "5b3eaec536274e45a2d49664450c1820",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -0.12350037699349059,
+        "Y": 128.87580061359103
       }
     ],
     "Annotations": [],
-    "X": -68.926901450203218,
-    "Y": -117.0621054464267,
-    "Zoom": 0.977220601341528
+    "X": -87.565684716699991,
+    "Y": -10.56637291119506,
+    "Zoom": 0.87894011356279522
   }
 }

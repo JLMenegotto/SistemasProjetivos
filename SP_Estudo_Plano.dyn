@@ -76,11 +76,175 @@
       "Cuboid": {
         "Key": "Autodesk.DesignScript.Geometry.Cuboid",
         "Value": "ProtoGeometry.dll"
+      },
+      "List.Empty": {
+        "Key": "List",
+        "Value": "BuiltIn.ds"
+      },
+      "Arc": {
+        "Key": "Autodesk.DesignScript.Geometry.Arc",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Curve": {
+        "Key": "Autodesk.DesignScript.Geometry.Curve",
+        "Value": "ProtoGeometry.dll"
       }
     }
   },
-  "Inputs": [],
-  "Outputs": [],
+  "Inputs": [
+    {
+      "Id": "eb3570a00ba4456fab8eac90801b0a6f",
+      "Name": "abscissa",
+      "Type": "number",
+      "Value": "0",
+      "MaximumValue": 5.0,
+      "MinimumValue": 0.0,
+      "StepValue": 0.1,
+      "NumberType": "Double",
+      "Description": "A slider that produces numeric values."
+    },
+    {
+      "Id": "47b7d58b678047ea99264a7c0348cc9a",
+      "Name": "Afastamento",
+      "Type": "number",
+      "Value": "1.2",
+      "MaximumValue": 5.0,
+      "MinimumValue": 0.0,
+      "StepValue": 0.1,
+      "NumberType": "Double",
+      "Description": "A slider that produces numeric values."
+    },
+    {
+      "Id": "4f81ef2624f2478fa36061e074ed315e",
+      "Name": "cota",
+      "Type": "number",
+      "Value": "2",
+      "MaximumValue": 5.0,
+      "MinimumValue": 0.0,
+      "StepValue": 0.1,
+      "NumberType": "Double",
+      "Description": "A slider that produces numeric values."
+    },
+    {
+      "Id": "d22d3767cc384cbcb1e50a82e262579a",
+      "Name": "Rota Plano de Projeção Horizontal",
+      "Type": "number",
+      "Value": "0",
+      "MaximumValue": 90.0,
+      "MinimumValue": 0.0,
+      "StepValue": 10.0,
+      "NumberType": "Double",
+      "Description": "A slider that produces numeric values."
+    },
+    {
+      "Id": "bde8b42c92474de5b109d86178d341c0",
+      "Name": "abscissa",
+      "Type": "number",
+      "Value": "1.1",
+      "MaximumValue": 5.0,
+      "MinimumValue": 0.0,
+      "StepValue": 0.1,
+      "NumberType": "Double",
+      "Description": "A slider that produces numeric values."
+    },
+    {
+      "Id": "97bb6acb9c3943f5a4c0c495be54fcd6",
+      "Name": "Afastamento",
+      "Type": "number",
+      "Value": "5",
+      "MaximumValue": 5.0,
+      "MinimumValue": 0.0,
+      "StepValue": 0.1,
+      "NumberType": "Double",
+      "Description": "A slider that produces numeric values."
+    },
+    {
+      "Id": "00eed9897bb347ff853aecf2d09aec8a",
+      "Name": "cota",
+      "Type": "number",
+      "Value": "2",
+      "MaximumValue": 5.0,
+      "MinimumValue": 0.0,
+      "StepValue": 0.1,
+      "NumberType": "Double",
+      "Description": "A slider that produces numeric values."
+    },
+    {
+      "Id": "3e822829394249d49fb569cb55eb9c86",
+      "Name": "abscissa",
+      "Type": "number",
+      "Value": "5",
+      "MaximumValue": 5.0,
+      "MinimumValue": 0.0,
+      "StepValue": 0.1,
+      "NumberType": "Double",
+      "Description": "A slider that produces numeric values."
+    },
+    {
+      "Id": "156b084111d2454e92aead9e3783f97a",
+      "Name": "Afastamento",
+      "Type": "number",
+      "Value": "3.1",
+      "MaximumValue": 5.0,
+      "MinimumValue": 0.0,
+      "StepValue": 0.1,
+      "NumberType": "Double",
+      "Description": "A slider that produces numeric values."
+    },
+    {
+      "Id": "310fe06d4fc64dd1b4c120f4e88a76bc",
+      "Name": "cota",
+      "Type": "number",
+      "Value": "5",
+      "MaximumValue": 5.0,
+      "MinimumValue": 0.0,
+      "StepValue": 0.1,
+      "NumberType": "Double",
+      "Description": "A slider that produces numeric values."
+    },
+    {
+      "Id": "ade5235721554a4da515b9d5b981c914",
+      "Name": "Tamanho construção",
+      "Type": "number",
+      "Value": "16",
+      "MaximumValue": 25.0,
+      "MinimumValue": 1.0,
+      "StepValue": 1.0,
+      "NumberType": "Double",
+      "Description": "A slider that produces numeric values."
+    },
+    {
+      "Id": "a40efbef7e9248538cdcc93adb23932c",
+      "Name": "Deslocar",
+      "Type": "number",
+      "Value": "70",
+      "MaximumValue": 100.0,
+      "MinimumValue": 1.0,
+      "StepValue": 1.0,
+      "NumberType": "Double",
+      "Description": "A slider that produces numeric values."
+    },
+    {
+      "Id": "5167a08db9104a2a9526e2fd515e6642",
+      "Name": "Qretas",
+      "Type": "number",
+      "Value": "24",
+      "MaximumValue": 25.0,
+      "MinimumValue": 1.0,
+      "StepValue": 1.0,
+      "NumberType": "Double",
+      "Description": "A slider that produces numeric values."
+    }
+  ],
+  "Outputs": [
+    {
+      "Id": "2fc52d3a19a74322b062aabff9374d6b",
+      "Name": "Watch",
+      "Type": "unknown",
+      "InitialValue": "",
+      "Description": "Visualize the output of node."
+    }
+  ],
   "Nodes": [
     {
       "ConcreteType": "CoreNodeModels.Input.DoubleSlider, CoreNodeModels",
@@ -89,7 +253,7 @@
       "MaximumValue": 5.0,
       "MinimumValue": 0.0,
       "StepValue": 0.1,
-      "InputValue": 3.3000000000000003,
+      "InputValue": 0.0,
       "Id": "eb3570a00ba4456fab8eac90801b0a6f",
       "Inputs": [],
       "Outputs": [
@@ -113,7 +277,7 @@
       "MaximumValue": 5.0,
       "MinimumValue": 0.0,
       "StepValue": 0.1,
-      "InputValue": 1.1,
+      "InputValue": 1.2000000000000002,
       "Id": "47b7d58b678047ea99264a7c0348cc9a",
       "Inputs": [],
       "Outputs": [
@@ -137,7 +301,7 @@
       "MaximumValue": 5.0,
       "MinimumValue": 0.0,
       "StepValue": 0.1,
-      "InputValue": 2.2,
+      "InputValue": 2.0,
       "Id": "4f81ef2624f2478fa36061e074ed315e",
       "Inputs": [],
       "Outputs": [
@@ -237,7 +401,7 @@
       "MaximumValue": 90.0,
       "MinimumValue": 0.0,
       "StepValue": 10.0,
-      "InputValue": 90.0,
+      "InputValue": 0.0,
       "Id": "d22d3767cc384cbcb1e50a82e262579a",
       "Inputs": [],
       "Outputs": [
@@ -260,7 +424,26 @@
       "FunctionType": "Graph",
       "NodeType": "FunctionNode",
       "Id": "e1533272aaf34bbeb73ba2604e9fd0c2",
-      "Inputs": [],
+      "Inputs": [
+        {
+          "Id": "0d3f919e9af84c7594447256f9cdb35e",
+          "Name": "Escala",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "827b5358c9dd4098bc89e296f310f55a",
+          "Name": "Deslocar",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
       "Outputs": [
         {
           "Id": "debc6fc666944fc38ea49d91a06ccb4e",
@@ -282,7 +465,7 @@
       "MaximumValue": 5.0,
       "MinimumValue": 0.0,
       "StepValue": 0.1,
-      "InputValue": 0.8,
+      "InputValue": 1.1,
       "Id": "bde8b42c92474de5b109d86178d341c0",
       "Inputs": [],
       "Outputs": [
@@ -306,7 +489,7 @@
       "MaximumValue": 5.0,
       "MinimumValue": 0.0,
       "StepValue": 0.1,
-      "InputValue": 1.8,
+      "InputValue": 5.0,
       "Id": "97bb6acb9c3943f5a4c0c495be54fcd6",
       "Inputs": [],
       "Outputs": [
@@ -330,7 +513,7 @@
       "MaximumValue": 5.0,
       "MinimumValue": 0.0,
       "StepValue": 0.1,
-      "InputValue": 0.30000000000000004,
+      "InputValue": 2.0,
       "Id": "00eed9897bb347ff853aecf2d09aec8a",
       "Inputs": [],
       "Outputs": [
@@ -506,7 +689,7 @@
       "MaximumValue": 5.0,
       "MinimumValue": 0.0,
       "StepValue": 0.1,
-      "InputValue": 2.4000000000000004,
+      "InputValue": 5.0,
       "Id": "3e822829394249d49fb569cb55eb9c86",
       "Inputs": [],
       "Outputs": [
@@ -530,7 +713,7 @@
       "MaximumValue": 5.0,
       "MinimumValue": 0.0,
       "StepValue": 0.1,
-      "InputValue": 1.8,
+      "InputValue": 3.1,
       "Id": "156b084111d2454e92aead9e3783f97a",
       "Inputs": [],
       "Outputs": [
@@ -554,7 +737,7 @@
       "MaximumValue": 5.0,
       "MinimumValue": 0.0,
       "StepValue": 0.1,
-      "InputValue": 1.1,
+      "InputValue": 5.0,
       "Id": "310fe06d4fc64dd1b4c120f4e88a76bc",
       "Inputs": [],
       "Outputs": [
@@ -576,10 +759,10 @@
       "FunctionSignature": "70cc6a68-e4b5-4ece-9cfb-88ddb14b6664",
       "FunctionType": "Graph",
       "NodeType": "FunctionNode",
-      "Id": "b24f6260c8e140d7b8d7d43be8cc344b",
+      "Id": "03fc56ddb9cb465f89117f8268377484",
       "Inputs": [
         {
-          "Id": "4e872f1f6f0949b5b34c60aa542ab479",
+          "Id": "4df62eda92fd4095a2ea47b4949879ba",
           "Name": "P1",
           "Description": "Se refere a um ponto utilizando\nas função SP_Locar_Ponto\n\nvar[]..[]",
           "UsingDefaultValue": false,
@@ -588,7 +771,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "b3fc1f2816404b94bf2933d64d663026",
+          "Id": "9ff4b83074d44e9bab765494d5f95481",
           "Name": "P2",
           "Description": "Se refere a um ponto utilizando\nas função SP_Locar_Ponto\n\nvar[]..[]",
           "UsingDefaultValue": false,
@@ -597,7 +780,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "c203462ffd7a4a6397172f1b13eb52b4",
+          "Id": "7f411de1eec549b18983e200b3e64406",
           "Name": "P3",
           "Description": "Se refere a um ponto utilizando\nas função SP_Locar_Ponto\n\nvar[]..[]",
           "UsingDefaultValue": false,
@@ -606,7 +789,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "69fdc47af9c8423cbe9c2e6d045ab1ee",
+          "Id": "00c80d9ae173410dba6724fd75623213",
           "Name": "Diedro",
           "Description": "Lista com os 4 semiplanos de projeção\n\nvar[]..[]",
           "UsingDefaultValue": false,
@@ -617,7 +800,7 @@
       ],
       "Outputs": [
         {
-          "Id": "d0ae2c3cd6a44630ae212230ed97e14f",
+          "Id": "ade2bd3868304dbe88a6e282f1afbc3b",
           "Name": "Plano",
           "Description": "return value",
           "UsingDefaultValue": false,
@@ -626,7 +809,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "93e817fd8389432585af2abbc1d51455",
+          "Id": "e416f23542034f00a204c573ddd25e69",
           "Name": "Diedro",
           "Description": "return value",
           "UsingDefaultValue": false,
@@ -635,7 +818,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "713c2ab22d9c4d8ebd524fa059a68205",
+          "Id": "a184af0309364476a3308a7394f0a42b",
           "Name": "ElementosGeometricos",
           "Description": "return value",
           "UsingDefaultValue": false,
@@ -648,14 +831,67 @@
       "Description": "Posiciona um plano a partir de 3 pontos"
     },
     {
+      "ConcreteType": "CoreNodeModels.Input.DoubleSlider, CoreNodeModels",
+      "NodeType": "NumberInputNode",
+      "NumberType": "Double",
+      "MaximumValue": 25.0,
+      "MinimumValue": 1.0,
+      "StepValue": 1.0,
+      "InputValue": 16.0,
+      "Id": "ade5235721554a4da515b9d5b981c914",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "d09c9b80fafa4eb1b6a4b839e937c874",
+          "Name": "",
+          "Description": "Double",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A slider that produces numeric values."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "2fc52d3a19a74322b062aabff9374d6b",
+      "Inputs": [
+        {
+          "Id": "810ad4368b8d42e791f6613d8e4417db",
+          "Name": "",
+          "Description": "Node to evaluate.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "86afc11f585d4b6fae45cf744d037905",
+          "Name": "",
+          "Description": "Watch contents.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the output of node."
+    },
+    {
       "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function, DynamoCore",
       "FunctionSignature": "194543bf-9fca-4af0-8ce8-9b55cf9bd6a2",
       "FunctionType": "Graph",
       "NodeType": "FunctionNode",
-      "Id": "a778f102056a4ad18c8eecf6db40b2fb",
+      "Id": "8a8145a401bf441b9ebdcdd78fae7db4",
       "Inputs": [
         {
-          "Id": "024e1945b4cc41de9ad203b105a33938",
+          "Id": "4b415b434d694b10b35b66fc1972c563",
           "Name": "Angulo",
           "Description": "var[]..[]",
           "UsingDefaultValue": false,
@@ -664,7 +900,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "ae74c4f1577f4f8f8db5f3d2e1bdb92a",
+          "Id": "9946e8882cbc47e3a38b258dc92f9c3e",
           "Name": "Plano",
           "Description": "Se refere ao plano criado com\na função SP_Locar_Plano\n\nvar[]..[]",
           "UsingDefaultValue": false,
@@ -673,7 +909,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "a958a2b38c2d47a4b3a70ad2c1747ef4",
+          "Id": "de31312be93243daaa4f89a7bdc35380",
           "Name": "Diedro",
           "Description": "var[]..[]",
           "UsingDefaultValue": false,
@@ -684,7 +920,7 @@
       ],
       "Outputs": [
         {
-          "Id": "0b61fa369e684812b8f7e49590d4628e",
+          "Id": "b3a040056f5c4eae93fb8f3ac5ae9fb5",
           "Name": "Resultado",
           "Description": "return value",
           "UsingDefaultValue": false,
@@ -695,6 +931,527 @@
       ],
       "Replication": "Auto",
       "Description": "Rotaciona o PPH do traçado"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "Traçado;\nL1 = Line.ByStartPointEndPoint(Traçado[9][0], Traçado[9][2]);\nL2 = Line.ByStartPointEndPoint(Traçado[9][2], Traçado[9][4]);\nL3 = Line.ByStartPointEndPoint(Traçado[9][4], Traçado[9][0]);\nTraH = Traçado[4][0];\nTraV = Traçado[4][1];\nd1   = L1.Direction.Reverse();\nd2   = L2.Direction.Reverse();\nd3   = L3.Direction.Reverse();\nPL1  = Line.Project(TraH<1> , [L1 ,L2 ,L3] , [ d1 , d2 , d3]);",
+      "Id": "4a4aeb3158a4491d979781dad063a688",
+      "Inputs": [
+        {
+          "Id": "a8e633760a504589a277d24f1cc85be5",
+          "Name": "Traçado",
+          "Description": "Traçado",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "b0495735d5504c31ae5ee924cdf5564e",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "4c23b14a37fb4e86aaa6b671ec0cf3bb",
+          "Name": "",
+          "Description": "L1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "34918b4b9e374f0580c247fc483007a2",
+          "Name": "",
+          "Description": "L2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "fe6c25cd47744dff96d7c810bf38b016",
+          "Name": "",
+          "Description": "L3",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "626a4ec0b8dd4ce686ff484ffac1048d",
+          "Name": "",
+          "Description": "TraH",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "80b61b03a9e946609bcd44c0e5dce450",
+          "Name": "",
+          "Description": "TraV",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "fc3ff4ec26b14e56a08599eff8ee6391",
+          "Name": "",
+          "Description": "d1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "315c3da315d0452ab46a6297bb0c51b1",
+          "Name": "",
+          "Description": "d2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "d6c3938e69144d6080f0172658e6e682",
+          "Name": "",
+          "Description": "d3",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "0bf142bbeda04fb8b45ac248bb605183",
+          "Name": "",
+          "Description": "PL1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "angulo;\nProlon= 1000;\nDiedro;\nQr;\nLTE = Diedro[\"LTerra\"];\nPPR = Diedro[\"Diedro\"];\nPTS = Plano[\"Pontos\"];\nTRA = Plano[\"Traços\"];\nFIG = Plano[\"Figura\"];\nSUP = Plano[\"Superficie\"];\nRAI = Plano[\"Raios\"];\nCON = Plano[\"Contorno\"];\n\nPTR = List.Flatten(Plano[\"PtProjetado\"], 3);\nPRO = List.Flatten(Plano[\"Projeções\"]  , 3);\nCHA = List.Flatten(Plano[\"Chamadas\"]   , 3);\nTRAH = List.Flatten(TRA, 1)[0];\nTRAV = List.Flatten(TRA, 1)[1];\n\nLins = [\n        Line.ByStartPointEndPoint(PTS[0], PTS[1]),\n        Line.ByStartPointEndPoint(PTS[1], PTS[2]),\n        Line.ByStartPointEndPoint(PTS[2], PTS[0])\n      ];\n\ndiv1 = Line.PointAtParameter(Lins<1>, 0..1..(1/Qr));\nldiv = Line.ByStartPointEndPoint(div1, List.ShiftIndices(div1, 1));\nHoPtH =\nList.Flatten([\n  Line.ByStartPointEndPoint ( Line.Intersect(TRAH, Curve.ExtendStart(ldiv, Prolon)) ,ldiv.StartPoint ),\n  Line.ByStartPointEndPoint ( Line.Intersect(TRAH, Curve.ExtendEnd  (ldiv, Prolon)) ,ldiv.EndPoint   ),\n  Line.ByStartPointEndPoint ( Line.Intersect(TRAH, Curve.ExtendStart(Lins, Prolon)) ,ldiv.StartPoint ),\n  Line.ByStartPointEndPoint ( Line.Intersect(TRAH, Curve.ExtendEnd  (Lins, Prolon)) ,ldiv.EndPoint   )\n] , 2);\nHoPtV = List.Flatten([\n  Line.ByStartPointEndPoint ( Line.Intersect(TRAV, Curve.ExtendStart(ldiv, Prolon)) ,ldiv.StartPoint ),\n  Line.ByStartPointEndPoint ( Line.Intersect(TRAV, Curve.ExtendEnd  (ldiv, Prolon)) ,ldiv.EndPoint   ),\n  Line.ByStartPointEndPoint ( Line.Intersect(TRAV, Curve.ExtendStart(Lins, Prolon)) ,ldiv.StartPoint ),\n  Line.ByStartPointEndPoint ( Line.Intersect(TRAV, Curve.ExtendEnd  (Lins, Prolon)) ,ldiv.EndPoint   )\n] , 2);",
+      "Id": "196fd2e829254b58a8cc44b192c6f0e3",
+      "Inputs": [
+        {
+          "Id": "7908bed2fc6a426d97cd93ed78de94dd",
+          "Name": "angulo",
+          "Description": "angulo",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "2a3950843a2442bc8b3d077c663be460",
+          "Name": "Diedro",
+          "Description": "Diedro",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "c71c3c6883a142ae9de641e2bfb89c62",
+          "Name": "Qr",
+          "Description": "Qr",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "24b9ae3712fc49da8a5e206aece04594",
+          "Name": "Plano",
+          "Description": "Plano",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "8b2db5675bc44e0d9324363158ae6738",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "37c70d4d5ce841e7ac85c73f874908df",
+          "Name": "",
+          "Description": "Prolon",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "ad34a9694abe4e21b2eec8a5975c8f67",
+          "Name": "",
+          "Description": "Value of expression at line 3",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "5168e6b14b1d4624804ac780a0bacdc5",
+          "Name": "",
+          "Description": "Value of expression at line 4",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "ca3730ccad934cbfb09264453e41dd05",
+          "Name": "",
+          "Description": "LTE",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "1584a4c1adae4bb3889b68007100cc11",
+          "Name": "",
+          "Description": "PPR",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "ffb7141abd3f488fb83c794dd8ef1765",
+          "Name": "",
+          "Description": "PTS",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "c360b454e49948909499656c774281cf",
+          "Name": "",
+          "Description": "TRA",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "b8c3c8a74b2a4b5e9cb5ec62cbd71217",
+          "Name": "",
+          "Description": "FIG",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "7e1a78eb334c4e7dbabdf77908e50ceb",
+          "Name": "",
+          "Description": "SUP",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "870de4295be04b878b8afc5a42be1f19",
+          "Name": "",
+          "Description": "RAI",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "4981a8f1a4ab4921a3bd2f8ee413d393",
+          "Name": "",
+          "Description": "CON",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "02a3bfb51b794755afb204b8db590e49",
+          "Name": "",
+          "Description": "PTR",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "73a173f2b5084343bca1c8e0bfdec323",
+          "Name": "",
+          "Description": "PRO",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "a78880456aab4ffd90a818fc28e2370d",
+          "Name": "",
+          "Description": "CHA",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "88ead45f06c84e4f989d391da79bea9b",
+          "Name": "",
+          "Description": "TRAH",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "232aea99f4e84ed89df52b9527c4d8b0",
+          "Name": "",
+          "Description": "TRAV",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "5f1a7358a82348228c476b35543bd1c9",
+          "Name": "",
+          "Description": "Lins",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "5f08ea5207dc400d8800219538e7091b",
+          "Name": "",
+          "Description": "div1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "8b403c69856948a5b03b151e5c281321",
+          "Name": "",
+          "Description": "ldiv",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "53893f2bd7da49b58ae0ccf8991c7099",
+          "Name": "",
+          "Description": "HoPtH",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "bce6ba60e17b4dcbb66716ab8e85fc35",
+          "Name": "",
+          "Description": "HoPtV",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "a874b0a15a3743ac9241620eab577ce9",
+      "Inputs": [
+        {
+          "Id": "27a2818358b344c098c098263cc5bbe4",
+          "Name": "",
+          "Description": "Node to evaluate.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "363089024d244a078b28b11ec4d6222c",
+          "Name": "",
+          "Description": "Watch contents.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the output of node."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "41a0f25600d644d7ab38ecd32ceb3e02",
+      "Inputs": [
+        {
+          "Id": "477a487c0a7f4cff899419c999483875",
+          "Name": "",
+          "Description": "Node to evaluate.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "a6fc8ad3b7a94da1965140a0711f37c5",
+          "Name": "",
+          "Description": "Watch contents.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the output of node."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "229b1bb08e8e46d69444cd4cbe65efec",
+      "Inputs": [
+        {
+          "Id": "a5f64286c752454baaf5c6445a575ece",
+          "Name": "",
+          "Description": "Node to evaluate.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "22bb2a6d32924af1ab458a43ef2ba54b",
+          "Name": "",
+          "Description": "Watch contents.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the output of node."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.DoubleSlider, CoreNodeModels",
+      "NodeType": "NumberInputNode",
+      "NumberType": "Double",
+      "MaximumValue": 100.0,
+      "MinimumValue": 1.0,
+      "StepValue": 1.0,
+      "InputValue": 70.0,
+      "Id": "a40efbef7e9248538cdcc93adb23932c",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "27d772b291064e2697c3a4965deb792b",
+          "Name": "",
+          "Description": "Double",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A slider that produces numeric values."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "32c97d66994845999495087be58f3d6e",
+      "Inputs": [
+        {
+          "Id": "4a49ce160ff647f68739fb15ceaaa270",
+          "Name": "",
+          "Description": "Node to evaluate.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "13e3d21cf7e547508db54014e2198a84",
+          "Name": "",
+          "Description": "Watch contents.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the output of node."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.DoubleSlider, CoreNodeModels",
+      "NodeType": "NumberInputNode",
+      "NumberType": "Double",
+      "MaximumValue": 25.0,
+      "MinimumValue": 1.0,
+      "StepValue": 1.0,
+      "InputValue": 24.0,
+      "Id": "5167a08db9104a2a9526e2fd515e6642",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "d9353ad1a32c437da60b05b00bcd7ba2",
+          "Name": "",
+          "Description": "Double",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A slider that produces numeric values."
     }
   ],
   "Connectors": [
@@ -715,13 +1472,13 @@
     },
     {
       "Start": "b4cf58a44300428080739ef9cc679ba8",
-      "End": "4e872f1f6f0949b5b34c60aa542ab479",
-      "Id": "709bce5b0791481da8bff7e23aa6c6c0"
+      "End": "4df62eda92fd4095a2ea47b4949879ba",
+      "Id": "97304bc4a620491eb01cf88588bc0e78"
     },
     {
       "Start": "af6a5759b9484bf6bb67bf707eb8b280",
-      "End": "024e1945b4cc41de9ad203b105a33938",
-      "Id": "dce6993539114aa3bce727b1eb52b0d2"
+      "End": "7908bed2fc6a426d97cd93ed78de94dd",
+      "Id": "81e412524e1a439da37c2c3b07ee49ee"
     },
     {
       "Start": "debc6fc666944fc38ea49d91a06ccb4e",
@@ -751,22 +1508,22 @@
     {
       "Start": "4fae124973a8453c888607ef0833de8f",
       "End": "8864a37c1d0a4e8d820ff9291652964d",
-      "Id": "ac0724f1e6d5491ba375c887a2ddc96d"
+      "Id": "6c980729958640f191ffbeb219eb4739"
     },
     {
       "Start": "8a4b69d0cdfd4d6389d5b798688198ea",
-      "End": "b3fc1f2816404b94bf2933d64d663026",
-      "Id": "b86aa39e70624e249b7e66cacd31d466"
+      "End": "9ff4b83074d44e9bab765494d5f95481",
+      "Id": "e3e7d078771e47a3871986406b1def99"
     },
     {
       "Start": "53ac6b450d7f4dc8afcf2bd39d8abb42",
-      "End": "c203462ffd7a4a6397172f1b13eb52b4",
-      "Id": "b3cc59a33577456ebf84789920ac56fb"
+      "End": "7f411de1eec549b18983e200b3e64406",
+      "Id": "a5a429687b09464d889b97f094814c60"
     },
     {
       "Start": "592ceba8b24247b7a6ec0cc2a9096e28",
-      "End": "69fdc47af9c8423cbe9c2e6d045ab1ee",
-      "Id": "c88feb86118942ae8fbdd360c0ba6b4f"
+      "End": "00c80d9ae173410dba6724fd75623213",
+      "Id": "5338092b81d84acdabff197fb7285265"
     },
     {
       "Start": "2d311f4a80ff4080ab377661f1257187",
@@ -784,14 +1541,49 @@
       "Id": "ca24fecc499f4befa5dda2de29e06624"
     },
     {
-      "Start": "d0ae2c3cd6a44630ae212230ed97e14f",
-      "End": "ae74c4f1577f4f8f8db5f3d2e1bdb92a",
-      "Id": "bc5de486914e4153affb649de50a7d3f"
+      "Start": "ade2bd3868304dbe88a6e282f1afbc3b",
+      "End": "24b9ae3712fc49da8a5e206aece04594",
+      "Id": "65962aedb37947c0ae9cb068ce8e49d2"
     },
     {
-      "Start": "93e817fd8389432585af2abbc1d51455",
-      "End": "a958a2b38c2d47a4b3a70ad2c1747ef4",
-      "Id": "4f61752aae68437fa1bb4cbef1f2ea0e"
+      "Start": "e416f23542034f00a204c573ddd25e69",
+      "End": "2a3950843a2442bc8b3d077c663be460",
+      "Id": "6137178688ea4a378f2ecff24105c562"
+    },
+    {
+      "Start": "d09c9b80fafa4eb1b6a4b839e937c874",
+      "End": "0d3f919e9af84c7594447256f9cdb35e",
+      "Id": "b2d8038efd194a588ff183a9cf75151a"
+    },
+    {
+      "Start": "b3a040056f5c4eae93fb8f3ac5ae9fb5",
+      "End": "a8e633760a504589a277d24f1cc85be5",
+      "Id": "2de810bdf7a24a99b27f57851a8d3ae6"
+    },
+    {
+      "Start": "626a4ec0b8dd4ce686ff484ffac1048d",
+      "End": "810ad4368b8d42e791f6613d8e4417db",
+      "Id": "e82696172ba94b558e841d4b9627acb1"
+    },
+    {
+      "Start": "5f08ea5207dc400d8800219538e7091b",
+      "End": "27a2818358b344c098c098263cc5bbe4",
+      "Id": "4ca65434d8924d80b981e80e61aee815"
+    },
+    {
+      "Start": "53893f2bd7da49b58ae0ccf8991c7099",
+      "End": "a5f64286c752454baaf5c6445a575ece",
+      "Id": "5cabc4d65ed14f2d8b05acc4d61a263b"
+    },
+    {
+      "Start": "27d772b291064e2697c3a4965deb792b",
+      "End": "827b5358c9dd4098bc89e296f310f55a",
+      "Id": "f14431ef59ce4fedb8e02e7e785ebaa8"
+    },
+    {
+      "Start": "d9353ad1a32c437da60b05b00bcd7ba2",
+      "End": "c71c3c6883a142ae9de641e2bfb89c62",
+      "Id": "61f47997f25f4736ac46b83db818111a"
     }
   ],
   "Dependencies": [
@@ -810,7 +1602,8 @@
         "e1533272aaf34bbeb73ba2604e9fd0c2",
         "8ada1c3881f84952a5f8b3171a3ca743",
         "78033573ceec4fde8048fbc8b4b78fff",
-        "b24f6260c8e140d7b8d7d43be8cc344b"
+        "03fc56ddb9cb465f89117f8268377484",
+        "8a8145a401bf441b9ebdcdd78fae7db4"
       ]
     }
   ],
@@ -826,22 +1619,22 @@
     },
     "Camera": {
       "Name": "Background Preview",
-      "EyeX": 221.19753784844841,
-      "EyeY": 231.02137474487745,
-      "EyeZ": 267.98576211705119,
-      "LookX": -279.97170664555637,
-      "LookY": -247.88978913693444,
-      "LookZ": -186.64287539085561,
-      "UpX": -0.33842809349927683,
-      "UpY": 0.91354545764261252,
-      "UpZ": -0.2256127708065756
+      "EyeX": 165.90320629980351,
+      "EyeY": 108.86719547408015,
+      "EyeZ": 177.01127645085589,
+      "LookX": -209.19084848619886,
+      "LookY": -93.355475546088485,
+      "LookZ": -114.47820142538976,
+      "UpX": -0.13722982715184429,
+      "UpY": 0.98768834059515154,
+      "UpZ": -0.07509804519625686
     },
     "NodeViews": [
       {
         "ShowGeometry": true,
         "Name": "abscissa",
         "Id": "eb3570a00ba4456fab8eac90801b0a6f",
-        "IsSetAsInput": false,
+        "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
         "X": 559.40339110430841,
@@ -851,7 +1644,7 @@
         "ShowGeometry": true,
         "Name": "Afastamento",
         "Id": "47b7d58b678047ea99264a7c0348cc9a",
-        "IsSetAsInput": false,
+        "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
         "X": 559.40339110430841,
@@ -861,7 +1654,7 @@
         "ShowGeometry": true,
         "Name": "cota",
         "Id": "4f81ef2624f2478fa36061e074ed315e",
-        "IsSetAsInput": false,
+        "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
         "X": 559.40339110430841,
@@ -874,18 +1667,18 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1010.8042246169368,
-        "Y": 1213.2423584496569
+        "X": 1013.3536216382961,
+        "Y": 1208.9933634140584
       },
       {
         "ShowGeometry": true,
         "Name": "Rota Plano de Projeção Horizontal",
         "Id": "d22d3767cc384cbcb1e50a82e262579a",
-        "IsSetAsInput": false,
+        "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1502.9732979358228,
-        "Y": 1288.0843052392217
+        "X": 1478.7402073698036,
+        "Y": 1227.0359361490935
       },
       {
         "ShowGeometry": false,
@@ -894,14 +1687,14 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 729.02969359422741,
-        "Y": 1093.4137380553905
+        "X": 637.40016029338244,
+        "Y": 1058.3546972262959
       },
       {
         "ShowGeometry": true,
         "Name": "abscissa",
         "Id": "bde8b42c92474de5b109d86178d341c0",
-        "IsSetAsInput": false,
+        "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
         "X": 560.71340691622936,
@@ -911,7 +1704,7 @@
         "ShowGeometry": true,
         "Name": "Afastamento",
         "Id": "97bb6acb9c3943f5a4c0c495be54fcd6",
-        "IsSetAsInput": false,
+        "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
         "X": 560.71340691622936,
@@ -921,7 +1714,7 @@
         "ShowGeometry": true,
         "Name": "cota",
         "Id": "00eed9897bb347ff853aecf2d09aec8a",
-        "IsSetAsInput": false,
+        "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
         "X": 560.71340691622936,
@@ -951,7 +1744,7 @@
         "ShowGeometry": true,
         "Name": "abscissa",
         "Id": "3e822829394249d49fb569cb55eb9c86",
-        "IsSetAsInput": false,
+        "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
         "X": 560.71340691622936,
@@ -961,7 +1754,7 @@
         "ShowGeometry": true,
         "Name": "Afastamento",
         "Id": "156b084111d2454e92aead9e3783f97a",
-        "IsSetAsInput": false,
+        "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
         "X": 560.71340691622936,
@@ -971,7 +1764,7 @@
         "ShowGeometry": true,
         "Name": "cota",
         "Id": "310fe06d4fc64dd1b4c120f4e88a76bc",
-        "IsSetAsInput": false,
+        "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
         "X": 560.71340691622936,
@@ -980,27 +1773,127 @@
       {
         "ShowGeometry": true,
         "Name": "SP_Locar_Plano",
-        "Id": "b24f6260c8e140d7b8d7d43be8cc344b",
+        "Id": "03fc56ddb9cb465f89117f8268377484",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1501.1943077278679,
-        "Y": 1361.9205556947225
+        "X": 1464.758847316162,
+        "Y": 1364.3223203727948
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Tamanho construção",
+        "Id": "ade5235721554a4da515b9d5b981c914",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 317.1502415147695,
+        "Y": 1051.67742211099
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Watch",
+        "Id": "2fc52d3a19a74322b062aabff9374d6b",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": true,
+        "Excluded": false,
+        "X": 2945.0777419488272,
+        "Y": 1361.517646320277
       },
       {
         "ShowGeometry": true,
         "Name": "SP_Rotaciona_PPH_Plano",
-        "Id": "a778f102056a4ad18c8eecf6db40b2fb",
+        "Id": "8a8145a401bf441b9ebdcdd78fae7db4",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1847.1127095302402,
-        "Y": 1315.6907834886633
+        "X": 1949.7447417238473,
+        "Y": 849.34881947712984
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "4a4aeb3158a4491d979781dad063a688",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2971.8345887721784,
+        "Y": 1116.303315234429
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Teorema dos Traços - Homologia",
+        "Id": "196fd2e829254b58a8cc44b192c6f0e3",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2053.3794614404237,
+        "Y": 1327.5303380243959
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Watch",
+        "Id": "a874b0a15a3743ac9241620eab577ce9",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2850.1001195535978,
+        "Y": 1775.5611602766342
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Watch",
+        "Id": "41a0f25600d644d7ab38ecd32ceb3e02",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2242.2095354925523,
+        "Y": 1906.614410600886
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Watch",
+        "Id": "229b1bb08e8e46d69444cd4cbe65efec",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 3022.5378010984018,
+        "Y": 1826.6584661785221
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Deslocar",
+        "Id": "a40efbef7e9248538cdcc93adb23932c",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 316.23063866688784,
+        "Y": 1111.2227992747432
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Watch",
+        "Id": "32c97d66994845999495087be58f3d6e",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 3069.3268694583116,
+        "Y": 1942.3163714190275
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Qretas",
+        "Id": "5167a08db9104a2a9526e2fd515e6642",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1478.4216389470826,
+        "Y": 1290.2191494544948
       }
     ],
     "Annotations": [],
-    "X": -112.32663444151035,
-    "Y": 32.340956785869935,
-    "Zoom": 0.36405767025543123
+    "X": -1417.632618097829,
+    "Y": -1259.4208771069068,
+    "Zoom": 1.0922629683597245
   }
 }
