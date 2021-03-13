@@ -96,7 +96,7 @@
       "Id": "eb3570a00ba4456fab8eac90801b0a6f",
       "Name": "abscissa",
       "Type": "number",
-      "Value": "0",
+      "Value": "3.1",
       "MaximumValue": 5.0,
       "MinimumValue": 0.0,
       "StepValue": 0.1,
@@ -107,7 +107,7 @@
       "Id": "47b7d58b678047ea99264a7c0348cc9a",
       "Name": "Afastamento",
       "Type": "number",
-      "Value": "1.2",
+      "Value": "4.3",
       "MaximumValue": 5.0,
       "MinimumValue": 0.0,
       "StepValue": 0.1,
@@ -118,7 +118,7 @@
       "Id": "4f81ef2624f2478fa36061e074ed315e",
       "Name": "cota",
       "Type": "number",
-      "Value": "2",
+      "Value": "3.5",
       "MaximumValue": 5.0,
       "MinimumValue": 0.0,
       "StepValue": 0.1,
@@ -129,7 +129,7 @@
       "Id": "d22d3767cc384cbcb1e50a82e262579a",
       "Name": "Rota Plano de Projeção Horizontal",
       "Type": "number",
-      "Value": "0",
+      "Value": "90",
       "MaximumValue": 90.0,
       "MinimumValue": 0.0,
       "StepValue": 10.0,
@@ -140,7 +140,7 @@
       "Id": "bde8b42c92474de5b109d86178d341c0",
       "Name": "abscissa",
       "Type": "number",
-      "Value": "1.1",
+      "Value": "4.2",
       "MaximumValue": 5.0,
       "MinimumValue": 0.0,
       "StepValue": 0.1,
@@ -151,7 +151,7 @@
       "Id": "97bb6acb9c3943f5a4c0c495be54fcd6",
       "Name": "Afastamento",
       "Type": "number",
-      "Value": "5",
+      "Value": "4.3",
       "MaximumValue": 5.0,
       "MinimumValue": 0.0,
       "StepValue": 0.1,
@@ -162,7 +162,7 @@
       "Id": "00eed9897bb347ff853aecf2d09aec8a",
       "Name": "cota",
       "Type": "number",
-      "Value": "2",
+      "Value": "1",
       "MaximumValue": 5.0,
       "MinimumValue": 0.0,
       "StepValue": 0.1,
@@ -184,7 +184,7 @@
       "Id": "156b084111d2454e92aead9e3783f97a",
       "Name": "Afastamento",
       "Type": "number",
-      "Value": "3.1",
+      "Value": "1.3",
       "MaximumValue": 5.0,
       "MinimumValue": 0.0,
       "StepValue": 0.1,
@@ -195,7 +195,7 @@
       "Id": "310fe06d4fc64dd1b4c120f4e88a76bc",
       "Name": "cota",
       "Type": "number",
-      "Value": "5",
+      "Value": "4.7",
       "MaximumValue": 5.0,
       "MinimumValue": 0.0,
       "StepValue": 0.1,
@@ -206,7 +206,7 @@
       "Id": "ade5235721554a4da515b9d5b981c914",
       "Name": "Tamanho construção",
       "Type": "number",
-      "Value": "16",
+      "Value": "3",
       "MaximumValue": 25.0,
       "MinimumValue": 1.0,
       "StepValue": 1.0,
@@ -217,8 +217,8 @@
       "Id": "a40efbef7e9248538cdcc93adb23932c",
       "Name": "Deslocar",
       "Type": "number",
-      "Value": "70",
-      "MaximumValue": 100.0,
+      "Value": "126",
+      "MaximumValue": 150.0,
       "MinimumValue": 1.0,
       "StepValue": 1.0,
       "NumberType": "Double",
@@ -228,7 +228,7 @@
       "Id": "5167a08db9104a2a9526e2fd515e6642",
       "Name": "Qretas",
       "Type": "number",
-      "Value": "24",
+      "Value": "2",
       "MaximumValue": 25.0,
       "MinimumValue": 1.0,
       "StepValue": 1.0,
@@ -236,15 +236,7 @@
       "Description": "A slider that produces numeric values."
     }
   ],
-  "Outputs": [
-    {
-      "Id": "2fc52d3a19a74322b062aabff9374d6b",
-      "Name": "Watch",
-      "Type": "unknown",
-      "InitialValue": "",
-      "Description": "Visualize the output of node."
-    }
-  ],
+  "Outputs": [],
   "Nodes": [
     {
       "ConcreteType": "CoreNodeModels.Input.DoubleSlider, CoreNodeModels",
@@ -253,7 +245,7 @@
       "MaximumValue": 5.0,
       "MinimumValue": 0.0,
       "StepValue": 0.1,
-      "InputValue": 0.0,
+      "InputValue": 3.1,
       "Id": "eb3570a00ba4456fab8eac90801b0a6f",
       "Inputs": [],
       "Outputs": [
@@ -277,7 +269,7 @@
       "MaximumValue": 5.0,
       "MinimumValue": 0.0,
       "StepValue": 0.1,
-      "InputValue": 1.2000000000000002,
+      "InputValue": 4.3,
       "Id": "47b7d58b678047ea99264a7c0348cc9a",
       "Inputs": [],
       "Outputs": [
@@ -301,7 +293,7 @@
       "MaximumValue": 5.0,
       "MinimumValue": 0.0,
       "StepValue": 0.1,
-      "InputValue": 2.0,
+      "InputValue": 3.5,
       "Id": "4f81ef2624f2478fa36061e074ed315e",
       "Inputs": [],
       "Outputs": [
@@ -401,7 +393,7 @@
       "MaximumValue": 90.0,
       "MinimumValue": 0.0,
       "StepValue": 10.0,
-      "InputValue": 0.0,
+      "InputValue": 90.0,
       "Id": "d22d3767cc384cbcb1e50a82e262579a",
       "Inputs": [],
       "Outputs": [
@@ -465,7 +457,7 @@
       "MaximumValue": 5.0,
       "MinimumValue": 0.0,
       "StepValue": 0.1,
-      "InputValue": 1.1,
+      "InputValue": 4.2,
       "Id": "bde8b42c92474de5b109d86178d341c0",
       "Inputs": [],
       "Outputs": [
@@ -489,7 +481,7 @@
       "MaximumValue": 5.0,
       "MinimumValue": 0.0,
       "StepValue": 0.1,
-      "InputValue": 5.0,
+      "InputValue": 4.3,
       "Id": "97bb6acb9c3943f5a4c0c495be54fcd6",
       "Inputs": [],
       "Outputs": [
@@ -513,7 +505,7 @@
       "MaximumValue": 5.0,
       "MinimumValue": 0.0,
       "StepValue": 0.1,
-      "InputValue": 2.0,
+      "InputValue": 1.0,
       "Id": "00eed9897bb347ff853aecf2d09aec8a",
       "Inputs": [],
       "Outputs": [
@@ -713,7 +705,7 @@
       "MaximumValue": 5.0,
       "MinimumValue": 0.0,
       "StepValue": 0.1,
-      "InputValue": 3.1,
+      "InputValue": 1.3,
       "Id": "156b084111d2454e92aead9e3783f97a",
       "Inputs": [],
       "Outputs": [
@@ -737,7 +729,7 @@
       "MaximumValue": 5.0,
       "MinimumValue": 0.0,
       "StepValue": 0.1,
-      "InputValue": 5.0,
+      "InputValue": 4.7,
       "Id": "310fe06d4fc64dd1b4c120f4e88a76bc",
       "Inputs": [],
       "Outputs": [
@@ -837,7 +829,7 @@
       "MaximumValue": 25.0,
       "MinimumValue": 1.0,
       "StepValue": 1.0,
-      "InputValue": 16.0,
+      "InputValue": 3.0,
       "Id": "ade5235721554a4da515b9d5b981c914",
       "Inputs": [],
       "Outputs": [
@@ -853,470 +845,6 @@
       ],
       "Replication": "Disabled",
       "Description": "A slider that produces numeric values."
-    },
-    {
-      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
-      "NodeType": "ExtensionNode",
-      "Id": "2fc52d3a19a74322b062aabff9374d6b",
-      "Inputs": [
-        {
-          "Id": "810ad4368b8d42e791f6613d8e4417db",
-          "Name": "",
-          "Description": "Node to evaluate.",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Outputs": [
-        {
-          "Id": "86afc11f585d4b6fae45cf744d037905",
-          "Name": "",
-          "Description": "Watch contents.",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Replication": "Disabled",
-      "Description": "Visualize the output of node."
-    },
-    {
-      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function, DynamoCore",
-      "FunctionSignature": "194543bf-9fca-4af0-8ce8-9b55cf9bd6a2",
-      "FunctionType": "Graph",
-      "NodeType": "FunctionNode",
-      "Id": "8a8145a401bf441b9ebdcdd78fae7db4",
-      "Inputs": [
-        {
-          "Id": "4b415b434d694b10b35b66fc1972c563",
-          "Name": "Angulo",
-          "Description": "var[]..[]",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "9946e8882cbc47e3a38b258dc92f9c3e",
-          "Name": "Plano",
-          "Description": "Se refere ao plano criado com\na função SP_Locar_Plano\n\nvar[]..[]",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "de31312be93243daaa4f89a7bdc35380",
-          "Name": "Diedro",
-          "Description": "var[]..[]",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Outputs": [
-        {
-          "Id": "b3a040056f5c4eae93fb8f3ac5ae9fb5",
-          "Name": "Resultado",
-          "Description": "return value",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Replication": "Auto",
-      "Description": "Rotaciona o PPH do traçado"
-    },
-    {
-      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
-      "NodeType": "CodeBlockNode",
-      "Code": "Traçado;\nL1 = Line.ByStartPointEndPoint(Traçado[9][0], Traçado[9][2]);\nL2 = Line.ByStartPointEndPoint(Traçado[9][2], Traçado[9][4]);\nL3 = Line.ByStartPointEndPoint(Traçado[9][4], Traçado[9][0]);\nTraH = Traçado[4][0];\nTraV = Traçado[4][1];\nd1   = L1.Direction.Reverse();\nd2   = L2.Direction.Reverse();\nd3   = L3.Direction.Reverse();\nPL1  = Line.Project(TraH<1> , [L1 ,L2 ,L3] , [ d1 , d2 , d3]);",
-      "Id": "4a4aeb3158a4491d979781dad063a688",
-      "Inputs": [
-        {
-          "Id": "a8e633760a504589a277d24f1cc85be5",
-          "Name": "Traçado",
-          "Description": "Traçado",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Outputs": [
-        {
-          "Id": "b0495735d5504c31ae5ee924cdf5564e",
-          "Name": "",
-          "Description": "Value of expression at line 1",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "4c23b14a37fb4e86aaa6b671ec0cf3bb",
-          "Name": "",
-          "Description": "L1",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "34918b4b9e374f0580c247fc483007a2",
-          "Name": "",
-          "Description": "L2",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "fe6c25cd47744dff96d7c810bf38b016",
-          "Name": "",
-          "Description": "L3",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "626a4ec0b8dd4ce686ff484ffac1048d",
-          "Name": "",
-          "Description": "TraH",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "80b61b03a9e946609bcd44c0e5dce450",
-          "Name": "",
-          "Description": "TraV",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "fc3ff4ec26b14e56a08599eff8ee6391",
-          "Name": "",
-          "Description": "d1",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "315c3da315d0452ab46a6297bb0c51b1",
-          "Name": "",
-          "Description": "d2",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "d6c3938e69144d6080f0172658e6e682",
-          "Name": "",
-          "Description": "d3",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "0bf142bbeda04fb8b45ac248bb605183",
-          "Name": "",
-          "Description": "PL1",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Replication": "Disabled",
-      "Description": "Allows for DesignScript code to be authored directly"
-    },
-    {
-      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
-      "NodeType": "CodeBlockNode",
-      "Code": "angulo;\nProlon= 1000;\nDiedro;\nQr;\nLTE = Diedro[\"LTerra\"];\nPPR = Diedro[\"Diedro\"];\nPTS = Plano[\"Pontos\"];\nTRA = Plano[\"Traços\"];\nFIG = Plano[\"Figura\"];\nSUP = Plano[\"Superficie\"];\nRAI = Plano[\"Raios\"];\nCON = Plano[\"Contorno\"];\n\nPTR = List.Flatten(Plano[\"PtProjetado\"], 3);\nPRO = List.Flatten(Plano[\"Projeções\"]  , 3);\nCHA = List.Flatten(Plano[\"Chamadas\"]   , 3);\nTRAH = List.Flatten(TRA, 1)[0];\nTRAV = List.Flatten(TRA, 1)[1];\n\nLins = [\n        Line.ByStartPointEndPoint(PTS[0], PTS[1]),\n        Line.ByStartPointEndPoint(PTS[1], PTS[2]),\n        Line.ByStartPointEndPoint(PTS[2], PTS[0])\n      ];\n\ndiv1 = Line.PointAtParameter(Lins<1>, 0..1..(1/Qr));\nldiv = Line.ByStartPointEndPoint(div1, List.ShiftIndices(div1, 1));\nHoPtH =\nList.Flatten([\n  Line.ByStartPointEndPoint ( Line.Intersect(TRAH, Curve.ExtendStart(ldiv, Prolon)) ,ldiv.StartPoint ),\n  Line.ByStartPointEndPoint ( Line.Intersect(TRAH, Curve.ExtendEnd  (ldiv, Prolon)) ,ldiv.EndPoint   ),\n  Line.ByStartPointEndPoint ( Line.Intersect(TRAH, Curve.ExtendStart(Lins, Prolon)) ,ldiv.StartPoint ),\n  Line.ByStartPointEndPoint ( Line.Intersect(TRAH, Curve.ExtendEnd  (Lins, Prolon)) ,ldiv.EndPoint   )\n] , 2);\nHoPtV = List.Flatten([\n  Line.ByStartPointEndPoint ( Line.Intersect(TRAV, Curve.ExtendStart(ldiv, Prolon)) ,ldiv.StartPoint ),\n  Line.ByStartPointEndPoint ( Line.Intersect(TRAV, Curve.ExtendEnd  (ldiv, Prolon)) ,ldiv.EndPoint   ),\n  Line.ByStartPointEndPoint ( Line.Intersect(TRAV, Curve.ExtendStart(Lins, Prolon)) ,ldiv.StartPoint ),\n  Line.ByStartPointEndPoint ( Line.Intersect(TRAV, Curve.ExtendEnd  (Lins, Prolon)) ,ldiv.EndPoint   )\n] , 2);",
-      "Id": "196fd2e829254b58a8cc44b192c6f0e3",
-      "Inputs": [
-        {
-          "Id": "7908bed2fc6a426d97cd93ed78de94dd",
-          "Name": "angulo",
-          "Description": "angulo",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "2a3950843a2442bc8b3d077c663be460",
-          "Name": "Diedro",
-          "Description": "Diedro",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "c71c3c6883a142ae9de641e2bfb89c62",
-          "Name": "Qr",
-          "Description": "Qr",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "24b9ae3712fc49da8a5e206aece04594",
-          "Name": "Plano",
-          "Description": "Plano",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Outputs": [
-        {
-          "Id": "8b2db5675bc44e0d9324363158ae6738",
-          "Name": "",
-          "Description": "Value of expression at line 1",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "37c70d4d5ce841e7ac85c73f874908df",
-          "Name": "",
-          "Description": "Prolon",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "ad34a9694abe4e21b2eec8a5975c8f67",
-          "Name": "",
-          "Description": "Value of expression at line 3",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "5168e6b14b1d4624804ac780a0bacdc5",
-          "Name": "",
-          "Description": "Value of expression at line 4",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "ca3730ccad934cbfb09264453e41dd05",
-          "Name": "",
-          "Description": "LTE",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "1584a4c1adae4bb3889b68007100cc11",
-          "Name": "",
-          "Description": "PPR",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "ffb7141abd3f488fb83c794dd8ef1765",
-          "Name": "",
-          "Description": "PTS",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "c360b454e49948909499656c774281cf",
-          "Name": "",
-          "Description": "TRA",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "b8c3c8a74b2a4b5e9cb5ec62cbd71217",
-          "Name": "",
-          "Description": "FIG",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "7e1a78eb334c4e7dbabdf77908e50ceb",
-          "Name": "",
-          "Description": "SUP",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "870de4295be04b878b8afc5a42be1f19",
-          "Name": "",
-          "Description": "RAI",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "4981a8f1a4ab4921a3bd2f8ee413d393",
-          "Name": "",
-          "Description": "CON",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "02a3bfb51b794755afb204b8db590e49",
-          "Name": "",
-          "Description": "PTR",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "73a173f2b5084343bca1c8e0bfdec323",
-          "Name": "",
-          "Description": "PRO",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "a78880456aab4ffd90a818fc28e2370d",
-          "Name": "",
-          "Description": "CHA",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "88ead45f06c84e4f989d391da79bea9b",
-          "Name": "",
-          "Description": "TRAH",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "232aea99f4e84ed89df52b9527c4d8b0",
-          "Name": "",
-          "Description": "TRAV",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "5f1a7358a82348228c476b35543bd1c9",
-          "Name": "",
-          "Description": "Lins",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "5f08ea5207dc400d8800219538e7091b",
-          "Name": "",
-          "Description": "div1",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "8b403c69856948a5b03b151e5c281321",
-          "Name": "",
-          "Description": "ldiv",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "53893f2bd7da49b58ae0ccf8991c7099",
-          "Name": "",
-          "Description": "HoPtH",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "bce6ba60e17b4dcbb66716ab8e85fc35",
-          "Name": "",
-          "Description": "HoPtV",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Replication": "Disabled",
-      "Description": "Allows for DesignScript code to be authored directly"
-    },
-    {
-      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
-      "NodeType": "ExtensionNode",
-      "Id": "a874b0a15a3743ac9241620eab577ce9",
-      "Inputs": [
-        {
-          "Id": "27a2818358b344c098c098263cc5bbe4",
-          "Name": "",
-          "Description": "Node to evaluate.",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Outputs": [
-        {
-          "Id": "363089024d244a078b28b11ec4d6222c",
-          "Name": "",
-          "Description": "Watch contents.",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Replication": "Disabled",
-      "Description": "Visualize the output of node."
     },
     {
       "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
@@ -1348,42 +876,13 @@
       "Description": "Visualize the output of node."
     },
     {
-      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
-      "NodeType": "ExtensionNode",
-      "Id": "229b1bb08e8e46d69444cd4cbe65efec",
-      "Inputs": [
-        {
-          "Id": "a5f64286c752454baaf5c6445a575ece",
-          "Name": "",
-          "Description": "Node to evaluate.",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Outputs": [
-        {
-          "Id": "22bb2a6d32924af1ab458a43ef2ba54b",
-          "Name": "",
-          "Description": "Watch contents.",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Replication": "Disabled",
-      "Description": "Visualize the output of node."
-    },
-    {
       "ConcreteType": "CoreNodeModels.Input.DoubleSlider, CoreNodeModels",
       "NodeType": "NumberInputNode",
       "NumberType": "Double",
-      "MaximumValue": 100.0,
+      "MaximumValue": 150.0,
       "MinimumValue": 1.0,
       "StepValue": 1.0,
-      "InputValue": 70.0,
+      "InputValue": 126.0,
       "Id": "a40efbef7e9248538cdcc93adb23932c",
       "Inputs": [],
       "Outputs": [
@@ -1401,42 +900,13 @@
       "Description": "A slider that produces numeric values."
     },
     {
-      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
-      "NodeType": "ExtensionNode",
-      "Id": "32c97d66994845999495087be58f3d6e",
-      "Inputs": [
-        {
-          "Id": "4a49ce160ff647f68739fb15ceaaa270",
-          "Name": "",
-          "Description": "Node to evaluate.",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Outputs": [
-        {
-          "Id": "13e3d21cf7e547508db54014e2198a84",
-          "Name": "",
-          "Description": "Watch contents.",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Replication": "Disabled",
-      "Description": "Visualize the output of node."
-    },
-    {
       "ConcreteType": "CoreNodeModels.Input.DoubleSlider, CoreNodeModels",
       "NodeType": "NumberInputNode",
       "NumberType": "Double",
       "MaximumValue": 25.0,
       "MinimumValue": 1.0,
       "StepValue": 1.0,
-      "InputValue": 24.0,
+      "InputValue": 2.0,
       "Id": "5167a08db9104a2a9526e2fd515e6642",
       "Inputs": [],
       "Outputs": [
@@ -1452,6 +922,142 @@
       ],
       "Replication": "Disabled",
       "Description": "A slider that produces numeric values."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function, DynamoCore",
+      "FunctionSignature": "194543bf-9fca-4af0-8ce8-9b55cf9bd6a2",
+      "FunctionType": "Graph",
+      "NodeType": "FunctionNode",
+      "Id": "4e271158478d4cad8083a600c2d9ea34",
+      "Inputs": [
+        {
+          "Id": "cfc365bfd7084d30afd7bff2965eb550",
+          "Name": "Angulo",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "a22af185060447b5b0e0ea28c15f275f",
+          "Name": "Plano",
+          "Description": "Se refere ao plano criado com\na função SP_Locar_Plano\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "90c344f3937a45f09aed0accf7f3f136",
+          "Name": "Diedro",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "dc20eb5f06ab4c0f905907f5c2d56d3b",
+          "Name": "Resultado",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Rotaciona o PPH do traçado"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "e8d628246ac54af1986b030f10fb39d7",
+      "Inputs": [
+        {
+          "Id": "e6ee3d99abd5400798fbef81390e41d9",
+          "Name": "",
+          "Description": "Node to evaluate.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "867908a2631b4237a243190117ae10f2",
+          "Name": "",
+          "Description": "Watch contents.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the output of node."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function, DynamoCore",
+      "FunctionSignature": "4b1c139c-8d79-4294-9754-3127eedbce2e",
+      "FunctionType": "Graph",
+      "NodeType": "FunctionNode",
+      "Id": "1274de6a1f4242d38a5be2e0ed06b262",
+      "Inputs": [
+        {
+          "Id": "ebf6a479dce146b5905dd8fd9128f6c4",
+          "Name": "Angulo",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "f34c81c32f6c46c883cb6b6726ebb86a",
+          "Name": "Plano",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "0cf8f03bdd0b429a84d70b1d1618f03a",
+          "Name": "Quantidade_de_Retas",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "e72114e1bad840d7865dd716aa6b26ed",
+          "Name": "Diedro",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "05e5921ff0044ee381d4e6385960eb5d",
+          "Name": "Resultado",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Se uma reta pertence a um plano os traços da reta são pontos que pertencem aos traços do plano"
     }
   ],
   "Connectors": [
@@ -1477,8 +1083,13 @@
     },
     {
       "Start": "af6a5759b9484bf6bb67bf707eb8b280",
-      "End": "7908bed2fc6a426d97cd93ed78de94dd",
-      "Id": "81e412524e1a439da37c2c3b07ee49ee"
+      "End": "ebf6a479dce146b5905dd8fd9128f6c4",
+      "Id": "21586a5182f14ee09a9b9164d7526193"
+    },
+    {
+      "Start": "af6a5759b9484bf6bb67bf707eb8b280",
+      "End": "cfc365bfd7084d30afd7bff2965eb550",
+      "Id": "7b9cee5c73af41be836e9b7311721b88"
     },
     {
       "Start": "debc6fc666944fc38ea49d91a06ccb4e",
@@ -1542,38 +1153,28 @@
     },
     {
       "Start": "ade2bd3868304dbe88a6e282f1afbc3b",
-      "End": "24b9ae3712fc49da8a5e206aece04594",
-      "Id": "65962aedb37947c0ae9cb068ce8e49d2"
+      "End": "f34c81c32f6c46c883cb6b6726ebb86a",
+      "Id": "fb7ce48353e24e498c8149880931f401"
+    },
+    {
+      "Start": "ade2bd3868304dbe88a6e282f1afbc3b",
+      "End": "a22af185060447b5b0e0ea28c15f275f",
+      "Id": "d2b6d14508e14877823e88d1e28af12f"
     },
     {
       "Start": "e416f23542034f00a204c573ddd25e69",
-      "End": "2a3950843a2442bc8b3d077c663be460",
-      "Id": "6137178688ea4a378f2ecff24105c562"
+      "End": "e72114e1bad840d7865dd716aa6b26ed",
+      "Id": "36f98a5860b9426c9ee8e9d2ddf043d1"
+    },
+    {
+      "Start": "e416f23542034f00a204c573ddd25e69",
+      "End": "90c344f3937a45f09aed0accf7f3f136",
+      "Id": "705acefe4064476aa010dff182edece7"
     },
     {
       "Start": "d09c9b80fafa4eb1b6a4b839e937c874",
       "End": "0d3f919e9af84c7594447256f9cdb35e",
       "Id": "b2d8038efd194a588ff183a9cf75151a"
-    },
-    {
-      "Start": "b3a040056f5c4eae93fb8f3ac5ae9fb5",
-      "End": "a8e633760a504589a277d24f1cc85be5",
-      "Id": "2de810bdf7a24a99b27f57851a8d3ae6"
-    },
-    {
-      "Start": "626a4ec0b8dd4ce686ff484ffac1048d",
-      "End": "810ad4368b8d42e791f6613d8e4417db",
-      "Id": "e82696172ba94b558e841d4b9627acb1"
-    },
-    {
-      "Start": "5f08ea5207dc400d8800219538e7091b",
-      "End": "27a2818358b344c098c098263cc5bbe4",
-      "Id": "4ca65434d8924d80b981e80e61aee815"
-    },
-    {
-      "Start": "53893f2bd7da49b58ae0ccf8991c7099",
-      "End": "a5f64286c752454baaf5c6445a575ece",
-      "Id": "5cabc4d65ed14f2d8b05acc4d61a263b"
     },
     {
       "Start": "27d772b291064e2697c3a4965deb792b",
@@ -1582,15 +1183,16 @@
     },
     {
       "Start": "d9353ad1a32c437da60b05b00bcd7ba2",
-      "End": "c71c3c6883a142ae9de641e2bfb89c62",
-      "Id": "61f47997f25f4736ac46b83db818111a"
+      "End": "0cf8f03bdd0b429a84d70b1d1618f03a",
+      "Id": "05ad726b564645d08980fc03a9afeb2a"
     }
   ],
   "Dependencies": [
     "22f9ad02-fbd0-4600-a8fc-374dead17853",
     "6ce05f3b-9b7e-4783-a8fe-c6f227ce8f73",
     "70cc6a68-e4b5-4ece-9cfb-88ddb14b6664",
-    "194543bf-9fca-4af0-8ce8-9b55cf9bd6a2"
+    "194543bf-9fca-4af0-8ce8-9b55cf9bd6a2",
+    "4b1c139c-8d79-4294-9754-3127eedbce2e"
   ],
   "NodeLibraryDependencies": [
     {
@@ -1603,7 +1205,7 @@
         "8ada1c3881f84952a5f8b3171a3ca743",
         "78033573ceec4fde8048fbc8b4b78fff",
         "03fc56ddb9cb465f89117f8268377484",
-        "8a8145a401bf441b9ebdcdd78fae7db4"
+        "4e271158478d4cad8083a600c2d9ea34"
       ]
     }
   ],
@@ -1677,8 +1279,8 @@
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1478.7402073698036,
-        "Y": 1227.0359361490935
+        "X": 1469.3725408756525,
+        "Y": 1236.6184858485731
       },
       {
         "ShowGeometry": false,
@@ -1793,72 +1395,12 @@
       {
         "ShowGeometry": true,
         "Name": "Watch",
-        "Id": "2fc52d3a19a74322b062aabff9374d6b",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": true,
-        "Excluded": false,
-        "X": 2945.0777419488272,
-        "Y": 1361.517646320277
-      },
-      {
-        "ShowGeometry": true,
-        "Name": "SP_Rotaciona_PPH_Plano",
-        "Id": "8a8145a401bf441b9ebdcdd78fae7db4",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Excluded": false,
-        "X": 1949.7447417238473,
-        "Y": 849.34881947712984
-      },
-      {
-        "ShowGeometry": true,
-        "Name": "Code Block",
-        "Id": "4a4aeb3158a4491d979781dad063a688",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Excluded": false,
-        "X": 2971.8345887721784,
-        "Y": 1116.303315234429
-      },
-      {
-        "ShowGeometry": true,
-        "Name": "Teorema dos Traços - Homologia",
-        "Id": "196fd2e829254b58a8cc44b192c6f0e3",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Excluded": false,
-        "X": 2053.3794614404237,
-        "Y": 1327.5303380243959
-      },
-      {
-        "ShowGeometry": true,
-        "Name": "Watch",
-        "Id": "a874b0a15a3743ac9241620eab577ce9",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Excluded": false,
-        "X": 2850.1001195535978,
-        "Y": 1775.5611602766342
-      },
-      {
-        "ShowGeometry": true,
-        "Name": "Watch",
         "Id": "41a0f25600d644d7ab38ecd32ceb3e02",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
         "X": 2242.2095354925523,
         "Y": 1906.614410600886
-      },
-      {
-        "ShowGeometry": true,
-        "Name": "Watch",
-        "Id": "229b1bb08e8e46d69444cd4cbe65efec",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Excluded": false,
-        "X": 3022.5378010984018,
-        "Y": 1826.6584661785221
       },
       {
         "ShowGeometry": true,
@@ -1872,28 +1414,48 @@
       },
       {
         "ShowGeometry": true,
-        "Name": "Watch",
-        "Id": "32c97d66994845999495087be58f3d6e",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Excluded": false,
-        "X": 3069.3268694583116,
-        "Y": 1942.3163714190275
-      },
-      {
-        "ShowGeometry": true,
         "Name": "Qretas",
         "Id": "5167a08db9104a2a9526e2fd515e6642",
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1478.4216389470826,
-        "Y": 1290.2191494544948
+        "X": 1468.0031496378006,
+        "Y": 1298.0330164364498
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "SP_Rotaciona_PPH_Plano",
+        "Id": "4e271158478d4cad8083a600c2d9ea34",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1950.7762966457794,
+        "Y": 1400.2935133457815
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Watch",
+        "Id": "e8d628246ac54af1986b030f10fb39d7",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2866.5720425231143,
+        "Y": 1765.5457075836773
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Homologia_01",
+        "Id": "1274de6a1f4242d38a5be2e0ed06b262",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1952.6283434213174,
+        "Y": 1236.1220892298447
       }
     ],
     "Annotations": [],
-    "X": -1417.632618097829,
-    "Y": -1259.4208771069068,
-    "Zoom": 1.0922629683597245
+    "X": -1687.7643824066827,
+    "Y": -1401.7016883576509,
+    "Zoom": 1.1935277252569159
   }
 }
