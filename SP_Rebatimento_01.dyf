@@ -46,11 +46,11 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
       "NodeType": "CodeBlockNode",
-      "Code": "parang;\nQr;\nPlano;\nDiedro;\nLTE    = Diedro[\"LTerra\"    ];\nPPR    = Diedro[\"Diedro\"    ];\nPTS    = Plano [\"Pontos\"    ];\nTRA    = Plano [\"Traços\"    ];\nFIG    = Plano [\"Figura\"    ];\nSUP    = Plano [\"Superficie\"];\nRAI    = Plano [\"Raios\"     ];\nCON    = Plano [\"Contorno\"  ];\nPTR    = List.Flatten ( Plano[\"PtProjetado\"] , 3);\nPRO    = List.Flatten ( Plano[\"Projeções\"  ] , 3);\nCHA    = List.Flatten ( Plano[\"Chamadas\"   ] , 3);\nTRAH   = List.Flatten ( TRA , 1)[0];\nTRAV   = List.Flatten ( TRA , 1)[1];\n\nBaseZ  = Vector.ZAxis();\ndirh   = BaseZ.Reverse();\ndirv   = Vector.YAxis ( );\nNorm   = FIG.Normal;\n\nProjH   = [PTR[0], PTR[2], PTR[4]];\n//----------------------------------------------------------------\n//Inclinação do Plano\nangulo  = Vector.AngleWithVector    ( BaseZ , Norm ) * parang;\n//----------------------------------------------------------------\nLifig   = Surface.PerimeterCurves   ( SUP         );\nPtfig   = Line.PointAtParameter     ( Lifig<1> , 0..1..(1/Qr));\nLiPla   = Line.ByStartPointEndPoint ( Ptfig    , List.ShiftIndices (Ptfig , 1));\n//----------------------------------------------------------------\n// Cateto do triangulo de rebatimento (igual à Cota do ponto)\nCateto  = Line.ByStartPointDirectionLength   ( ProjH , eixo  ,  PTS.Z);\nPtCat1  = Cateto.EndPoint;\n//----------------------------------------------------------------\n//Direção da Homologia Afim (Ortogonal ao traço Horizontal)\n//----------------------------------------------------------------\ndirHom  = Line.ByStartPointDirectionLength   ( ProjH , eixoN , -PTS.Z*2);\nCentros = List.Flatten( Line.Intersect (TRAH<1> , dirHom), 1);\nHipoten = Line.ByStartPointEndPoint    ( Centros, PtCat1);\nArcos   = Arc.ByCenterPointStartPointSweepAngle ( Centros, PtCat1 , -angulo, BaseZ);\n\nHoPOH  = [ Line.Intersect ( TRAH<1> , Curve.ExtendStart ( LiPla , 1000)) ,\n           Line.Intersect ( TRAH<1> , Curve.ExtendEnd   ( LiPla , 1000)) ];\nHoPOV  = [ Line.Intersect ( TRAV<1> , Curve.ExtendStart ( LiPla , 1000)) ,\n           Line.Intersect ( TRAV<1> , Curve.ExtendEnd   ( LiPla , 1000)) ];\n\nHoLIH  = [ Line.ByStartPointEndPoint ( HoPOH[0] , LiPla.StartPoint ),\n           Line.ByStartPointEndPoint ( HoPOH[1] , LiPla.EndPoint   ) ];\nHoLIV  = [ Line.ByStartPointEndPoint ( HoPOV[0] , LiPla.StartPoint ),\n           Line.ByStartPointEndPoint ( HoPOV[1] , LiPla.EndPoint   ) ];\n\nProHP   = Point.Project ( HoPOH , PPR<1> , dirh );\nProHL   = Line.Project  ( HoLIH , PPR<1> , dirh );\nProHLi  = Line.Project  ( LiPla , PPR<1> , dirh );\nProVP   = Point.Project ( HoPOV , PPR<1> , dirv );\nProVL   = Line.Project  ( HoLIV , PPR<1> , dirv );\n//----------------------------------------------------------------\n//O traço horizontal do Plano é o Eixo de Homologia do rebatimento\n//----------------------------------------------------------------\neixo      = TRAH.Direction;\neixoN     = Vector.Rotate(eixo, BaseZ, 90);\norig      = Line.PointAtParameter ( TRAH      , 0.0 );\nPthomo3D  = List.Flatten          ( [ HoPOH , Ptfig             ] , 10  );\nLihomo3D  = List.Flatten          ( [ Lifig , LiPla, HoLIH , SUP] , 10  );\n\nPthomo2D  = Pthomo3D!=null?Geometry.Rotate( Pthomo3D , orig, eixo, angulo):null;\nLihomo2D  = Lihomo3D!=null?Geometry.Rotate( Lihomo3D , orig, eixo, angulo):null;\n\n[ProHLi, HoPOH, HoPOV, HoLIH, HoLIV, Ptfig, LiPla, Pthomo3D, Lihomo3D, Pthomo2D,\nLihomo2D, Cateto, dirHom, Centros, Arcos, Hipoten];",
+      "Code": "parang;\nQr;\nPlano;\nDiedro;\nLTE    = Diedro[\"LTerra\"    ];\nPPR    = Diedro[\"Diedro\"    ];\nPTS    = Plano [\"Pontos\"    ];\nTRA    = Plano [\"Traços\"    ];\nFIG    = Plano [\"Figura\"    ];\nSUP    = Plano [\"Superficie\"];\nRAI    = Plano [\"Raios\"     ];\nCON    = Plano [\"Contorno\"  ];\nPTR    = List.Flatten ( Plano[\"PtProjetado\"] , 3);\nPRO    = List.Flatten ( Plano[\"Projeções\"  ] , 3);\nCHA    = List.Flatten ( Plano[\"Chamadas\"   ] , 3);\nTRAH   = List.Flatten ( TRA , 1)[0];\nTRAV   = List.Flatten ( TRA , 1)[1];\n\nBaseZ  = Vector.ZAxis ( );\ndirh   = BaseZ.Reverse( );\ndirv   = Vector.YAxis ( );\nNorm   = FIG.Normal;\n\nProjH   = [PTR[0], PTR[2], PTR[4]];\n//----------------------------------------------------------------\n//Inclinação do Plano\nangulo  = Vector.AngleWithVector    ( BaseZ , Norm ) * parang;\n//----------------------------------------------------------------\nLifig   = Surface.PerimeterCurves   ( SUP         );\nPtfig   = Line.PointAtParameter     ( Lifig<1> , 0..1..(1/Qr));\nLiPla   = Line.ByStartPointEndPoint ( Ptfig    , List.ShiftIndices (Ptfig , 1));\n//----------------------------------------------------------------\n// Cateto do triangulo de rebatimento (igual à Cota do ponto)\n// Direção da Homologia Afim (Ortogonal ao traço Horizontal)\n//----------------------------------------------------------------\n\nPtCat  = Catet?Catet.EndPoint:null;\ndirHo  = List.Flatten(Line.ByStartPointDirectionLength   (ProjH<1>, eixoN<2>, PTS.Z *[5,-5]),5);\nCenRe  = List.Flatten(Line.Intersect                     (TRAH    , dirHo<1>)               ,5);\nCatet  = parang==1? Line.ByStartPointDirectionLength     (ProjH   , eixo  , PTS.Z):null;\nHipot  = parang==1? Line.ByStartPointEndPoint            (CenRe   , PtCat        ):null;\nArc2D  = parang==1? Arc.ByCenterPointStartPointEndPoint  (CenRe   , PtReb , PtCat):null;\nArc3D  = parang<1 ? Arc.ByCenterPointStartPointSweepAngle(CenRe   , PTS   , angulo, eixo):null;\n\nHoPOH  = [ Line.Intersect ( TRAH<1> , Curve.ExtendStart ( LiPla , 1000)) ,\n           Line.Intersect ( TRAH<1> , Curve.ExtendEnd   ( LiPla , 1000)) ];\nHoPOV  = [ Line.Intersect ( TRAV<1> , Curve.ExtendStart ( LiPla , 1000)) ,\n           Line.Intersect ( TRAV<1> , Curve.ExtendEnd   ( LiPla , 1000)) ];\n\nHoLIH  = [ Line.ByStartPointEndPoint ( HoPOH[0] , LiPla.StartPoint ),\n           Line.ByStartPointEndPoint ( HoPOH[1] , LiPla.EndPoint   ) ];\nHoLIV  = [ Line.ByStartPointEndPoint ( HoPOV[0] , LiPla.StartPoint ),\n           Line.ByStartPointEndPoint ( HoPOV[1] , LiPla.EndPoint   ) ];\n\nProHP   = Point.Project ( HoPOH , PPR<1> , dirh );\nProHL   = Line.Project  ( HoLIH , PPR<1> , dirh );\nProHLi  = Line.Project  ( LiPla , PPR<1> , dirh );\nProVP   = Point.Project ( HoPOV , PPR<1> , dirv );\nProVL   = Line.Project  ( HoLIV , PPR<1> , dirv );\n//----------------------------------------------------------------\n//O traço horizontal do Plano é o Eixo de Homologia do rebatimento\n//----------------------------------------------------------------\neixo      = TRAH.Direction;\neixoN     = Vector.Rotate         ( eixo, BaseZ, 90);\norig      = Line.PointAtParameter ( TRAH       , 0.0 );\nPthomo3D  = List.Flatten          ( HoPOH      , 10  );\nPtfigu3D  = List.Flatten          ( Ptfig      , 10  );\nLihomo3D  = List.Flatten          ( [ Lifig , LiPla, HoLIH , SUP] , 10  );\n\nPthomo2D  = Pthomo3D!=null?Geometry.Rotate( Pthomo3D , orig, eixo, angulo):null;\nPtfigu2D  = Ptfigu3D!=null?Geometry.Rotate( Ptfigu3D , orig, eixo, angulo):null;\nLihomo2D  = Lihomo3D!=null?Geometry.Rotate( Lihomo3D , orig, eixo, angulo):null;\n\nPtReb     = List.UniqueItems ( Ptfigu2D );\n\n[ProHLi, HoPOH, HoPOV, HoLIH, HoLIV, Ptfig, LiPla, Pthomo3D, Lihomo3D, Pthomo2D,\nLihomo2D, Catet, PtCat, dirHo, CenRe, Hipot, Arc2D, Arc3D];",
       "Id": "859bb49b51424d1a8d5932f5a76ef535",
       "Inputs": [
         {
-          "Id": "e3470d9ad1f64cfcb883ce95008017a9",
+          "Id": "c56123fd896a4c45ba89ff4692c1a1fb",
           "Name": "parang",
           "Description": "parang",
           "UsingDefaultValue": false,
@@ -59,7 +59,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "18636c010a4643628b110e22cd899744",
+          "Id": "aed333f97b384873bea7ee2cd0c620cc",
           "Name": "Qr",
           "Description": "Qr",
           "UsingDefaultValue": false,
@@ -68,7 +68,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "2866bc6b57774202b65f205cd76f248e",
+          "Id": "3c3e70824cd74811a8ce76da5adc726c",
           "Name": "Plano",
           "Description": "Plano",
           "UsingDefaultValue": false,
@@ -77,7 +77,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "835a6f0d63374356ae0d819a8e1e1f07",
+          "Id": "4b906f8817204667b0f7197b11a474a7",
           "Name": "Diedro",
           "Description": "Diedro",
           "UsingDefaultValue": false,
@@ -88,7 +88,7 @@
       ],
       "Outputs": [
         {
-          "Id": "2e1a2e2311944345a7a5bbd58af42e53",
+          "Id": "c7b6c83f8b394b249fef2a7e7e54c7ea",
           "Name": "",
           "Description": "Value of expression at line 1",
           "UsingDefaultValue": false,
@@ -97,7 +97,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "75fc100bb07440ecbe2cdb2cfa4b4658",
+          "Id": "f5ff6c93d6374f0f96cf44c99cf7677d",
           "Name": "",
           "Description": "Value of expression at line 2",
           "UsingDefaultValue": false,
@@ -106,7 +106,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "759113d0642d485e9e64d27273e1840a",
+          "Id": "4f7802da0d334dc4bd3d450e1005c876",
           "Name": "",
           "Description": "Value of expression at line 3",
           "UsingDefaultValue": false,
@@ -115,7 +115,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "ff28bd141ee94213a5ea9a1c4fcb6c61",
+          "Id": "be51c6eee95b48c29111290e246b8e63",
           "Name": "",
           "Description": "Value of expression at line 4",
           "UsingDefaultValue": false,
@@ -124,7 +124,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "ddf6e4ad1bd64fe0bf81a3659378050a",
+          "Id": "e3b41ff3f2b9481d94f816617159eb2d",
           "Name": "",
           "Description": "LTE",
           "UsingDefaultValue": false,
@@ -133,7 +133,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "df401ea47f7149c6924eb5b5409be233",
+          "Id": "4fc540de41584a548441f5b13743470b",
           "Name": "",
           "Description": "PPR",
           "UsingDefaultValue": false,
@@ -142,7 +142,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "ba4468a8183f43a3ae622734ebe183fd",
+          "Id": "689e1ad43b0940d3a7be905fd79986c3",
           "Name": "",
           "Description": "PTS",
           "UsingDefaultValue": false,
@@ -151,7 +151,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "352cd29cdb364d9fb6e6b6cf8d9d8d08",
+          "Id": "f1059eabfb874228bbfd51729200a459",
           "Name": "",
           "Description": "TRA",
           "UsingDefaultValue": false,
@@ -160,7 +160,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "5763a211db9540a3af20db7880d4c4a5",
+          "Id": "8206622d47ea41099f38ad78b23c9f1f",
           "Name": "",
           "Description": "FIG",
           "UsingDefaultValue": false,
@@ -169,7 +169,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "2168ffead66443cdac19e4755e9f06f4",
+          "Id": "f2dc76cc0b5a4f24badd71915842bf2e",
           "Name": "",
           "Description": "SUP",
           "UsingDefaultValue": false,
@@ -178,7 +178,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "6c9e86bdc60f49c8bdd94c7a5fb0b599",
+          "Id": "9dd77b2337924fbd9edd1c961a61910c",
           "Name": "",
           "Description": "RAI",
           "UsingDefaultValue": false,
@@ -187,7 +187,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "e612eabee43a427db5c477a37fdde141",
+          "Id": "f18b4597be584e8ab6325b2b7ce83f37",
           "Name": "",
           "Description": "CON",
           "UsingDefaultValue": false,
@@ -196,7 +196,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "728575a4d23d463f872ef0cbb802f951",
+          "Id": "f4b1545b2e2e4b6580e823b85bf2bf72",
           "Name": "",
           "Description": "PTR",
           "UsingDefaultValue": false,
@@ -205,7 +205,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "d4402606fb4a4ba69e53aec495f0e6b5",
+          "Id": "2cf19f6fbfe94e51a005376d0758d714",
           "Name": "",
           "Description": "PRO",
           "UsingDefaultValue": false,
@@ -214,7 +214,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "1bb1d0e51f9f440d93537a3af64775ee",
+          "Id": "6c5b40b9ce514488bfa4d6d0e7de179f",
           "Name": "",
           "Description": "CHA",
           "UsingDefaultValue": false,
@@ -223,7 +223,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "ec759eda9b384b79bb61df59cc9f1d10",
+          "Id": "37d615f4b4d244e8b24b85e393a29951",
           "Name": "",
           "Description": "TRAH",
           "UsingDefaultValue": false,
@@ -232,7 +232,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "a8843d35bf964332ba795691f43d2d90",
+          "Id": "1ae539ccee0942dcbc5f15d5df71208a",
           "Name": "",
           "Description": "TRAV",
           "UsingDefaultValue": false,
@@ -241,7 +241,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "5e72755675c54563a8616cdb36652e36",
+          "Id": "6d810da1005c4cb192af4e7c3f4aae49",
           "Name": "",
           "Description": "BaseZ",
           "UsingDefaultValue": false,
@@ -250,7 +250,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "a3a7ab687e454b64a94ea5f6caca837a",
+          "Id": "3353d58767fc4fac8f7633b44d166e60",
           "Name": "",
           "Description": "dirh",
           "UsingDefaultValue": false,
@@ -259,7 +259,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "42d616273924406daef5b0904ef99b3c",
+          "Id": "6ffbf4f595b24c96959e6d8997f15d57",
           "Name": "",
           "Description": "dirv",
           "UsingDefaultValue": false,
@@ -268,7 +268,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "87ec645a1c614187b2e29f66073cd934",
+          "Id": "df096819da964187946143304113dcd5",
           "Name": "",
           "Description": "Norm",
           "UsingDefaultValue": false,
@@ -277,7 +277,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "63b43f3bd20d45c792607ac9c932663d",
+          "Id": "be270535cf354d50a5b9c9bdd3f0a0a7",
           "Name": "",
           "Description": "ProjH",
           "UsingDefaultValue": false,
@@ -286,7 +286,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "28d03c0a70c242d79805ccb48cc69f20",
+          "Id": "0bac7e5b801a423eb4666c047281a71f",
           "Name": "",
           "Description": "angulo",
           "UsingDefaultValue": false,
@@ -295,7 +295,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "91b3f4ae2508440bbabc9697a50aca2c",
+          "Id": "8ce31d870fe540f5863fbba3e767c6a1",
           "Name": "",
           "Description": "Lifig",
           "UsingDefaultValue": false,
@@ -304,7 +304,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "be8b29335a4f4e2ba76f2cfe3715274d",
+          "Id": "9e10d6ae716544c6aee69e84be7456e1",
           "Name": "",
           "Description": "Ptfig",
           "UsingDefaultValue": false,
@@ -313,7 +313,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "773f304c47e147eebcb16e1aabec91c4",
+          "Id": "f151db88d7be4071ac34cc0009ca600b",
           "Name": "",
           "Description": "LiPla",
           "UsingDefaultValue": false,
@@ -322,61 +322,70 @@
           "KeepListStructure": false
         },
         {
-          "Id": "30fde33269614e349b7b7b27e1efd3e8",
+          "Id": "8f87421ae708489d9b8d37e1fcc1c39b",
           "Name": "",
-          "Description": "Cateto",
+          "Description": "PtCat",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
           "KeepListStructure": false
         },
         {
-          "Id": "e452fd450a354df39ec46b7227beb340",
+          "Id": "ab3db0058d474719bc99c5be9ded194d",
           "Name": "",
-          "Description": "PtCat1",
+          "Description": "dirHo",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
           "KeepListStructure": false
         },
         {
-          "Id": "3e64e7db87194c229a32e2b1d87023bf",
+          "Id": "2399a56b069546a7aa22f9ddc60f6028",
           "Name": "",
-          "Description": "dirHom",
+          "Description": "CenRe",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
           "KeepListStructure": false
         },
         {
-          "Id": "2dc776fd123e44db8cd08b6248f5b697",
+          "Id": "bcafe885941f45308fcda332e78c8cb0",
           "Name": "",
-          "Description": "Centros",
+          "Description": "Catet",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
           "KeepListStructure": false
         },
         {
-          "Id": "7351a88dc8334d048eb01ee9059b553e",
+          "Id": "979b5e5e2dfd40ee9cebcc65871772b4",
           "Name": "",
-          "Description": "Hipoten",
+          "Description": "Hipot",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
           "KeepListStructure": false
         },
         {
-          "Id": "f313f2da47fa4c62838b90dd4a8ac236",
+          "Id": "186995310b3b4f2fb941cfdbcaa623ce",
           "Name": "",
-          "Description": "Arcos",
+          "Description": "Arc2D",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
           "KeepListStructure": false
         },
         {
-          "Id": "0ac0815afd7f4e74ba26f84f26c7fe7e",
+          "Id": "928fd692d74f4e2682001834d23db575",
+          "Name": "",
+          "Description": "Arc3D",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "94ff25435bea4cc79695c25ef22dec58",
           "Name": "",
           "Description": "HoPOH",
           "UsingDefaultValue": false,
@@ -385,7 +394,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "800d79c9bd59486bba7b7d6e6980f5dd",
+          "Id": "046a05d68f764684a208fcd9354bd6b9",
           "Name": "",
           "Description": "HoPOV",
           "UsingDefaultValue": false,
@@ -394,7 +403,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "20abb2cab5d04dc89381677db0cbe7cd",
+          "Id": "5cc5d96f214d4caaa1da00237fdd54a6",
           "Name": "",
           "Description": "HoLIH",
           "UsingDefaultValue": false,
@@ -403,7 +412,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "840aa81a841d44a9b78199b79ac91eaf",
+          "Id": "644193544b5f4a93bc23df4b3c087491",
           "Name": "",
           "Description": "HoLIV",
           "UsingDefaultValue": false,
@@ -412,7 +421,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "095a376965e44b3399fdd3cfd9b4406c",
+          "Id": "da4241e5830d4053a370c3005f591394",
           "Name": "",
           "Description": "ProHP",
           "UsingDefaultValue": false,
@@ -421,7 +430,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "2a8a6e965a3d4445b4264d4ae0a125b9",
+          "Id": "8fd3a933a31b43adae771670f89dd16c",
           "Name": "",
           "Description": "ProHL",
           "UsingDefaultValue": false,
@@ -430,7 +439,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "d305074ae0c44ebfb2cfde8a2213972a",
+          "Id": "3697becde18d4043a5ba50f0efae0268",
           "Name": "",
           "Description": "ProHLi",
           "UsingDefaultValue": false,
@@ -439,7 +448,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "81ec1127c1ac48efb4ad67a0822fa025",
+          "Id": "e46777cb806e4235b566d8cd4b716c29",
           "Name": "",
           "Description": "ProVP",
           "UsingDefaultValue": false,
@@ -448,7 +457,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "5545dea6903349938848d3d604179236",
+          "Id": "d8bccba22bc34f668bbbf959e1c1a68f",
           "Name": "",
           "Description": "ProVL",
           "UsingDefaultValue": false,
@@ -457,7 +466,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "d2008f81f63f4721bec767ac4bb52321",
+          "Id": "106e46fa21344c898f9019f2691354e1",
           "Name": "",
           "Description": "eixo",
           "UsingDefaultValue": false,
@@ -466,7 +475,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "4d2d264ed3c74a589a617b025d92393b",
+          "Id": "c23ce4db49af4303b062245921f5ca7c",
           "Name": "",
           "Description": "eixoN",
           "UsingDefaultValue": false,
@@ -475,7 +484,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "6097abc01f7f40aab0e42fb04e1c197f",
+          "Id": "964bee2c9a504233af1111c10c1eba64",
           "Name": "",
           "Description": "orig",
           "UsingDefaultValue": false,
@@ -484,7 +493,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "38ba5d7dae8a4f89b16d691681ff9a37",
+          "Id": "bbfb70162a69405e9a4cfb56884f5218",
           "Name": "",
           "Description": "Pthomo3D",
           "UsingDefaultValue": false,
@@ -493,7 +502,16 @@
           "KeepListStructure": false
         },
         {
-          "Id": "6436c196b765457c95da1a51aaac7956",
+          "Id": "7b46ab1753254a5b9c8477fc01add76a",
+          "Name": "",
+          "Description": "Ptfigu3D",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "65974752b4cb4fe4ae88996ebfe3c94d",
           "Name": "",
           "Description": "Lihomo3D",
           "UsingDefaultValue": false,
@@ -502,7 +520,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "ee5c75ded7934ceea7167b0693c89463",
+          "Id": "44e1451596844523a518e0f95d811bf7",
           "Name": "",
           "Description": "Pthomo2D",
           "UsingDefaultValue": false,
@@ -511,7 +529,16 @@
           "KeepListStructure": false
         },
         {
-          "Id": "f14bb5e0678a42d4ae8d8b7d761c1a4a",
+          "Id": "f9b96d6f1c074a9f94b72a60c2824e14",
+          "Name": "",
+          "Description": "Ptfigu2D",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "4267d1097f2f4de9bdb0f059590a7c42",
           "Name": "",
           "Description": "Lihomo2D",
           "UsingDefaultValue": false,
@@ -520,9 +547,18 @@
           "KeepListStructure": false
         },
         {
-          "Id": "c0e3246b9667413aa87cd948fc72f51a",
+          "Id": "4bbfd325bfa14929873816b7d1ac191e",
           "Name": "",
-          "Description": "Value of expression at line 71",
+          "Description": "PtReb",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "5bf3c7e4f5d64d4bac64cde50f97b8b9",
+          "Name": "",
+          "Description": "Value of expression at line 76",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -660,29 +696,29 @@
   ],
   "Connectors": [
     {
-      "Start": "c0e3246b9667413aa87cd948fc72f51a",
+      "Start": "5bf3c7e4f5d64d4bac64cde50f97b8b9",
       "End": "c8243049a7c841b999b2ea6bc07ef4d5",
-      "Id": "a9158a000cee48fda53a96b7947c3dc2"
+      "Id": "7668eaf59cbf4405946f456997267eb5"
     },
     {
       "Start": "9a015f86b76f484c8d06ec7da0d6e0fa",
-      "End": "e3470d9ad1f64cfcb883ce95008017a9",
-      "Id": "f373cdb9f38647e6be25a46633b8feec"
+      "End": "c56123fd896a4c45ba89ff4692c1a1fb",
+      "Id": "cd0d67c9d3d74a098e1ec428ec73858d"
     },
     {
       "Start": "85821330762d4c169781ad41f544a7f9",
-      "End": "18636c010a4643628b110e22cd899744",
-      "Id": "1aa9fc6597a34c038a01dcaec3db8177"
+      "End": "aed333f97b384873bea7ee2cd0c620cc",
+      "Id": "973451a88ce149c2aaa3bf0f7f62795a"
     },
     {
       "Start": "a373d0f7d4a0417abf8ce6b338409ecb",
-      "End": "2866bc6b57774202b65f205cd76f248e",
-      "Id": "0e6b166526eb45db9e8d1f269bd65465"
+      "End": "3c3e70824cd74811a8ce76da5adc726c",
+      "Id": "7639abe402ca4204bb6375f506fda5b7"
     },
     {
       "Start": "69ba9d2eba5c4a4492446aeb08782613",
-      "End": "835a6f0d63374356ae0d819a8e1e1f07",
-      "Id": "f618b8dbccf547e9b9952abba2c35244"
+      "End": "4b906f8817204667b0f7197b11a474a7",
+      "Id": "9487d530004d4614bb424790e2a48024"
     }
   ],
   "Dependencies": [],
@@ -717,8 +753,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 212.5278808989442,
-        "Y": 191.2639404494721
+        "X": 324.81021772833765,
+        "Y": 185.719133692465
       },
       {
         "ShowGeometry": true,
@@ -727,8 +763,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1010.1122567268658,
-        "Y": 1416.0005033937396
+        "X": 1210.4650759305969,
+        "Y": 1376.816968118952
       },
       {
         "ShowGeometry": true,
@@ -772,8 +808,8 @@
       }
     ],
     "Annotations": [],
-    "X": 183.691222007838,
-    "Y": 17.475617433291575,
-    "Zoom": 0.32886429486928914
+    "X": 218.40656852349608,
+    "Y": 89.506587324314282,
+    "Zoom": 0.24200947031542175
   }
 }
