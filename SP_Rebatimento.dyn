@@ -96,7 +96,7 @@
       "Id": "eb3570a00ba4456fab8eac90801b0a6f",
       "Name": "abscissa",
       "Type": "number",
-      "Value": "0.4",
+      "Value": "1.8",
       "MaximumValue": 5.0,
       "MinimumValue": 0.0,
       "StepValue": 0.1,
@@ -107,7 +107,7 @@
       "Id": "47b7d58b678047ea99264a7c0348cc9a",
       "Name": "Afastamento",
       "Type": "number",
-      "Value": "4.8",
+      "Value": "2.8",
       "MaximumValue": 5.0,
       "MinimumValue": 0.0,
       "StepValue": 0.1,
@@ -118,7 +118,7 @@
       "Id": "4f81ef2624f2478fa36061e074ed315e",
       "Name": "cota",
       "Type": "number",
-      "Value": "0.7",
+      "Value": "3.6",
       "MaximumValue": 5.0,
       "MinimumValue": 0.0,
       "StepValue": 0.1,
@@ -129,10 +129,10 @@
       "Id": "d22d3767cc384cbcb1e50a82e262579a",
       "Name": "Parâmetro de rotaçao",
       "Type": "number",
-      "Value": "0.35",
+      "Value": "0.575",
       "MaximumValue": 1.0,
       "MinimumValue": 0.0,
-      "StepValue": 0.05,
+      "StepValue": 0.005,
       "NumberType": "Double",
       "Description": "A slider that produces numeric values."
     },
@@ -140,7 +140,7 @@
       "Id": "bde8b42c92474de5b109d86178d341c0",
       "Name": "abscissa",
       "Type": "number",
-      "Value": "4.8",
+      "Value": "0.4",
       "MaximumValue": 5.0,
       "MinimumValue": 0.0,
       "StepValue": 0.1,
@@ -162,7 +162,7 @@
       "Id": "00eed9897bb347ff853aecf2d09aec8a",
       "Name": "cota",
       "Type": "number",
-      "Value": "3.6",
+      "Value": "2.5",
       "MaximumValue": 5.0,
       "MinimumValue": 0.0,
       "StepValue": 0.1,
@@ -195,7 +195,7 @@
       "Id": "310fe06d4fc64dd1b4c120f4e88a76bc",
       "Name": "cota",
       "Type": "number",
-      "Value": "2.1",
+      "Value": "0.9",
       "MaximumValue": 5.0,
       "MinimumValue": 0.0,
       "StepValue": 0.1,
@@ -206,7 +206,7 @@
       "Id": "ade5235721554a4da515b9d5b981c914",
       "Name": "Tamanho construção",
       "Type": "number",
-      "Value": "9",
+      "Value": "3",
       "MaximumValue": 25.0,
       "MinimumValue": 1.0,
       "StepValue": 1.0,
@@ -217,7 +217,7 @@
       "Id": "a40efbef7e9248538cdcc93adb23932c",
       "Name": "Deslocar",
       "Type": "number",
-      "Value": "82",
+      "Value": "112",
       "MaximumValue": 150.0,
       "MinimumValue": 1.0,
       "StepValue": 1.0,
@@ -228,7 +228,7 @@
       "Id": "5167a08db9104a2a9526e2fd515e6642",
       "Name": "Qretas",
       "Type": "number",
-      "Value": "1",
+      "Value": "25",
       "MaximumValue": 25.0,
       "MinimumValue": 1.0,
       "StepValue": 1.0,
@@ -245,7 +245,7 @@
       "MaximumValue": 5.0,
       "MinimumValue": 0.0,
       "StepValue": 0.1,
-      "InputValue": 0.4,
+      "InputValue": 1.8,
       "Id": "eb3570a00ba4456fab8eac90801b0a6f",
       "Inputs": [],
       "Outputs": [
@@ -269,7 +269,7 @@
       "MaximumValue": 5.0,
       "MinimumValue": 0.0,
       "StepValue": 0.1,
-      "InputValue": 4.8000000000000007,
+      "InputValue": 2.8,
       "Id": "47b7d58b678047ea99264a7c0348cc9a",
       "Inputs": [],
       "Outputs": [
@@ -293,7 +293,7 @@
       "MaximumValue": 5.0,
       "MinimumValue": 0.0,
       "StepValue": 0.1,
-      "InputValue": 0.7,
+      "InputValue": 3.6,
       "Id": "4f81ef2624f2478fa36061e074ed315e",
       "Inputs": [],
       "Outputs": [
@@ -392,8 +392,8 @@
       "NumberType": "Double",
       "MaximumValue": 1.0,
       "MinimumValue": 0.0,
-      "StepValue": 0.05,
-      "InputValue": 0.35000000000000003,
+      "StepValue": 0.005,
+      "InputValue": 0.57500000000000007,
       "Id": "d22d3767cc384cbcb1e50a82e262579a",
       "Inputs": [],
       "Outputs": [
@@ -457,7 +457,7 @@
       "MaximumValue": 5.0,
       "MinimumValue": 0.0,
       "StepValue": 0.1,
-      "InputValue": 4.8000000000000007,
+      "InputValue": 0.4,
       "Id": "bde8b42c92474de5b109d86178d341c0",
       "Inputs": [],
       "Outputs": [
@@ -481,7 +481,7 @@
       "MaximumValue": 5.0,
       "MinimumValue": 0.0,
       "StepValue": 0.1,
-      "InputValue": 2.8000000000000003,
+      "InputValue": 2.8,
       "Id": "97bb6acb9c3943f5a4c0c495be54fcd6",
       "Inputs": [],
       "Outputs": [
@@ -505,7 +505,7 @@
       "MaximumValue": 5.0,
       "MinimumValue": 0.0,
       "StepValue": 0.1,
-      "InputValue": 3.6,
+      "InputValue": 2.5,
       "Id": "00eed9897bb347ff853aecf2d09aec8a",
       "Inputs": [],
       "Outputs": [
@@ -729,7 +729,7 @@
       "MaximumValue": 5.0,
       "MinimumValue": 0.0,
       "StepValue": 0.1,
-      "InputValue": 2.1,
+      "InputValue": 0.9,
       "Id": "310fe06d4fc64dd1b4c120f4e88a76bc",
       "Inputs": [],
       "Outputs": [
@@ -829,7 +829,7 @@
       "MaximumValue": 25.0,
       "MinimumValue": 1.0,
       "StepValue": 1.0,
-      "InputValue": 9.0,
+      "InputValue": 3.0,
       "Id": "ade5235721554a4da515b9d5b981c914",
       "Inputs": [],
       "Outputs": [
@@ -853,7 +853,7 @@
       "MaximumValue": 150.0,
       "MinimumValue": 1.0,
       "StepValue": 1.0,
-      "InputValue": 82.0,
+      "InputValue": 112.0,
       "Id": "a40efbef7e9248538cdcc93adb23932c",
       "Inputs": [],
       "Outputs": [
@@ -877,7 +877,7 @@
       "MaximumValue": 25.0,
       "MinimumValue": 1.0,
       "StepValue": 1.0,
-      "InputValue": 1.0,
+      "InputValue": 25.0,
       "Id": "5167a08db9104a2a9526e2fd515e6642",
       "Inputs": [],
       "Outputs": [
@@ -972,7 +972,7 @@
     {
       "Start": "b4cf58a44300428080739ef9cc679ba8",
       "End": "4df62eda92fd4095a2ea47b4949879ba",
-      "Id": "97304bc4a620491eb01cf88588bc0e78"
+      "Id": "5f3ab256188f40d3bfd11b6ff2882904"
     },
     {
       "Start": "af6a5759b9484bf6bb67bf707eb8b280",
@@ -1012,17 +1012,17 @@
     {
       "Start": "8a4b69d0cdfd4d6389d5b798688198ea",
       "End": "9ff4b83074d44e9bab765494d5f95481",
-      "Id": "e3e7d078771e47a3871986406b1def99"
+      "Id": "d7f3224fa63c4bcb964a43534f0344e3"
     },
     {
       "Start": "53ac6b450d7f4dc8afcf2bd39d8abb42",
       "End": "7f411de1eec549b18983e200b3e64406",
-      "Id": "a5a429687b09464d889b97f094814c60"
+      "Id": "da7229ef37de47e68fa50a6e718c9f0d"
     },
     {
       "Start": "592ceba8b24247b7a6ec0cc2a9096e28",
       "End": "00c80d9ae173410dba6724fd75623213",
-      "Id": "5338092b81d84acdabff197fb7285265"
+      "Id": "f43742a5e9ac4594b5de06c14f4c3857"
     },
     {
       "Start": "2d311f4a80ff4080ab377661f1257187",
@@ -1042,12 +1042,12 @@
     {
       "Start": "ade2bd3868304dbe88a6e282f1afbc3b",
       "End": "61934710cd65479989b73a889c3a27d4",
-      "Id": "621484a731344bedaa3307a35d0a7668"
+      "Id": "563bcf11b73d4a5fb354dcdb2068a0c8"
     },
     {
       "Start": "e416f23542034f00a204c573ddd25e69",
       "End": "b1a361ebbd7e4444991d91cf1e2a66e4",
-      "Id": "12998c93ebb0429bbce71c365cbffd3d"
+      "Id": "9cb1de73c6574dd289cd50496ca928b2"
     },
     {
       "Start": "d09c9b80fafa4eb1b6a4b839e937c874",
@@ -1062,7 +1062,7 @@
     {
       "Start": "d9353ad1a32c437da60b05b00bcd7ba2",
       "End": "48c07a170f4140e9a2fd74a4e7055696",
-      "Id": "7bb3726b3d42470c971e0baa276237e8"
+      "Id": "fc63bd86db6842ea927322db50cf1f60"
     }
   ],
   "Dependencies": [
@@ -1123,8 +1123,8 @@
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 559.40339110430841,
-        "Y": 1197.6034411583139
+        "X": -132.67678553715939,
+        "Y": 1197.131332694601
       },
       {
         "ShowGeometry": true,
@@ -1133,8 +1133,8 @@
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 559.40339110430841,
-        "Y": 1256.0593395390013
+        "X": -132.67678553715939,
+        "Y": 1251.8041584082137
       },
       {
         "ShowGeometry": true,
@@ -1143,8 +1143,8 @@
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 559.40339110430841,
-        "Y": 1310.8176110361226
+        "X": -132.67678553715939,
+        "Y": 1305.123323588313
       },
       {
         "ShowGeometry": false,
@@ -1153,8 +1153,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 962.28203278716842,
-        "Y": 1205.9895373561137
+        "X": 838.94655995470976,
+        "Y": 1200.7753627466338
       },
       {
         "ShowGeometry": true,
@@ -1163,8 +1163,8 @@
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1424.7256956335157,
-        "Y": 1243.6580219892921
+        "X": 1491.6406272696747,
+        "Y": 1322.6185394956656
       },
       {
         "ShowGeometry": false,
@@ -1173,8 +1173,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 637.40016029338244,
-        "Y": 1058.3546972262959
+        "X": 506.95208259780895,
+        "Y": 1380.7853862067179
       },
       {
         "ShowGeometry": true,
@@ -1183,8 +1183,8 @@
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 560.71340691622936,
-        "Y": 1386.8587164166872
+        "X": -137.69993865598042,
+        "Y": 1458.8142958584306
       },
       {
         "ShowGeometry": true,
@@ -1193,8 +1193,8 @@
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 560.71340691622936,
-        "Y": 1440.7837354797889
+        "X": -137.69993865598042,
+        "Y": 1512.7393149215322
       },
       {
         "ShowGeometry": true,
@@ -1203,8 +1203,8 @@
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 560.71340691622936,
-        "Y": 1495.2853337671809
+        "X": -137.69993865598042,
+        "Y": 1567.2409132089242
       },
       {
         "ShowGeometry": false,
@@ -1213,8 +1213,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 961.55126165534512,
-        "Y": 1388.4454770875202
+        "X": 839.96707904392429,
+        "Y": 1465.6066057875148
       },
       {
         "ShowGeometry": false,
@@ -1223,8 +1223,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 961.28229339838549,
-        "Y": 1568.7745519641062
+        "X": 839.08733777719544,
+        "Y": 1726.3375495801172
       },
       {
         "ShowGeometry": true,
@@ -1233,8 +1233,8 @@
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 560.71340691622936,
-        "Y": 1567.1039741384095
+        "X": -134.13252738688118,
+        "Y": 1715.7621899334197
       },
       {
         "ShowGeometry": true,
@@ -1243,8 +1243,8 @@
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 560.71340691622936,
-        "Y": 1622.9636620152123
+        "X": -134.13252738688118,
+        "Y": 1769.8348781080354
       },
       {
         "ShowGeometry": true,
@@ -1253,8 +1253,8 @@
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 560.71340691622936,
-        "Y": 1678.8233498920154
+        "X": -134.13252738688118,
+        "Y": 1823.9696217457304
       },
       {
         "ShowGeometry": true,
@@ -1263,8 +1263,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1423.1738320150455,
-        "Y": 1363.0227886446348
+        "X": 1489.3503546974569,
+        "Y": 1441.1852209670019
       },
       {
         "ShowGeometry": true,
@@ -1273,8 +1273,8 @@
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 317.1502415147695,
-        "Y": 1051.67742211099
+        "X": 176.1269658695611,
+        "Y": 1366.8724493363986
       },
       {
         "ShowGeometry": true,
@@ -1283,8 +1283,8 @@
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 316.23063866688784,
-        "Y": 1111.2227992747432
+        "X": 175.20736302167938,
+        "Y": 1421.2726538764157
       },
       {
         "ShowGeometry": true,
@@ -1293,8 +1293,8 @@
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1424.1600518430155,
-        "Y": 1298.5165728874151
+        "X": 1491.0749834791745,
+        "Y": 1377.4770903937886
       },
       {
         "ShowGeometry": true,
@@ -1303,13 +1303,13 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1779.8251195152279,
-        "Y": 1289.088882047547
+        "X": 1852.21576790915,
+        "Y": 1351.5209535120889
       }
     ],
     "Annotations": [],
-    "X": -144.57284046229051,
-    "Y": -982.08330656005683,
-    "Zoom": 1.1752098386659371
+    "X": 113.80398590930099,
+    "Y": -355.03353532195797,
+    "Zoom": 0.34089917223882704
   }
 }
