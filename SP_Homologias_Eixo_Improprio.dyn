@@ -1,0 +1,468 @@
+{
+  "Uuid": "662914b9-2adb-4502-9e72-6832d4661511",
+  "IsCustomNode": false,
+  "Description": null,
+  "Name": "SP_Homologias_Eixo_Improprio",
+  "ElementResolver": {
+    "ResolutionMap": {
+      "Line": {
+        "Key": "Autodesk.DesignScript.Geometry.Line",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Point": {
+        "Key": "Autodesk.DesignScript.Geometry.Point",
+        "Value": "ProtoGeometry.dll"
+      },
+      "List": {
+        "Key": "List",
+        "Value": "BuiltIn.ds"
+      },
+      "Vector": {
+        "Key": "Autodesk.DesignScript.Geometry.Vector",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Math": {
+        "Key": "DSCore.Math",
+        "Value": "DSCoreNodes.dll"
+      },
+      "Surface": {
+        "Key": "Autodesk.DesignScript.Geometry.Surface",
+        "Value": "ProtoGeometry.dll"
+      },
+      "PolyCurve": {
+        "Key": "Autodesk.DesignScript.Geometry.PolyCurve",
+        "Value": "ProtoGeometry.dll"
+      }
+    }
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "CoreNodeModels.Input.DoubleSlider, CoreNodeModels",
+      "NodeType": "NumberInputNode",
+      "NumberType": "Double",
+      "MaximumValue": 10.0,
+      "MinimumValue": 0.0,
+      "StepValue": 0.05,
+      "InputValue": 1.75,
+      "Id": "c4db32441e1d4904bba86955ced43bd1",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "e786087cb140440ba9997528dea46df1",
+          "Name": "",
+          "Description": "Double",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A slider that produces numeric values."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.DoubleSlider, CoreNodeModels",
+      "NodeType": "NumberInputNode",
+      "NumberType": "Double",
+      "MaximumValue": 50.0,
+      "MinimumValue": 0.0,
+      "StepValue": 0.1,
+      "InputValue": 50.0,
+      "Id": "e1f2e52a30f442dfb0998edea4452c4c",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "06c7442778cc4ef38e3725fd490b634c",
+          "Name": "",
+          "Description": "Double",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A slider that produces numeric values."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.DoubleSlider, CoreNodeModels",
+      "NodeType": "NumberInputNode",
+      "NumberType": "Double",
+      "MaximumValue": 10.0,
+      "MinimumValue": 0.0,
+      "StepValue": 0.25,
+      "InputValue": 3.0,
+      "Id": "ddba7ebe49294c16892b25ae4fad0a43",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "9931e67b42404a07b639f5733227e48c",
+          "Name": "",
+          "Description": "Double",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A slider that produces numeric values."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.BoolSelector, CoreNodeModels",
+      "NodeType": "BooleanInputNode",
+      "InputValue": false,
+      "Id": "037db50040ab45ac8ca0170c3c8e8450",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "eb845cb6aa964ab98b5872aff134fe26",
+          "Name": "",
+          "Description": "Boolean",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Selection between a true and false."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.BoolSelector, CoreNodeModels",
+      "NodeType": "BooleanInputNode",
+      "InputValue": true,
+      "Id": "c0a5a83a65f14334aa6e71ef5c2691e5",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "257ecb9699da48c89e07166bc8137c6e",
+          "Name": "",
+          "Description": "Boolean",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Selection between a true and false."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.DoubleSlider, CoreNodeModels",
+      "NodeType": "NumberInputNode",
+      "NumberType": "Double",
+      "MaximumValue": 10.0,
+      "MinimumValue": 0.0,
+      "StepValue": 0.05,
+      "InputValue": 2.85,
+      "Id": "aa5d2cdd97cb4f52a54e107430deb2ee",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "030aa705cec542a1b6db8bc0700af5bc",
+          "Name": "",
+          "Description": "Double",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A slider that produces numeric values."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.DoubleSlider, CoreNodeModels",
+      "NodeType": "NumberInputNode",
+      "NumberType": "Double",
+      "MaximumValue": 1.0,
+      "MinimumValue": 0.0,
+      "StepValue": 0.05,
+      "InputValue": 0.75,
+      "Id": "2f4554bd95ad47a187c592ef4f961623",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "04d25ac3067447468daec8f5db8351ae",
+          "Name": "",
+          "Description": "Double",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A slider that produces numeric values."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function, DynamoCore",
+      "FunctionSignature": "d3a93516-dd72-4ecc-83b9-6495f0ca6800",
+      "FunctionType": "Graph",
+      "NodeType": "FunctionNode",
+      "Id": "0c3e9f4cdbe84e00928846e245d6bf9a",
+      "Inputs": [
+        {
+          "Id": "8e218932a1f44cc6ac8ca0ca22efbfd8",
+          "Name": "Desloca_Vértice_da_Homologia",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "77d997b4d5d64f75b0b6539b2a281c59",
+          "Name": "Desloca_Ponto_A",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "29a20444679146cfb47163ef0429d016",
+          "Name": "Desloca_Ponto_B",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "72c16aaa402745eb8fb268159368b400",
+          "Name": "Desloca_Ponto_C",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "1d7cc2f74b0541288726737bd9251209",
+          "Name": "Fator_Escalar",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "7130af1eca644912b0d247ed64b1a159",
+          "Name": "Homotetia_Inversa",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "51e2f9f941024680949f18e1bfecafb0",
+          "Name": "Translação",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "bcb12fc4acd84a318c4ddcd998154155",
+          "Name": "Resultado da Homologia",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Constroi Homotetias e Translações"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "e786087cb140440ba9997528dea46df1",
+      "End": "29a20444679146cfb47163ef0429d016",
+      "Id": "622965bd7a6d411a9253e3a494baeea6"
+    },
+    {
+      "Start": "06c7442778cc4ef38e3725fd490b634c",
+      "End": "8e218932a1f44cc6ac8ca0ca22efbfd8",
+      "Id": "a2e55d7cf0f54ee494814ec6dd449df1"
+    },
+    {
+      "Start": "9931e67b42404a07b639f5733227e48c",
+      "End": "77d997b4d5d64f75b0b6539b2a281c59",
+      "Id": "feb67b2358ea4e329e6293a3e88b9c79"
+    },
+    {
+      "Start": "eb845cb6aa964ab98b5872aff134fe26",
+      "End": "7130af1eca644912b0d247ed64b1a159",
+      "Id": "8f7197762e02464d8db893723e3a9570"
+    },
+    {
+      "Start": "257ecb9699da48c89e07166bc8137c6e",
+      "End": "51e2f9f941024680949f18e1bfecafb0",
+      "Id": "35110948757a4eb8a22d6bf818d83556"
+    },
+    {
+      "Start": "030aa705cec542a1b6db8bc0700af5bc",
+      "End": "72c16aaa402745eb8fb268159368b400",
+      "Id": "f9e4cca006a047378f769aa5a9ac80f3"
+    },
+    {
+      "Start": "04d25ac3067447468daec8f5db8351ae",
+      "End": "1d7cc2f74b0541288726737bd9251209",
+      "Id": "0e551dcddf5c41869f7a1a0589de7238"
+    }
+  ],
+  "Dependencies": [
+    "d3a93516-dd72-4ecc-83b9-6495f0ca6800"
+  ],
+  "NodeLibraryDependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 0.01,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.3.0.5885",
+      "RunType": "Automatic",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -13.488992197152047,
+      "EyeY": 200.6964621818305,
+      "EyeZ": 90.958113043162015,
+      "LookX": -15.103264801072825,
+      "LookY": -187.76680681531832,
+      "LookZ": -110.10458337292485,
+      "UpX": -0.099390526543173513,
+      "UpY": 0.6819983600624997,
+      "UpZ": -0.72456867176654538
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "Ajuste ponto B",
+        "Id": "c4db32441e1d4904bba86955ced43bd1",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -329.31051277319955,
+        "Y": 589.45307111534976
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Desloca Vértice da Homologia",
+        "Id": "e1f2e52a30f442dfb0998edea4452c4c",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -329.31051277319955,
+        "Y": 474.0094977979806
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Desloca Ponto A",
+        "Id": "ddba7ebe49294c16892b25ae4fad0a43",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -329.31051277319955,
+        "Y": 531.73128445666521
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Homotetia Inversa",
+        "Id": "037db50040ab45ac8ca0170c3c8e8450",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -161.97085539815896,
+        "Y": 767.98652582336945
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Translação",
+        "Id": "c0a5a83a65f14334aa6e71ef5c2691e5",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -162.76416880358363,
+        "Y": 826.38433728505663
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Ajuste ponto C",
+        "Id": "aa5d2cdd97cb4f52a54e107430deb2ee",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -329.31051277319955,
+        "Y": 647.17485777403431
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "i",
+        "Id": "2f4554bd95ad47a187c592ef4f961623",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -327.612820400834,
+        "Y": 707.86825088002411
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Homologia_Eixo_Improprio",
+        "Id": "0c3e9f4cdbe84e00928846e245d6bf9a",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 56.616795668091072,
+        "Y": 557.46029625492361
+      }
+    ],
+    "Annotations": [
+      {
+        "Id": "9d576f52ff84427e89257c5b0309cfa4",
+        "Title": " ",
+        "Nodes": [
+          "f2dd54aa07154d65a9fe533239d70ac3"
+        ],
+        "Left": 64.9866190361401,
+        "Top": 391.66297943609487,
+        "Width": 209.0,
+        "Height": 146.0,
+        "FontSize": 14.0,
+        "InitialTop": 421.66297943609487,
+        "InitialHeight": 140.0,
+        "TextblockHeight": 20.0,
+        "Background": "#FFE8F7AD"
+      },
+      {
+        "Id": "f2dd54aa07154d65a9fe533239d70ac3",
+        "Title": "Homologias de Eixo Impróprio\r\ne Vértice Próprio e Impróprio\r\n__________________________________\r\nHomotetia Direta e Inversa\r\nTranslações\r\n",
+        "Nodes": [],
+        "Left": 74.9866190361401,
+        "Top": 421.66297943609487,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      }
+    ],
+    "X": 517.28195869225988,
+    "Y": -250.57153269367836,
+    "Zoom": 1.0313471870592905
+  }
+}

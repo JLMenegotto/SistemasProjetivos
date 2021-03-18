@@ -1,0 +1,858 @@
+{
+  "Uuid": "2c28e822-e3bc-4430-ba51-38b579feb626",
+  "IsCustomNode": true,
+  "Category": "Sistemas_Projetivos",
+  "Description": "Constroi Homologia com Eixo",
+  "Name": "Homologias_Com_Eixo",
+  "ElementResolver": {
+    "ResolutionMap": {
+      "Line": {
+        "Key": "Autodesk.DesignScript.Geometry.Line",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Point": {
+        "Key": "Autodesk.DesignScript.Geometry.Point",
+        "Value": "ProtoGeometry.dll"
+      },
+      "List": {
+        "Key": "List",
+        "Value": "BuiltIn.ds"
+      },
+      "Vector": {
+        "Key": "Autodesk.DesignScript.Geometry.Vector",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Math": {
+        "Key": "DSCore.Math",
+        "Value": "DSCoreNodes.dll"
+      },
+      "Surface": {
+        "Key": "Autodesk.DesignScript.Geometry.Surface",
+        "Value": "ProtoGeometry.dll"
+      },
+      "PolyCurve": {
+        "Key": "Autodesk.DesignScript.Geometry.PolyCurve",
+        "Value": "ProtoGeometry.dll"
+      }
+    }
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "TE;\nDV;\ni;\nj;\nm;\nafim;\nreba;\nsime;\n\nPR      = Point.ByCoordinates             ( -TE ,  0 , 0   );\nPS      = Line.PointAtParameter           ( Eix ,  j       );\nPT      = Point.ByCoordinates             ( TE  ,  0 , 0   );\nEix     = Line.ByStartPointEndPoint       ( PR  , PT       );\nVer     = Point.ByCoordinates             (  0  , DV , 0   );\nV1      = Vector.ByCoordinates            (  5  , m  , 0   );\nr1      = Line.ByStartPointDirectionLength( PR  , V1 , TE/2);\nr2      = Line.ByStartPointEndPoint       ( PT  , PA       );\nr3      = Line.ByStartPointEndPoint       ( PS  , PA       );\nr4      = Line.ByStartPointEndPoint       ( PT  , PB       );\nPA      = Line.PointAtParameter           ( r1  , 1        );\nPB      = Line.PointAtParameter           ( r1  , i        );\nPC      = List.Flatten ( Line.Intersect   ( r3  , r4)  ,  1)[0];\n\nproprio = Line.ByStartPointEndPoint       ( PA  , Ver      );\ndirecao = proprio.Direction;\nortogon = Vector.YAxis     ( );\ndista   = Point.DistanceTo ( pABC , Point.Project ( pABC , Eix, ortogon ))*2;\n\nrVABC   = (afim && sime) ? Line.ByStartPointDirectionLength (pABC, ortogon , dista ):\n          (afim && reba) ? Line.ByStartPointDirectionLength (pABC, ortogon , DV    ):\n           afim          ? Line.ByStartPointDirectionLength (pABC, direcao , DV    ):\n                           Line.ByStartPointEndPoint        (pABC, Ver );\n\npABC  =              [PA , PB , PC ];\npABCh = List.Flatten([PHa, PHb, PHc] , 1);\n\nPHa   = Line.PointAtParameter         ( rVABC[0] , sime ? 1:0.3);\nPHb   = List.Flatten ( Line.Intersect ( rVABC[1] , Hl1 ) , 1)[0];\nPHc   = List.Flatten ( Line.Intersect ( rVABC[2] , Hl3 ) , 1)[0];\nHl1   = Line.ByStartPointEndPoint     ( PR  , PHa  );\nHl2   = Line.ByStartPointEndPoint     ( PS  , PHa  );\nHl3   = Line.ByStartPointEndPoint     ( PT  , PHb  );\n\nHomologas = Surface.ByPerimeterPoints ( [pABC , pABCh] );\n[Eix, Ver ,PR,PS,PT, pABC, pABCh , rVABC, Homologas, [r1,r2,r3,r4] , [PHa, PHb, PHc] , [Hl1, Hl2, Hl3]];",
+      "Id": "a5ed923a692c4788b3a0c4c9c9d19df2",
+      "Inputs": [
+        {
+          "Id": "d68674f8abfe46a69b6552f7a1f66b5a",
+          "Name": "TE",
+          "Description": "TE",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "a1ce1318b878496fad4efa6416f5e296",
+          "Name": "DV",
+          "Description": "DV",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "893b8679f3a84138b1b3c4aa0220e16a",
+          "Name": "i",
+          "Description": "i",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "1f4874e5f39b469a992668004ee85d51",
+          "Name": "j",
+          "Description": "j",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "abd57d3bb4fc488599b87a15853b79b1",
+          "Name": "m",
+          "Description": "m",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "240fc2b838c84f5eb71b62af92750a54",
+          "Name": "afim",
+          "Description": "afim",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "ef23dc27e381436f813f378d7cf709d6",
+          "Name": "reba",
+          "Description": "reba",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "0633525088314cb699cc012b21df938c",
+          "Name": "sime",
+          "Description": "sime",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "de2b0bf7d436475d8f8f5d29157bbacb",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "cbab9a487d4e4a9b967180fd20822b95",
+          "Name": "",
+          "Description": "Value of expression at line 2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "e7ac1658e8f64530886d40e01ac519ac",
+          "Name": "",
+          "Description": "Value of expression at line 3",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "effcb7dfc6114644b6387dc6332ce60c",
+          "Name": "",
+          "Description": "Value of expression at line 4",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "5b8c001b23a44f53ba06cb1454404b61",
+          "Name": "",
+          "Description": "Value of expression at line 5",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "cc220f797d2a46eab323ed3f40ffadeb",
+          "Name": "",
+          "Description": "Value of expression at line 6",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "8d2998631d574de2803e2d264c0b0eb7",
+          "Name": "",
+          "Description": "Value of expression at line 7",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "1f48e5138b2947fcb93de4ba82bf406c",
+          "Name": "",
+          "Description": "Value of expression at line 8",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "3f7059eef473484ebbd8ab0952f63b3d",
+          "Name": "",
+          "Description": "PR",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "fc6bdf8a03dc4d1f912287f0beb4a48f",
+          "Name": "",
+          "Description": "PS",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "be6aa2505ad7415ca64432d71e3272f8",
+          "Name": "",
+          "Description": "PT",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "9178d9a39eae49609f0c23db1afd0ae0",
+          "Name": "",
+          "Description": "Eix",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "63c64af5a5f4421681cf8c989d21908a",
+          "Name": "",
+          "Description": "Ver",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "4b750d0a9cb74acd9d2514e24dbf7ea8",
+          "Name": "",
+          "Description": "V1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "22ebf246507d445b80b49c1e47d89ec0",
+          "Name": "",
+          "Description": "r1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "3df17a626dee4fb2986d7ffdd3424112",
+          "Name": "",
+          "Description": "r2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "4059fd69f7484cb1a77c0f4726c506e6",
+          "Name": "",
+          "Description": "r3",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "282a0a0bd0554078bba94cc1e3f4a6cd",
+          "Name": "",
+          "Description": "r4",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "f93c825ce7f74e4bb6d3a02bab006afc",
+          "Name": "",
+          "Description": "PA",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "96c69d92754a48a2a4804088bf7c43f3",
+          "Name": "",
+          "Description": "PB",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "5a86dfcbcc364ac1b1731dcb98811452",
+          "Name": "",
+          "Description": "PC",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "7564a70df104486eb4fba6828653424e",
+          "Name": "",
+          "Description": "proprio",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "c14ea8009fd44e27b1e8423b0c55cfb6",
+          "Name": "",
+          "Description": "direcao",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "e3e3e0f90d774a3f871b40fc93ca50ad",
+          "Name": "",
+          "Description": "ortogon",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "86913a1f4b654cdda955fabd6d0a754b",
+          "Name": "",
+          "Description": "dista",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "8e173c2f5be842f4aca745cc86d9b2da",
+          "Name": "",
+          "Description": "rVABC",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "9c587cd5509a4deba267374969524408",
+          "Name": "",
+          "Description": "pABC",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "2833d9c1311141cb828396784175782d",
+          "Name": "",
+          "Description": "pABCh",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "ba210959061647e3b94b7cfc90237042",
+          "Name": "",
+          "Description": "PHa",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "d6d61384ce2143598dd3616f8c1eec2d",
+          "Name": "",
+          "Description": "PHb",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "f6c82bbdc0a44ad2ac84ebbfaffbe143",
+          "Name": "",
+          "Description": "PHc",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "2d8deec3deae4e7592585a2ccf727bb6",
+          "Name": "",
+          "Description": "Hl1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "8b538cb68e454d61bb82fe3e7ced8774",
+          "Name": "",
+          "Description": "Hl2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "7d324409ca324eb3b277d9cca51a64c3",
+          "Name": "",
+          "Description": "Hl3",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "fc324c368ff144ce925fc2ad7c7ef02b",
+          "Name": "",
+          "Description": "Homologas",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "a738200ad5564c5f81b6092ef447bbf1",
+          "Name": "",
+          "Description": "Value of expression at line 45",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Output, DynamoCore",
+      "NodeType": "OutputNode",
+      "ElementResolver": null,
+      "Symbol": "Resultado_Homologia",
+      "Id": "41c8386c9b9c48ab86aed3496d49c9ba",
+      "Inputs": [
+        {
+          "Id": "cbde17b918e645b3a8dd3250a7087c4d",
+          "Name": "",
+          "Description": "",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "A function output, use with custom nodes"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "Ajusta_Eixo",
+        "TypeName": "var",
+        "TypeRank": -1,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "aeb61cd330f74e178a64c1187bc6edb8",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "c6304bb10299435296beae8b5def97b0",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "Desloca_Vértice",
+        "TypeName": "var",
+        "TypeRank": -1,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "369ac578c34d41f7a97e2344bb439c2c",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "4e61fcab954941ad8c45f839f8c6f1e7",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "Ajusta_Ponto_B",
+        "TypeName": "var",
+        "TypeRank": -1,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "ddf265bc9e024c149994c40e99796cc2",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "a155131dde0b466fbf293c0263215187",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "Ajusta_Ponto_S_no_Eixo",
+        "TypeName": "var",
+        "TypeRank": -1,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "b000ccfb793c43a7ba04f3d2603c5552",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "7628035a09a640ad9346c324822ae942",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "Desloca_Ponto_A",
+        "TypeName": "var",
+        "TypeRank": -1,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "b6313fd8f3c44dcf851709ee2fa2f2c3",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "b630aab163c44e1685cd8f19d46ce2ba",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "Homologia_Afim",
+        "TypeName": "var",
+        "TypeRank": -1,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "c2d3da3caf4c4e79b3cbc3ba51abeb80",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "e11a8fb8b03a40bdbe55d394607c7d32",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "Rebatimentos",
+        "TypeName": "var",
+        "TypeRank": -1,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "96a830748fb542ed9babe011dedf5942",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "b613bd80af0249838583c2dc5f15cb0c",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "Simetrias_Axiais",
+        "TypeName": "var",
+        "TypeRank": -1,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "a0cb21da7a334f489cdaa95ad6d44746",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "308c4dbe578244eb98a799463dba8b89",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "a738200ad5564c5f81b6092ef447bbf1",
+      "End": "cbde17b918e645b3a8dd3250a7087c4d",
+      "Id": "24a77775b0744e8c828659461fdcf779"
+    },
+    {
+      "Start": "c6304bb10299435296beae8b5def97b0",
+      "End": "d68674f8abfe46a69b6552f7a1f66b5a",
+      "Id": "4daf68afdbf34958bfa8826ef5cc60a7"
+    },
+    {
+      "Start": "4e61fcab954941ad8c45f839f8c6f1e7",
+      "End": "a1ce1318b878496fad4efa6416f5e296",
+      "Id": "367102c4f6594f1384c1336b1451764a"
+    },
+    {
+      "Start": "a155131dde0b466fbf293c0263215187",
+      "End": "893b8679f3a84138b1b3c4aa0220e16a",
+      "Id": "bf81bf37a99d4f6a9bd49f18205b3a9e"
+    },
+    {
+      "Start": "7628035a09a640ad9346c324822ae942",
+      "End": "1f4874e5f39b469a992668004ee85d51",
+      "Id": "5141c62559344ebc89279f635b1ddf8d"
+    },
+    {
+      "Start": "b630aab163c44e1685cd8f19d46ce2ba",
+      "End": "abd57d3bb4fc488599b87a15853b79b1",
+      "Id": "800d4a4336bf400dafe14cc4f990237f"
+    },
+    {
+      "Start": "e11a8fb8b03a40bdbe55d394607c7d32",
+      "End": "240fc2b838c84f5eb71b62af92750a54",
+      "Id": "99f5db53d35544b592d5a824b0b208d3"
+    },
+    {
+      "Start": "b613bd80af0249838583c2dc5f15cb0c",
+      "End": "ef23dc27e381436f813f378d7cf709d6",
+      "Id": "a8e88b558c76405aad4ae0b19f674d9d"
+    },
+    {
+      "Start": "308c4dbe578244eb98a799463dba8b89",
+      "End": "0633525088314cb699cc012b21df938c",
+      "Id": "45d0e21ce5f2466f801b237654c4af2d"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": false,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.3.0.5885",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -44.106790657049885,
+      "EyeY": 24.04417779075715,
+      "EyeZ": 19.850906860194435,
+      "LookX": 7.3566768465239605,
+      "LookY": -7.9697332504009708,
+      "LookZ": -35.55727142486581,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "Construção das Homologias com Eixo Próprio e Vértice Próprio e Impróprio.",
+        "Id": "a5ed923a692c4788b3a0c4c9c9d19df2",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 710.16674167469364,
+        "Y": 178.18241957440549
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Homologia",
+        "Id": "41c8386c9b9c48ab86aed3496d49c9ba",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1503.44536180395,
+        "Y": 949.07065583472524
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Input",
+        "Id": "aeb61cd330f74e178a64c1187bc6edb8",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 465.87577545537192,
+        "Y": 30.97754126927623
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Input",
+        "Id": "369ac578c34d41f7a97e2344bb439c2c",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 432.87577545537192,
+        "Y": 90.35213361408637
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Input",
+        "Id": "ddf265bc9e024c149994c40e99796cc2",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 441.87577545537192,
+        "Y": 149.72672595889651
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Input",
+        "Id": "b000ccfb793c43a7ba04f3d2603c5552",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 375.87577545537192,
+        "Y": 209.10131830370665
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Input",
+        "Id": "b6313fd8f3c44dcf851709ee2fa2f2c3",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 432.87577545537192,
+        "Y": 268.47591064851679
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Input",
+        "Id": "c2d3da3caf4c4e79b3cbc3ba51abeb80",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 441.87577545537192,
+        "Y": 327.85050299332693
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Input",
+        "Id": "96a830748fb542ed9babe011dedf5942",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 457.87577545537192,
+        "Y": 387.22509533813707
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Input",
+        "Id": "a0cb21da7a334f489cdaa95ad6d44746",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 424.87577545537192,
+        "Y": 446.59968768294721
+      }
+    ],
+    "Annotations": [],
+    "X": -858.47435733590976,
+    "Y": -477.37329475380557,
+    "Zoom": 1.1251713388307081
+  }
+}

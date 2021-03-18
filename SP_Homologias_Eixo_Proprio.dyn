@@ -1,0 +1,536 @@
+{
+  "Uuid": "662914b9-2adb-4502-9e72-6832d4661511",
+  "IsCustomNode": false,
+  "Description": null,
+  "Name": "SP_Homologias_Eixo_Proprio",
+  "ElementResolver": {
+    "ResolutionMap": {
+      "Line": {
+        "Key": "Autodesk.DesignScript.Geometry.Line",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Point": {
+        "Key": "Autodesk.DesignScript.Geometry.Point",
+        "Value": "ProtoGeometry.dll"
+      },
+      "List": {
+        "Key": "List",
+        "Value": "BuiltIn.ds"
+      },
+      "Vector": {
+        "Key": "Autodesk.DesignScript.Geometry.Vector",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Math": {
+        "Key": "DSCore.Math",
+        "Value": "DSCoreNodes.dll"
+      },
+      "Surface": {
+        "Key": "Autodesk.DesignScript.Geometry.Surface",
+        "Value": "ProtoGeometry.dll"
+      },
+      "PolyCurve": {
+        "Key": "Autodesk.DesignScript.Geometry.PolyCurve",
+        "Value": "ProtoGeometry.dll"
+      }
+    }
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "CoreNodeModels.Input.DoubleSlider, CoreNodeModels",
+      "NodeType": "NumberInputNode",
+      "NumberType": "Double",
+      "MaximumValue": 100.0,
+      "MinimumValue": 0.0,
+      "StepValue": 0.1,
+      "InputValue": 11.100000000000001,
+      "Id": "db9422378f6345a4ae46434c1dbda65f",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "e4e408017d68472186d4e205c796744e",
+          "Name": "",
+          "Description": "Double",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A slider that produces numeric values."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.DoubleSlider, CoreNodeModels",
+      "NodeType": "NumberInputNode",
+      "NumberType": "Double",
+      "MaximumValue": 1.0,
+      "MinimumValue": 0.0,
+      "StepValue": 0.05,
+      "InputValue": 0.4,
+      "Id": "c4db32441e1d4904bba86955ced43bd1",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "e786087cb140440ba9997528dea46df1",
+          "Name": "",
+          "Description": "Double",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A slider that produces numeric values."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.DoubleSlider, CoreNodeModels",
+      "NodeType": "NumberInputNode",
+      "NumberType": "Double",
+      "MaximumValue": 100.0,
+      "MinimumValue": -100.0,
+      "StepValue": 0.1,
+      "InputValue": -49.5,
+      "Id": "e1f2e52a30f442dfb0998edea4452c4c",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "06c7442778cc4ef38e3725fd490b634c",
+          "Name": "",
+          "Description": "Double",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A slider that produces numeric values."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.DoubleSlider, CoreNodeModels",
+      "NodeType": "NumberInputNode",
+      "NumberType": "Double",
+      "MaximumValue": 0.85,
+      "MinimumValue": 0.25,
+      "StepValue": 0.05,
+      "InputValue": 0.4,
+      "Id": "bfe953448f304e4aa3ecffe52dc7df86",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "3317dd15c48c4fde81f7f58b3a9c0c0e",
+          "Name": "",
+          "Description": "Double",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A slider that produces numeric values."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.DoubleSlider, CoreNodeModels",
+      "NodeType": "NumberInputNode",
+      "NumberType": "Double",
+      "MaximumValue": -1.0,
+      "MinimumValue": -10.0,
+      "StepValue": 0.25,
+      "InputValue": -5.0,
+      "Id": "ddba7ebe49294c16892b25ae4fad0a43",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "9931e67b42404a07b639f5733227e48c",
+          "Name": "",
+          "Description": "Double",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A slider that produces numeric values."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.BoolSelector, CoreNodeModels",
+      "NodeType": "BooleanInputNode",
+      "InputValue": false,
+      "Id": "667a23e9f2514c278943cd02c3c23fe1",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "f5005dff01074325adbff4fc66960aae",
+          "Name": "",
+          "Description": "Boolean",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Selection between a true and false."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.BoolSelector, CoreNodeModels",
+      "NodeType": "BooleanInputNode",
+      "InputValue": false,
+      "Id": "037db50040ab45ac8ca0170c3c8e8450",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "eb845cb6aa964ab98b5872aff134fe26",
+          "Name": "",
+          "Description": "Boolean",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Selection between a true and false."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.BoolSelector, CoreNodeModels",
+      "NodeType": "BooleanInputNode",
+      "InputValue": false,
+      "Id": "7bb22fb3c73045a38cb5ab53d507e00a",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "a943bd14d2ed495394f8da53a4b22657",
+          "Name": "",
+          "Description": "Boolean",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Selection between a true and false."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function, DynamoCore",
+      "FunctionSignature": "2c28e822-e3bc-4430-ba51-38b579feb626",
+      "FunctionType": "Graph",
+      "NodeType": "FunctionNode",
+      "Id": "d5e865ad30564964b620ccd3a619866b",
+      "Inputs": [
+        {
+          "Id": "80994b8ec72e49018c2435af2982153f",
+          "Name": "Ajusta_Eixo",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "1ff5c304fa13459fbdf24139aca8ee47",
+          "Name": "Desloca_Vértice",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "bed2607f802042d5b0d1945f5aa3d445",
+          "Name": "Ajusta_Ponto_B",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "ae3d03a8f92940cabf01c3d6b0df604f",
+          "Name": "Ajusta_Ponto_S_no_Eixo",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "9637057ce2eb4e5b856e5f928d0b5034",
+          "Name": "Desloca_Ponto_A",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "4373059a174341f9a5b4b9b4569106e4",
+          "Name": "Homologia_Afim",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "10bdcfd92ee54a71b0453ec2816d6e63",
+          "Name": "Rebatimentos",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "5cc25412ec744851b61d41468cb66378",
+          "Name": "Simetrias_Axiais",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "19ac8fdc62ec4ddb9c2303909d73a1c3",
+          "Name": "Resultado_Homologia",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Constroi Homologia com Eixo"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "e4e408017d68472186d4e205c796744e",
+      "End": "80994b8ec72e49018c2435af2982153f",
+      "Id": "35e57b127e454a3b9a9b9eb3741c59c5"
+    },
+    {
+      "Start": "e786087cb140440ba9997528dea46df1",
+      "End": "bed2607f802042d5b0d1945f5aa3d445",
+      "Id": "d011f61dcf0a479d94daa7bb6478efb0"
+    },
+    {
+      "Start": "06c7442778cc4ef38e3725fd490b634c",
+      "End": "1ff5c304fa13459fbdf24139aca8ee47",
+      "Id": "fc040c6596db4ba1a689a524add0cdf8"
+    },
+    {
+      "Start": "3317dd15c48c4fde81f7f58b3a9c0c0e",
+      "End": "ae3d03a8f92940cabf01c3d6b0df604f",
+      "Id": "928edee219604cffa39b6a6147b1d7ab"
+    },
+    {
+      "Start": "9931e67b42404a07b639f5733227e48c",
+      "End": "9637057ce2eb4e5b856e5f928d0b5034",
+      "Id": "4b96575eb88b485fa541152db28b4780"
+    },
+    {
+      "Start": "f5005dff01074325adbff4fc66960aae",
+      "End": "4373059a174341f9a5b4b9b4569106e4",
+      "Id": "51f0db5d27d2445aae7f78aed4d49efa"
+    },
+    {
+      "Start": "eb845cb6aa964ab98b5872aff134fe26",
+      "End": "10bdcfd92ee54a71b0453ec2816d6e63",
+      "Id": "04c19712dd9e475fb94ebd1e27970bd0"
+    },
+    {
+      "Start": "a943bd14d2ed495394f8da53a4b22657",
+      "End": "5cc25412ec744851b61d41468cb66378",
+      "Id": "8558e01b47d941c8914f83ad16e49db1"
+    }
+  ],
+  "Dependencies": [
+    "2c28e822-e3bc-4430-ba51-38b579feb626"
+  ],
+  "NodeLibraryDependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 0.01,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.3.0.5885",
+      "RunType": "Automatic",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -44.106790657049885,
+      "EyeY": 24.04417779075715,
+      "EyeZ": 19.850906860194435,
+      "LookX": 7.3566768465239605,
+      "LookY": -7.9697332504009708,
+      "LookZ": -35.55727142486581,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "Ajusta Eixo da Homologia",
+        "Id": "db9422378f6345a4ae46434c1dbda65f",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -330.09277760853331,
+        "Y": 410.14318141115842
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Ajuste ponto B",
+        "Id": "c4db32441e1d4904bba86955ced43bd1",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -330.09277760853331,
+        "Y": 522.42250712763666
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Desloca Vértice da Homologia",
+        "Id": "e1f2e52a30f442dfb0998edea4452c4c",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -330.09277760853331,
+        "Y": 466.18684944464337
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Ajuste ponto S sobre Eixo",
+        "Id": "bfe953448f304e4aa3ecffe52dc7df86",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -330.09277760853331,
+        "Y": 576.22098842394848
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Desloca Ponto A",
+        "Id": "ddba7ebe49294c16892b25ae4fad0a43",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -330.09277760853331,
+        "Y": 630.12236338841456
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Homologia Afim",
+        "Id": "667a23e9f2514c278943cd02c3c23fe1",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -167.71079601032363,
+        "Y": 692.1869661694119
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Rebatimento",
+        "Id": "037db50040ab45ac8ca0170c3c8e8450",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -167.71079601032363,
+        "Y": 748.21925404808428
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Simetria Axial",
+        "Id": "7bb22fb3c73045a38cb5ab53d507e00a",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -167.71079601032363,
+        "Y": 804.25154192675666
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Homologias_de_Eixo_Próprio",
+        "Id": "d5e865ad30564964b620ccd3a619866b",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 70.3020110000806,
+        "Y": 504.73832992604167
+      }
+    ],
+    "Annotations": [
+      {
+        "Id": "3b631ca4ac7d48589dcd571d0814b0f0",
+        "Title": "",
+        "Nodes": [
+          "db9422378f6345a4ae46434c1dbda65f",
+          "c4db32441e1d4904bba86955ced43bd1",
+          "e1f2e52a30f442dfb0998edea4452c4c",
+          "bfe953448f304e4aa3ecffe52dc7df86",
+          "ddba7ebe49294c16892b25ae4fad0a43",
+          "667a23e9f2514c278943cd02c3c23fe1",
+          "037db50040ab45ac8ca0170c3c8e8450",
+          "7bb22fb3c73045a38cb5ab53d507e00a"
+        ],
+        "Left": -340.09277760853331,
+        "Top": 380.14318141115842,
+        "Width": 317.38198159820968,
+        "Height": 492.10836051559824,
+        "FontSize": 14.0,
+        "InitialTop": 410.14318141115842,
+        "InitialHeight": 539.10836051559818,
+        "TextblockHeight": 20.0,
+        "Background": "#FFFFC999"
+      },
+      {
+        "Id": "9d576f52ff84427e89257c5b0309cfa4",
+        "Title": " ",
+        "Nodes": [
+          "d5e865ad30564964b620ccd3a619866b",
+          "f2dd54aa07154d65a9fe533239d70ac3"
+        ],
+        "Left": 60.3020110000806,
+        "Top": 238.8182364891266,
+        "Width": 416.0,
+        "Height": 540.92009343691507,
+        "FontSize": 14.0,
+        "InitialTop": 268.8182364891266,
+        "InitialHeight": 304.37356985843053,
+        "TextblockHeight": 20.0,
+        "Background": "#FFE8F7AD"
+      },
+      {
+        "Id": "f2dd54aa07154d65a9fe533239d70ac3",
+        "Title": "Homologias:\r\n________________________________________________________\r\nTransformações geométricas por correspondências Homológicas são um capítulo importante para o desenvolvimento de Seções Planas, Rebatimentos e Simetrias. \r\n\r\nHomologia Afim : Vértice Impróprio\r\n\r\nRebatimentos: Homologia Afim com direção da Homologia perpendicular ao eixo\r\n\r\nSimetria Axial:  Homologia Afim Ortogonal ao Eixo e Distancias iguas dos pontos correspondentes",
+        "Nodes": [],
+        "Left": 78.521590303276469,
+        "Top": 268.8182364891266,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      }
+    ],
+    "X": 575.571378766532,
+    "Y": -56.073322406317516,
+    "Zoom": 0.7988514560694665
+  }
+}
