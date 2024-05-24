@@ -14,7 +14,7 @@ As funções devem ser executadas no programa Revit utilizando uma Vista 3D conf
 [**Canal YouTube:** Videos com explicação dos conteúdos e metodologias das funções](https://www.youtube.com/channel/UCCN58u2BP38F09aswlJrILA)
 #### **Consulte outros projetos**
   
-   1. [**OntologiaBIM:**] Construtor de ontologias OWL(https://github.com/JLMenegotto/OntologiaBIM)
+   1. [**OntologiaBIM:** Construtor de ontologias OWL] (https://github.com/JLMenegotto/OntologiaBIM)
    2. [**Acustica2024 e Parla:** Integração do Simulador Acústico BRASS com Revit](https://github.com/JLMenegotto/Acustica_2024)
    3. [**RIO:** Reformatação de acervos digitais](https://github.com/JLMenegotto/Rio)
    4. [**Promenade:** Sistema IoT para microlocalização](https://github.com/JLMenegotto/Promenade)
